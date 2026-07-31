@@ -1,9 +1,16 @@
-export default function App() {
-  return (
-    <div className="min-h-screen bg-orange-500 flex items-center justify-center">
-      <h1 className="text-5xl font-bold text-white">
-        HungerBridge
-      </h1>
-    </div>
-  );
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { AppLayout } from "./components/AppLayout"
+import { Home } from "./pages/Home"
+
+export const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <AppLayout />,
+      children: [
+        { index: true, element: <Home /> }
+      ],
+    },
+  ])
+  return <RouterProvider router={router} />;
 }
