@@ -100,7 +100,7 @@ export const Home = () => {
                 y: 0,
                 opacity: 1,
                 duration: 0.5,
-                stagger: 0.5,
+                stagger: 0.1,
                 scrollTrigger: {
                     trigger: container,
                     start: "top 80%",
@@ -171,7 +171,6 @@ export const Home = () => {
                     </div>
                     <div>Image</div>
                 </div>
-            </div>
             <div className="absolute z-0 ">
                 <div
                     className=" absolute bottom-0 -right-260 w-[200px] h-[200px] 
@@ -180,6 +179,7 @@ export const Home = () => {
                 <div
                     className=" absolute bottom-0 -right-150 w-[200px] h-[200px] rounded-full bg-primary/15 blur-[90px]"
                 />
+            </div>
             </div>
             <div className="py-14 p-24">
                 <div className="flex flex-col items-center gap-4 text-inactive">
