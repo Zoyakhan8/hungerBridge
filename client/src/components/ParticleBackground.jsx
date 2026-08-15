@@ -21,7 +21,7 @@ export const ParticleBackground = () => {
 
         const particles = [];
 
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 20; i++) {
             particles.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
@@ -114,7 +114,7 @@ export const ParticleBackground = () => {
     return (
         <canvas
             ref={canvasRef}
-            className="absolute inset-0 z-0 pointer-events-none blur-sm"
+            className="absolute inset-0 z-0 pointer-events-none blur-md"
         />
     );
 };

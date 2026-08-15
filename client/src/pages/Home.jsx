@@ -66,6 +66,7 @@ export const Home = () => {
                 { scaleX: 0, },
                 {
                     scaleX: 1.2,
+                    backgroundColor: "#FE7F42",
                     duration: 0.5,
                     scrollTrigger: {
                         trigger: connector,
@@ -116,12 +117,12 @@ export const Home = () => {
     }, [])
     return (
         <section className="bg-brown ">
-            <div className="relative z-10 overflow-hidden ">
-               <ParticleBackground/>
+            <div className="relative z-10">
                 <div className="flex flex-row justify-between p-24">
                     <div className="flex flex-col justify-center gap-5 w-[30%] p-4">
-                        <div className="flex flex-row items-center bg-background/30 backdrop-blur-3xl px-4 py-1 rounded-[20px] w-max border border-white/20">
-                            <h4 className=" text-cta font-body font-bold ">
+                        <div className="flex flex-row items-center bg-background px-4 py-1 rounded-[20px] w-max
+                        border border border-white/20 shadow-xl shadow-black/10">
+                            <h4 className=" text-primary font-body font-bold">
                                 Safe Food.
                                 <span className="text-inactive">Trusted Delivery.</span>
                                 <span className="text-secondary">Zero Waste.</span>
@@ -131,7 +132,7 @@ export const Home = () => {
                             <h1>
                                 Donate.Protect.
                             </h1>
-                            <span className="text-primary">Nourish.</span>
+                            <span className="text-secondary">Nourish.</span>
                         </div>
                         <h3 className="font-body font-medium text-inactive">HungerBridge connects food donors with
                             verified NGOs while ensuring food safety
@@ -140,17 +141,17 @@ export const Home = () => {
                         <div className="flex flex-row items-center gap-6">
                             <NavLink to="/register" className={({ isActive }) =>
                                 `inline-block backdrop-blur-3xl px-10 py-3 shadow-[0_4px_20px] shadow-primary/50
-                            bg-gradient-to-r from-primary/90 from-30 via-primary/80 to-inactive/75 to-70
+                            bg-primary
                             border border-white/20 text-brown rounded-[10px] text-xl font-bold
                             ${isActive ? "" : "hover:shadow-[0_4px_30px] shadow-primary/50 hover:scale-105 transition-all duration-300"}`
                             }>Start Now</NavLink>
                             <NavLink to="/about" className={({ isActive }) =>
-                                `inline-block bg-background/30 backdrop-blur-3xl px-10 py-3
-                            border border-white/20 text-inactive rounded-[10px] text-xl font-bold
+                                `inline-block bg-background backdrop-blur-3xl px-10 py-3 shadow-xl shadow-black/10
+                            border border-white/20 text-heading rounded-[10px] text-xl font-bold
                             ${isActive ? "" : "hover:scale-105 transition-all duration-300"}`
                             }>Explore</NavLink>
                         </div>
-                        <div className="font-body font-medium text-inactive/70 flex flex-row items-center gap-8 w-max py-2 ">
+                        <div className="font-body font-medium text-inactive flex flex-row items-center gap-8 w-max py-2 ">
                             <div className="flex flex-row gap-4 ">
                                 <img src="/src/assets/Verified.png" alt="" />
                                 <h4>Verified NGOs</h4>
@@ -171,15 +172,15 @@ export const Home = () => {
                     </div>
                     <div>Image</div>
                 </div>
-            <div className="absolute z-0 ">
-                <div
-                    className=" absolute bottom-0 -right-260 w-[200px] h-[200px] 
-                    rounded-full bg-primary/15 blur-[90px]"
-                />
-                <div
-                    className=" absolute bottom-0 -right-150 w-[200px] h-[200px] rounded-full bg-primary/15 blur-[90px]"
-                />
-            </div>
+                <div className="absolute z-0 ">
+                    <div
+                        className=" absolute bottom-50 -right-190 w-[200px] h-[200px] 
+                    rounded-full bg-primary/30 blur-[90px]"
+                    />
+                    <div
+                        className=" absolute bottom-70 -right-230 w-[200px] h-[200px] rounded-full bg-primary/45 blur-[90px]"
+                    />
+                </div>
             </div>
             <div className="py-14 p-24">
                 <div className="flex flex-col items-center gap-4 text-inactive">
@@ -189,7 +190,7 @@ export const Home = () => {
                 </div>
                 <div
                     ref={cardRef}
-                    className=" grid grid-cols-4 gap-6 p-6">
+                    className=" grid grid-cols-4 gap-6 p-6 items-stretch">
                     <div className="featureCard">
                         <Feature
                             image="./src/assets/waste.png"
@@ -315,11 +316,11 @@ export const Home = () => {
             <div className="py-10 p-24">
                 <div className="flex flex-col items-center gap-4 text-inactive p-4">
                     <h4 className="font-heading font-extrabold text-5xl">Research Driven Impact</h4>
-                    <h4 className="text-inactive/80">The heart of HungerBridge is our proprietary ZeroWaste Box. Engineered for resilience and transparency.</h4>
+                    <h4 className="text-inactive">The heart of HungerBridge is our proprietary ZeroWaste Box. Engineered for resilience and transparency.</h4>
                 </div>
                 <div
                     ref={iotRef}
-                    className="grid grid-cols-3 rows-2 gap-5 p-4">
+                    className="grid grid-cols-4 items-stretch gap-5 p-4">
                     <div className="featureCard">
                         <Feature
                             image="./src/assets/safe.png"
@@ -342,7 +343,7 @@ export const Home = () => {
                             text="Reduces edible food waste.Helps connect donors with verified NGOs.Supports food access for people in need."
                         />
                     </div>
-                    <div className="featureCard col-span-3">
+                    <div className="featureCard">
                         <Feature
                             image="./src/assets/written.png"
                             title="Academic Innovation"

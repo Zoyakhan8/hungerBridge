@@ -3,13 +3,11 @@
 --font-heading: "Manrope", sans-serif;
 --font-body: "Inter", sans-serif;
 
-  --color-brown:#33110F;
-  --color-background:#4C2522;
-  --color-primary:#FE7F42 ;
-  --color-secondary:#FFFB97 ;
-  --color-tertiary:#B32C1A ;
-  --color-neutral:#7A4B47 ;
-  --color-heading:#FFB596;
-  --color-inactive:#FFDBCD;
-  --color-cta:#FF8C57;
+  --color-brown:#FBF9F1;
+  --color-background:#FFFFFF;
+  --color-primary:#FF6D29 ;
+  --color-secondary:#8F1003 ;
+  --color-tertiary:#F0EEE5 ;
+  --color-heading:#2d3436;
+  --color-inactive:#2d3436;
 }

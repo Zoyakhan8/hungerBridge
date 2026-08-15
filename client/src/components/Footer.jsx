@@ -1,6 +1,6 @@
 export const Footer = () => {
     return (
-        <footer className="flex bg-background p-24 justify-evenly items-center gap-8">
+        <footer className="flex bg-tertiary p-24 justify-evenly items-center gap-8">
             <div className=" flex flex-col items-center gap-4 w-[360px] p-4">
                 <h2 className="font-heading font-extrabold text-4xl text-heading">HungerBridge</h2>
                 <h4 className="font-body text-sm text-inactive">© 2026 HungerBridge.

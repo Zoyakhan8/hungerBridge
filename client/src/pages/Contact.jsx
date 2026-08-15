@@ -47,9 +47,10 @@ export const Contact = () => {
             <div className="relative z-10">
                 <div className="flex flex-row justify-between items-center px-24 py-16">
                     <div className="flex flex-col justify-center gap-5 w-[40%] p-4">
-                        <div className=" bg-background/30 backdrop-blur-3xl px-4 py-1 rounded-[20px] w-max border border-white/20">
+                        <div className=" bg-background/30 backdrop-blur-3xl px-4 py-1 rounded-[20px] w-max 
+                        border border-white/20 shadow-xl shadow-black/10">
                             <h4 className="text-secondary font-body font-bold">
-                                Academic Project
+                                . Academic Project
                             </h4>
                         </div>
                         <div className="font-heading font-extrabold text-6xl text-inactive">
@@ -103,7 +104,7 @@ export const Contact = () => {
                                     <label className="font-heading text-md text-inactive font-bold" htmlFor="name" >Full Name</label>
                                     <input className=" text-inactive px-4 py-3 bg-background/20
                              backdrop-blur-xl rounded-[8px] w-full border 
-                             border border-cta/20 shadow-xl shadow-black/10"
+                             border border-cta/40 shadow-xl shadow-black/10"
                                         type="text" id="name" name="name" placeholder="Enter your name"
                                         value={formData.name} onChange={handleChange} />
                                 </div>
@@ -111,7 +112,7 @@ export const Contact = () => {
                                     <label className="font-heading text-md text-inactive font-bold" htmlFor="email" >Email</label>
                                     <input className=" text-inactive px-4 py-3 bg-background/20
                              backdrop-blur-xl rounded-[8px] w-full border 
-                             border border-cta/20 shadow-xl shadow-black/10"
+                             border border-cta/40 shadow-xl shadow-black/10"
                                         type="email" id="email" name="email" placeholder="Enter your email"
                                         value={formData.email} onChange={handleChange} />
                                 </div>
@@ -120,7 +121,7 @@ export const Contact = () => {
                                 <label className="font-heading text-md text-inactive font-bold" htmlFor="phone-number" >Phone Number</label>
                                 <input className=" text-inactive px-4 py-3 bg-background/20
                              backdrop-blur-xl rounded-[8px] w-full border 
-                             border border-cta/20 shadow-xl shadow-black/10"
+                             border border-cta/40 shadow-xl shadow-black/10"
                                     type="tel" id="phone-number" name="phoneNumber" placeholder="Enter your number"
                                     value={formData.phoneNumber} onChange={handleChange} />
                             </div>
@@ -128,15 +129,15 @@ export const Contact = () => {
                                 <label className="font-heading text-md text-inactive font-bold" htmlFor="message" >Enquires</label>
                                 <textarea className=" text-inactive px-4 py-3 bg-background/20
                              backdrop-blur-xl rounded-[8px] w-full border 
-                             border border-cta/20 shadow-xl shadow-black/10"
+                             border border-cta/40 shadow-xl shadow-black/10"
                                     id="message" name="message" placeholder="Enter a message........"
                                     value={formData.message} onChange={handleChange}></textarea>
                             </div>
                             <div className="flex flex-col gap-2 flex-1">
                                 <button type="submit"
                                     className="inline-block backdrop-blur-3xl px-10 py-3 shadow-[0_4px_20px] shadow-primary/50
-                            bg-gradient-to-r from-primary/90 from-30 via-primary/80 to-inactive/75 to-70
-                            border border-white/20 text-brown rounded-[10px] text-xl font-bold
+                            bg-primary
+                            border border-white/40 text-brown rounded-[10px] text-xl font-bold
                             cursor-pointer">
                                     Submit
                                 </button>
