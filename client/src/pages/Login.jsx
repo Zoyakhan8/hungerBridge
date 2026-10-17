@@ -49,10 +49,13 @@ export const Login = () => {
                     password: ""
                 })
                 if (data.role == "donor") {
-                    navigate("/donor")
+                    navigate("/donor/dashboard")
                 }
                 else if (data.role == "ngo") {
                     navigate("/ngo")
+                }
+                else if (data.role == "delivery_partner") {
+                    navigate("/delivery")
                 }
                 else if (data.role == "admin") {
                     navigate("/admin")

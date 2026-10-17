@@ -2,6 +2,8 @@
 @theme {
 --font-heading: "Manrope", sans-serif;
 --font-body: "Inter", sans-serif;
+--font-app-heading:"Sora",sans-serif;
+--font-app-body:"JetBrains Mono",sans-serif;
 
   --color-brown:#FBF9F1;
   --color-background:#FFFFFF;
@@ -10,4 +12,5 @@
   --color-tertiary:#F0EEE5 ;
   --color-heading:#2d3436;
   --color-inactive:#2d3436;
+  --color-table:#574239;
 }
