@@ -20,3 +20,15 @@ server/dist/
 # OS
 .DS_Store
 Thumbs.db
+# Python virtual environments
+hungerBridgeAi/venv/
+hungerBridgeAi/.venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
