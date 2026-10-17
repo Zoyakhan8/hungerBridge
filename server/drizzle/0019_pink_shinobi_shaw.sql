@@ -1,0 +1,1 @@
+ALTER TABLE "donations" ALTER COLUMN "prepared_date_time" SET DATA TYPE timestamp with time zone;

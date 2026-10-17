@@ -3,6 +3,7 @@ export const roleEnum = pgEnum("role", [
   "donor",
   "ngo",
   "admin",
+  "delivery_partner"
 ]);
 export const users = pgTable("users", {
     id: serial("id").primaryKey(),

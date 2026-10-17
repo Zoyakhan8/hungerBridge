@@ -12,6 +12,7 @@ import { uploadToCloudinary } from "../utils/uploadToCloudinary.js";
 import { sessions } from "../model/sessionsSchema.ts";
 import { sendOTP } from "../config/sendOTP.js";
 import { otps } from "../model/otpSchema.ts";
+import { geocodeAddress } from "../utils/geocodeAddress.ts";
 export const DonorRegistration = async (req, res) => {
     try {
         const { name, email, phoneNumber, password, companyName } = req.body;
@@ -148,6 +149,14 @@ export const NgoRegistration = async (req, res) => {
             req.files.addressProof[0],
             "ngo/address"
         );
+        const coordinates = await geocodeAddress(registeredAddress);
+        if (!coordinates) {
+            return res.status(422).json({
+                success: false,
+                message: "Could not locate this shop address. Please provide a more complete address.",
+            });
+        }
+        console.log(coordinates)
         let verificationTokenValue = "";
         const expiresAt = new Date(Date.now() + 60 * 60 * 1000)
         await db.transaction(async (tx) => {
@@ -164,12 +173,14 @@ export const NgoRegistration = async (req, res) => {
                 organizationName,
                 registeredNumber,
                 registeredAddress,
+                latitude: coordinates.latitude,
+                longitude: coordinates.longitude,
                 email,
                 phoneNumber,
-                registrationCertificateUrl: registration.secure_url,
-                panCardUrl: pan.secure_url,
-                addressProofUrl: address.secure_url,
-                approved: false,
+                registrationCertificateUrl: registration,
+                panCardUrl: pan,
+                addressProofUrl: address,
+                verifyStatus: "pending",
                 userId: user.id
             })
             await tx.insert(verificationToken).values({

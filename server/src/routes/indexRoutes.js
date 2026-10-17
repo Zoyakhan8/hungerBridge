@@ -1,8 +1,13 @@
 import { Router } from "express";
-import authRoutes from "./auth.js";
-
+import { authRoutes } from "./authRoutes";
+import { donorRoutes } from "./donorRoutes";
+import { adminRoutes } from "./adminRoutes";
+import { ngoRoutes } from "./ngoRoutes";
+import { deliveryRoutes } from "./deliveryRoute";
 const router = Router();
-
 router.use("/auth", authRoutes);
-
+router.use("/donor", donorRoutes);
+router.use("/ngo", ngoRoutes);
+router.use("/admin", adminRoutes);
+router.use("/delivery", deliveryRoutes);
 export default router;

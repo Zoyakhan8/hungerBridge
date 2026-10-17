@@ -13,7 +13,7 @@ export const uploadToCloudinary = (file, folder) => {
                 if (error) {
                     reject(error);
                 } else {
-                    resolve(result);
+                    resolve(result.secure_url);
                 }
 
             }

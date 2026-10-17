@@ -1,0 +1,1 @@
+ALTER TABLE "donors" RENAME COLUMN "verification_status" TO "verify_status";

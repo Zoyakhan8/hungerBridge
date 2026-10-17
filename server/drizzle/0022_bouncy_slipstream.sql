@@ -1,0 +1,1 @@
+ALTER TABLE "donations" RENAME COLUMN "quanitity" TO "quantity";

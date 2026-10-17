@@ -39,3 +39,9 @@ export const isNgo = (req, res, next) => {
     }
     next();
 };
+export const isDelivery = (req, res, next) => {
+    if (req.user.role !== "delivery_partner") {
+        return res.status(403).json({ message: "access denied" });
+    }
+    next();
+};

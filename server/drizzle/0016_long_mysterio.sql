@@ -1,0 +1,2 @@
+CREATE TYPE "public"."donation_status" AS ENUM('pending', 'accepted', 'picked_up', 'in-transit', 'delivered');--> statement-breakpoint
+ALTER TABLE "donations" ADD COLUMN "donation_status" "donation_status" DEFAULT 'pending';
