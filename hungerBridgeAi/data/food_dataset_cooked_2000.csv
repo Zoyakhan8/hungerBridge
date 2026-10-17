@@ -1,0 +1,2001 @@
+food_name,ingredients,categories
+Creamy Paneer Masala,"paneer, onion, tomato, garam masala, ginger garlic paste, oil, salt",cooked_veggies
+Prawn In Mustard Sauce,"prawn, mustard paste, green chilli, mustard oil, turmeric, salt",cooked_seafood
+Andhra Lamb Curry,"lamb, andhra spices, onion, curry leaves, oil, salt",cooked_meats
+Awadhi Mutton Curry,"mutton, awadhi spices, onion, curry leaves, oil, salt",cooked_meats
+Tomato Chana Dal,"chana dal, tomato, turmeric, mustard seeds, curry leaves, salt",cooked_lentils
+Cluster Beans Sabzi,"cluster beans, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Green Peas Bhaji,"green peas, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Bengali Mutton Curry,"mutton, bengali spices, onion, curry leaves, oil, salt",cooked_meats
+Paneer Amritsari,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Urad Dal Chawal,"urad dal, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Chicken Pulao,"chicken, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_poultry"
+Goan Clam Curry,"clam, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Punjabi Chicken Roast,"chicken, punjabi spices, onion, curry leaves, oil, salt",cooked_poultry
+Tiger Prawn Coconut Curry,"tiger prawn, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Chole With Roti,"roti, chole, spices, oil, salt","cooked_roti,cooked_lentils"
+Capsicum Do Pyaza,"capsicum, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Sprouts Curry,"sprouted moong, onion, tomato, spices, oil, salt",cooked_lentils
+Andhra Egg Roast,"egg, andhra spices, onion, tomato, oil, salt",cooked_egg
+Bengali Black Masoor Dal,"black masoor dal, panch phoron, ginger, coconut, ghee, salt",cooked_lentils
+Anchovy Rava Fry,"anchovy, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Hyderabadi Chicken Biryani,"chicken, basmati rice, hyderabadi spices, curd, saffron, ghee, salt","cooked_rice,cooked_poultry"
+Paneer Stir Fry,"paneer, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Puri With Mutton Korma,"puri, mutton korma, spices, oil, salt","cooked_roti,cooked_meats"
+Mutton Ghee Roast,"mutton, ghee, red chilli, garlic, curry leaves, salt",cooked_meats
+Fish Dum Biryani,"fish, basmati rice, curd, biryani masala, saffron, fried onion, ghee, salt","cooked_rice,cooked_seafood"
+Stuffed Yam,"yam, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Onion Stir Fry,"onion, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Dhaba Style Chicken Roast,"chicken, dhaba style spices, onion, curry leaves, oil, salt",cooked_poultry
+Tiger Prawn 65,"tiger prawn, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_seafood
+Dry Zucchini Fry,"zucchini, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Goan Chicken Curry,"chicken, goan spices, onion, curry leaves, oil, salt",cooked_poultry
+Fish Curry With Roti,"roti, fish curry, spices, oil, salt","cooked_roti,cooked_seafood"
+Kerala Pork Curry,"pork, kerala spices, onion, curry leaves, oil, salt",cooked_meats
+Tandoori Roti,"wheat flour, water, salt, oil or ghee",cooked_roti
+Green Peas Sabzi,"green peas, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Fish Pulao,"fish, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_seafood"
+Dhaba Style Paneer Masala,"paneer, onion, tomato, garam masala, ginger garlic paste, oil, salt",cooked_veggies
+Kerala Egg Masala,"egg, kerala spices, onion, tomato, oil, salt",cooked_egg
+Hyderabadi Prawn Biryani,"prawn, basmati rice, hyderabadi spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Quail Roast,"quail, onion, coconut, black pepper, curry leaves, oil, salt",cooked_poultry
+Egg Pakora,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Sardine Rava Fry,"sardine, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Mild Egg Curry,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Masala Omelette,"egg, onion, green chilli, coriander leaves, salt, oil",cooked_egg
+Mixed Veg Naan,"flour, mixed veg, spices, butter, salt","cooked_roti,cooked_veggies"
+Lamb Vindaloo,"lamb, vinegar, red chilli, garlic, goan spices, oil, salt",cooked_meats
+Catla Tawa Fry,"catla, red chilli powder, turmeric, lemon juice, oil, salt",cooked_seafood
+Malabar Pork Curry,"pork, malabar spices, onion, curry leaves, oil, salt",cooked_meats
+Chicken Curry,"chicken, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, coriander leaves",cooked_poultry
+Kerala Egg Fry,"egg, kerala spices, onion, tomato, oil, salt",cooked_egg
+Cabbage Kofta Curry,"cabbage, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Bangda Tikka,"bangda, curd, ginger garlic paste, red chilli powder, ajwain, mustard oil, salt",cooked_seafood
+Phulka With Dal Makhani,"phulka, dal makhani, spices, oil, salt","cooked_roti,cooked_lentils"
+Hyderabadi Egg Roast,"egg, hyderabadi spices, onion, tomato, oil, salt",cooked_egg
+Spinach Achari,"spinach, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Chapati With Pork Curry,"chapati, pork curry, spices, oil, salt","cooked_roti,cooked_meats"
+Snake Gourd Bhaji,"snake gourd, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Moong Dal Fry,"moong dal, onion, tomato, ginger garlic paste, red chilli powder, oil, salt",cooked_lentils
+Tomato Onion Moong Dal,"moong dal, tomato onion, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Kulcha And Fish Fry,"kulcha, fish fry, spices, oil, salt","cooked_roti,cooked_seafood"
+Sausage Fry,"sausages, onion, oil, pepper",cooked_meats
+Pumpkin Lobia,"lobia, pumpkin, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Steamed Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Lamb Jalfrezi,"lamb, capsicum, onion, tomato, spices, oil, salt",cooked_meats
+Fish Biryani,"fish, basmati rice, curd, biryani masala, saffron, fried onion, ghee, mint, salt","cooked_rice,cooked_seafood"
+Quail Lollipop,"quail wings, corn flour, ginger garlic paste, red chilli sauce, oil, salt",cooked_poultry
+Grilled Clam,"clam, lemon juice, garlic, pepper, olive oil, salt",cooked_seafood
+Baby Corn Do Pyaza,"baby corn, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Chettinad Mutton Curry,"mutton, chettinad spices, onion, curry leaves, oil, salt",cooked_meats
+Tuna Salad Cooked,"tuna, onion, pepper, lemon, salt",cooked_seafood
+Kulcha With Paneer Butter Masala,"kulcha, paneer butter masala, spices, oil, salt","cooked_roti,cooked_veggies"
+Beetroot Biryani,"beetroot, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Egg Pepper Fry,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Quail Pepper Fry,"quail, black pepper, curry leaves, garlic, onion, oil, salt",cooked_poultry
+Amritsari Crab,"crab, gram flour, carom seeds, ginger garlic paste, red chilli powder, oil, salt",cooked_seafood
+Chettinad Egg Fry,"egg, chettinad spices, onion, tomato, oil, salt",cooked_egg
+Country Chicken Roast,"country chicken, onion, coconut, black pepper, curry leaves, oil, salt",cooked_poultry
+Ash Gourd Sabzi,"ash gourd, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Lemon Chana Dal,"chana dal, lemon juice, turmeric, cumin seeds, ghee, salt",cooked_lentils
+Yam Do Pyaza,"yam, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Chapati With Chicken Curry,"chapati, chicken curry, spices, oil, salt","cooked_roti,cooked_poultry"
+Mushroom Achari,"mushroom, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Steamed Tuna,"tuna, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Dal Vada,"chana dal, onion, green chilli, spices, oil, salt",cooked_lentils
+Amritsari Tuna,"tuna, gram flour, carom seeds, ginger garlic paste, red chilli powder, oil, salt",cooked_seafood
+Paneer Butter Masala With Naan,"naan, paneer butter masala, spices, oil, salt","cooked_roti,cooked_veggies"
+Amritsari Pomfret,"pomfret, gram flour, carom seeds, ginger garlic paste, red chilli powder, oil, salt",cooked_seafood
+Mushroom Curry,"mushroom, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Paneer Omelette,"egg, paneer, onion, green chilli, oil, salt","cooked_egg,cooked_veggies"
+Tomato Masoor Dal,"masoor dal, tomato, turmeric, mustard seeds, curry leaves, salt",cooked_lentils
+Rabbit Do Pyaza,"rabbit, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Green Moong Dal Tadka,"green moong dal, turmeric, onion, tomato, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Schezwan Chicken Fried Rice,"chicken, rice, schezwan sauce, spring onion, garlic, oil, salt","cooked_rice,cooked_poultry"
+Quail Chettinad,"quail, coconut, black pepper, fennel seeds, curry leaves, onion, oil, salt",cooked_poultry
+Surmai Curry,"surmai, coconut milk, tamarind, red chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_seafood
+Yellow Moong Dal Soup,"yellow moong dal, turmeric, garlic, pepper, ghee, salt",cooked_lentils
+Lemon Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Venison Vindaloo,"venison, vinegar, red chilli, garlic, goan spices, oil, salt",cooked_meats
+Steamed Catla,"catla, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Mangalorean Beef Curry,"beef, mangalorean spices, onion, curry leaves, oil, salt",cooked_meats
+Ash Gourd Bhaji,"ash gourd, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Cluster Beans Achari,"cluster beans, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Goan Hilsa Curry,"hilsa, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Egg Devilled,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Goat Curry Rice,"goat, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, rice","cooked_rice,cooked_meats"
+Omelette With Phulka,"phulka, omelette, spices, oil, salt","cooked_roti,cooked_egg"
+Naan With Chicken Curry,"naan, chicken curry, spices, oil, salt","cooked_roti,cooked_poultry"
+Chicken Kebab,"chicken mince, ginger garlic paste, green chilli, garam masala, oil, salt",cooked_poultry
+Country Chicken Vindaloo,"country chicken, vinegar, red chilli, garlic, goan spices, oil, salt",cooked_poultry
+Half Boiled Egg,"egg, water, pepper, salt",cooked_egg
+Capsicum Omelette,"egg, capsicum, onion, salt, oil","cooked_egg,cooked_veggies"
+Dal With Roti,"dal, wheat roti, ghee, salt","cooked_roti,cooked_lentils"
+Tilapia Masala,"tilapia, onion, tomato, coconut, red chilli powder, ginger garlic paste, oil, salt",cooked_seafood
+Chicken Shawarma,"pita or roti, chicken, garlic sauce, vegetables","cooked_roti,cooked_poultry"
+Quail Ghee Roast,"quail, ghee, red chilli, garlic, curry leaves, salt",cooked_poultry
+Fish In Mustard Sauce,"fish, mustard paste, green chilli, mustard oil, turmeric, salt",cooked_seafood
+Steamed Rawas,"rawas, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Kashmiri Chicken Biryani,"chicken, basmati rice, kashmiri spices, curd, saffron, ghee, salt","cooked_rice,cooked_poultry"
+Mix Veg,"carrot, beans, peas, cauliflower, potato, spices, oil, salt",cooked_veggies
+Punjabi Green Moong Dal,"green moong dal, onion, tomato, ginger, garlic, ghee, garam masala, salt",cooked_lentils
+Spinach Urad Dal,"urad dal, spinach, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Bhindi Masala With Tandoori Roti,"tandoori roti, bhindi masala, spices, oil, salt","cooked_roti,cooked_veggies"
+Masoor Dal Rice,"masoor dal, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Crab Tawa Fry,"crab, red chilli powder, turmeric, lemon juice, oil, salt",cooked_seafood
+Bombay Duck Curry,"bombay duck, coconut milk, tamarind, red chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_seafood
+Goat Roast,"goat, onion, coconut, black pepper, curry leaves, ginger garlic paste, oil, salt",cooked_meats
+Rabbit Seekh Kebab,"rabbit mince, ginger garlic paste, green chilli, spices, oil, salt",cooked_meats
+Pork Dum Biryani,"pork, basmati rice, curd, biryani masala, saffron, fried onion, ghee, salt","cooked_rice,cooked_meats"
+Capsicum Stir Fry,"capsicum, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Paneer Biryani,"paneer, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Goan Catla Curry,"catla, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Lemon Mixed Dal,"mixed dal, lemon juice, turmeric, cumin seeds, ghee, salt",cooked_lentils
+Goat Curry,"goat, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt",cooked_meats
+Chicken Sukka,"chicken, coconut, black pepper, curry leaves, onion, oil, salt",cooked_poultry
+Mughlai Egg Roast,"egg, mughlai spices, onion, tomato, oil, salt",cooked_egg
+Urad Dal Khichdi,"urad dal, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Sunny Side Up,"egg, oil, salt, pepper",cooked_egg
+Quail 65,"quail, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_poultry
+Prawn 65,"prawn, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_seafood
+Wheat Chapati,"wheat flour, water, salt, oil or ghee",cooked_roti
+Masoor Dal Puri,"wheat flour, masoor dal, spices, oil, salt","cooked_roti,cooked_lentils"
+Thick Mixed Dal,"mixed dal, turmeric, ghee, salt",cooked_lentils
+Basa Coconut Curry,"basa, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Tomato Panchmel Dal,"panchmel dal, tomato, turmeric, mustard seeds, curry leaves, salt",cooked_lentils
+Kanda Poha,"flattened rice, onion, peanuts, curry leaves, turmeric, salt",cooked_rice
+Beef Korma,"beef, curd, cashew paste, onion, garam masala, ghee, salt",cooked_meats
+Soya Chunks Do Pyaza,"soya chunks, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Konkani Lamb Curry,"lamb, konkani spices, onion, curry leaves, oil, salt",cooked_meats
+Lamb Roast,"lamb, onion, coconut, black pepper, curry leaves, ginger garlic paste, oil, salt",cooked_meats
+Chapati With Dal Makhani,"chapati, dal makhani, spices, oil, salt","cooked_roti,cooked_lentils"
+Goat Fried Rice,"goat, rice, spring onion, soy sauce, garlic, oil, salt","cooked_rice,cooked_meats"
+Lamb Masala Rice,"lamb, rice, onion, tomato, garam masala, oil, salt","cooked_rice,cooked_meats"
+Raw Banana Stir Fry,"raw banana, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Mutton Bhuna,"mutton, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Bengali Chicken Roast,"chicken, bengali spices, onion, curry leaves, oil, salt",cooked_poultry
+Keema With Roti,"roti, keema, spices, oil, salt","cooked_roti,cooked_meats"
+Duck Masala,"duck, onion, tomato, garam masala, coriander powder, ginger garlic paste, oil, salt",cooked_poultry
+Coorgi Chicken Curry,"chicken, coorgi spices, onion, curry leaves, oil, salt",cooked_poultry
+Beef Kolhapuri,"beef, kolhapuri masala, coconut, onion, oil, salt",cooked_meats
+Malabar Basa Curry,"basa, coconut milk, kudampuli, green chilli, curry leaves, coconut oil, salt",cooked_seafood
+Tomato Onion Chana Dal,"chana dal, tomato onion, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Shrimp Tawa Fry,"shrimp, red chilli powder, turmeric, lemon juice, oil, salt",cooked_seafood
+Tinda Masala,"tinda, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Chicken Rice Bowl,"chicken, rice, onion, soy sauce, vegetables, oil, salt","cooked_rice,cooked_poultry"
+Phulka With Chicken Kadai,"phulka, chicken kadai, spices, oil, salt","cooked_roti,cooked_poultry"
+Lucknowi Beef Biryani,"beef, basmati rice, lucknowi spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Steamed Crab,"crab, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Kulcha And Chicken Korma,"kulcha, chicken korma, spices, oil, salt","cooked_roti,cooked_poultry"
+Hard Boiled Egg,"egg, water, salt",cooked_egg
+Pumpkin Mixed Dal,"mixed dal, pumpkin, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Punjabi Chicken Masala,"chicken, punjabi spices, onion, curry leaves, oil, salt",cooked_poultry
+Palak Mixed Dal,"mixed dal, palak, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Mutton Keema,"mutton mince, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Raw Banana Achari,"raw banana, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Egg Bhuna,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Bangda 65,"bangda, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_seafood
+Goan Chicken Masala,"chicken, goan spices, onion, curry leaves, oil, salt",cooked_poultry
+Onion Masala,"onion, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Palak Toor Dal,"toor dal, palak, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Onion Bhaji,"onion, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Plain Pulao,"rice, ghee or oil, salt, spices",cooked_rice
+Stuffed Ash Gourd,"ash gourd, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Lamb Seekh Kebab,"lamb mince, ginger garlic paste, green chilli, spices, oil, salt",cooked_meats
+Bengali Egg Fry,"egg, bengali spices, onion, tomato, oil, salt",cooked_egg
+Zucchini Sabzi,"zucchini, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Rabbit Roast,"rabbit, onion, coconut, black pepper, curry leaves, ginger garlic paste, oil, salt",cooked_meats
+Dhaba Style Black Masoor Dal,"black masoor dal, butter, onion, tomato, ginger garlic paste, cream, garam masala, salt",cooked_lentils
+Quail Korma,"quail, curd, cashew paste, onion, garam masala, ghee, salt",cooked_poultry
+Chicken Stew,"chicken, potato, coconut milk, whole spices, curry leaves, salt",cooked_poultry
+Crab Dum Biryani,"crab, basmati rice, curd, biryani masala, saffron, fried onion, ghee, salt","cooked_rice,cooked_seafood"
+Goat Masala Rice,"goat, rice, onion, tomato, garam masala, oil, salt","cooked_rice,cooked_meats"
+Paneer Peshawari,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Goat Keema,"goat mince, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Cauliflower Do Pyaza,"cauliflower, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Mangalorean Chicken Fry,"chicken, mangalorean spices, onion, curry leaves, oil, salt",cooked_poultry
+Lucknowi Mutton Biryani,"mutton, basmati rice, lucknowi spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Sweet Potato Masala,"sweet potato, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Chicken Kadai,"chicken, capsicum, onion, tomato, kadai masala, oil, salt",cooked_poultry
+Naan And Aloo Matar,"naan, aloo matar, spices, oil, salt","cooked_roti,cooked_veggies"
+Paratha,"wheat flour, water, salt, oil or ghee",cooked_roti
+Duck Achari,"duck, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_poultry
+Malabar Beef Biryani,"beef, basmati rice, malabar spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Lobster Rava Fry,"lobster, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Quail Tandoori,"quail, curd, tandoori masala, lemon juice, mustard oil, salt",cooked_poultry
+Palak Lobia,"lobia, palak, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Punjabi Pork Curry,"pork, punjabi spices, onion, curry leaves, oil, salt",cooked_meats
+Rabbit Sukka,"rabbit, coconut, black pepper, curry leaves, onion, oil, salt",cooked_meats
+Potato Kofta Curry,"potato, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Grilled Shrimp,"shrimp, lemon juice, garlic, pepper, olive oil, salt",cooked_seafood
+Malabar Sardine Curry,"sardine, coconut milk, kudampuli, green chilli, curry leaves, coconut oil, salt",cooked_seafood
+Steamed Anchovy,"anchovy, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Kulcha With Chole,"kulcha, chole, spices, oil, salt","cooked_roti,cooked_lentils"
+Phulka And Dal Tadka,"phulka, dal tadka, spices, oil, salt","cooked_roti,cooked_lentils"
+Chettinad Lamb Curry,"lamb, chettinad spices, onion, curry leaves, oil, salt",cooked_meats
+Schezwan Beef Fried Rice,"beef, rice, schezwan sauce, spring onion, garlic, oil, salt","cooked_rice,cooked_meats"
+Home Style Mixed Dal,"mixed dal, turmeric, onion, tomato, ghee, salt",cooked_lentils
+Malabar Fish Biryani,"fish, basmati rice, malabar spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Egg With Cabbage Poriyal,"egg, cabbage, coconut, mustard seeds, curry leaves, salt","cooked_egg,cooked_veggies"
+Garlic Moth Dal Tadka,"moth dal, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Coorgi Beef Fry,"beef, coorgi spices, onion, curry leaves, oil, salt",cooked_meats
+Toor Dal Paratha,"wheat flour, toor dal, spices, ghee, salt","cooked_roti,cooked_lentils"
+Mangalorean Mutton Fry,"mutton, mangalorean spices, onion, curry leaves, oil, salt",cooked_meats
+Venison Kofta Curry,"venison mince, onion, tomato gravy, garam masala, oil, salt",cooked_meats
+Kolhapuri Mutton Fry,"mutton, kolhapuri spices, onion, curry leaves, oil, salt",cooked_meats
+Kulthi Dal Fry,"kulthi dal, onion, tomato, ginger garlic paste, red chilli powder, oil, salt",cooked_lentils
+Rawas Pepper Fry,"rawas, black pepper, curry leaves, garlic, onion, oil, salt",cooked_seafood
+Chicken Keema Naan,"flour, chicken mince, spices, butter, salt","cooked_roti,cooked_poultry"
+Puri,"wheat flour, water, salt, oil or ghee",cooked_roti
+Phulka With Keema,"phulka, keema, spices, oil, salt","cooked_roti,cooked_meats"
+Spinach Lobia,"lobia, spinach, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Tilapia In Mustard Sauce,"tilapia, mustard paste, green chilli, mustard oil, turmeric, salt",cooked_seafood
+Malabar Egg Roast,"egg, malabar spices, onion, tomato, oil, salt",cooked_egg
+Chicken Korma With Paratha,"paratha, chicken korma, spices, oil, salt","cooked_roti,cooked_poultry"
+Lamb Kolhapuri,"lamb, kolhapuri masala, coconut, onion, oil, salt",cooked_meats
+Green Moong Rice,"green moong, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Kulcha With Aloo Matar,"kulcha, aloo matar, spices, oil, salt","cooked_roti,cooked_veggies"
+Bengali Chicken Fry,"chicken, bengali spices, onion, curry leaves, oil, salt",cooked_poultry
+Schezwan Paneer,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Duck Tikka,"duck, curd, ginger garlic paste, red chilli powder, garam masala, mustard oil, lemon juice, salt",cooked_poultry
+Potato Bhaji,"potato, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Chapati With Bhindi Masala,"chapati, bhindi masala, spices, oil, salt","cooked_roti,cooked_veggies"
+Mix Veg With Roti,"roti, mix veg, spices, oil, salt","cooked_roti,cooked_veggies"
+Tilapia 65,"tilapia, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_seafood
+Double Egg Omelette,"two eggs, onion, green chilli, salt, oil",cooked_egg
+Steamed Tilapia,"tilapia, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Bengali Moong Dal,"moong dal, panch phoron, ginger, coconut, ghee, salt",cooked_lentils
+Dal Chawal,"rice, dal or curry, ghee, cumin seeds, salt","cooked_rice,cooked_lentils"
+Bhakri And Fish Fry,"bhakri, fish fry, spices, oil, salt","cooked_roti,cooked_seafood"
+Konkani Beef Curry,"beef, konkani spices, onion, curry leaves, oil, salt",cooked_meats
+Dhaba Style Lamb Curry,"lamb, dhaba style spices, onion, curry leaves, oil, salt",cooked_meats
+Soya Chunks Kofta Curry,"soya chunks, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Mangalorean Chicken Roast,"chicken, mangalorean spices, onion, curry leaves, oil, salt",cooked_poultry
+Chicken And Vegetable Stir Fry,"chicken, mixed vegetables, soy sauce, garlic, oil, salt","cooked_poultry,cooked_veggies"
+Puttu,"rice flour, grated coconut, salt",cooked_rice
+Kulcha With Chicken Curry,"kulcha, chicken curry, spices, oil, salt","cooked_roti,cooked_poultry"
+Venison Bhuna,"venison, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Home Style Yellow Moong Dal,"yellow moong dal, turmeric, onion, tomato, ghee, salt",cooked_lentils
+Yam Achari,"yam, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Puri With Chole,"puri, chole, spices, oil, salt","cooked_roti,cooked_lentils"
+Malabar Lobster Curry,"lobster, coconut milk, kudampuli, green chilli, curry leaves, coconut oil, salt",cooked_seafood
+Country Chicken Achari,"country chicken, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_poultry
+Mixed Dal Tadka,"mixed dal, turmeric, onion, tomato, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Egg Pulao Curry,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Hyderabadi Beef Curry,"beef, hyderabadi spices, onion, curry leaves, oil, salt",cooked_meats
+Phulka With Pork Curry,"phulka, pork curry, spices, oil, salt","cooked_roti,cooked_meats"
+Steamed Seer Fish,"seer fish, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Dhaba Style Lamb Fry,"lamb, dhaba style spices, onion, curry leaves, oil, salt",cooked_meats
+Duck Fried Rice,"duck, rice, spring onion, soy sauce, garlic, oil, salt","cooked_rice,cooked_poultry"
+Chicken Tandoori,"chicken, curd, tandoori masala, lemon juice, mustard oil, salt",cooked_poultry
+Konkani Chicken Masala,"chicken, konkani spices, onion, curry leaves, oil, salt",cooked_poultry
+Anchovy Tikka,"anchovy, curd, ginger garlic paste, red chilli powder, ajwain, mustard oil, salt",cooked_seafood
+Kolhapuri Chicken Roast,"chicken, kolhapuri spices, onion, curry leaves, oil, salt",cooked_poultry
+Amritsari Shrimp,"shrimp, gram flour, carom seeds, ginger garlic paste, red chilli powder, oil, salt",cooked_seafood
+Goan Mutton Curry,"mutton, goan spices, onion, curry leaves, oil, salt",cooked_meats
+Amritsari Rohu,"rohu, gram flour, carom seeds, ginger garlic paste, red chilli powder, oil, salt",cooked_seafood
+Phulka And Chole,"phulka, chole, spices, oil, salt","cooked_roti,cooked_lentils"
+Mughlai Chicken Roast,"chicken, mughlai spices, onion, curry leaves, oil, salt",cooked_poultry
+Dal Tadka Rice,"rice, dal or curry, ghee, cumin seeds, salt","cooked_rice,cooked_lentils"
+Bhakri With Mutton Rogan Josh,"bhakri, mutton rogan josh, spices, oil, salt","cooked_roti,cooked_meats"
+Stuffed Radish,"radish, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Mixed Vegetable Do Pyaza,"mixed vegetable, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Chana Dal Tadka,"chana dal, turmeric, onion, tomato, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Goan Shrimp Curry,"shrimp, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Egg Tadka,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Raw Jackfruit Achari,"raw jackfruit, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Roti And Dal Tadka,"roti, dal tadka, spices, oil, salt","cooked_roti,cooked_lentils"
+Panchmel Dal Fry,"panchmel dal, onion, tomato, ginger garlic paste, red chilli powder, oil, salt",cooked_lentils
+Creamy Egg Roast,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Pork Chops,"pork chops, curd, ginger garlic paste, garam masala, mustard oil, salt",cooked_meats
+Hilsa Curry,"hilsa, coconut milk, tamarind, red chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_seafood
+South Indian Egg Roast,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Dhaba Style Green Moong Dal,"green moong dal, butter, onion, tomato, ginger garlic paste, cream, garam masala, salt",cooked_lentils
+Broccoli Fried Rice,"broccoli, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Rajasthani Green Moong Dal,"green moong dal, asafoetida, red chilli, ghee, salt",cooked_lentils
+Restaurant Style Egg Curry,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Surmai Fry,"surmai, turmeric, red chilli powder, rice flour, lemon juice, oil, salt",cooked_seafood
+Naan With Bhindi Masala,"naan, bhindi masala, spices, oil, salt","cooked_roti,cooked_veggies"
+Beef Curry,"beef, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt",cooked_meats
+Omelette With Tandoori Roti,"tandoori roti, omelette, spices, oil, salt","cooked_roti,cooked_egg"
+Beef Masala Rice,"beef, rice, onion, tomato, garam masala, oil, salt","cooked_rice,cooked_meats"
+Onion Fried Rice,"onion, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Yellow Moong Khichdi,"yellow moong, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Rabbit Stew,"rabbit, potato, coconut milk, whole spices, curry leaves, salt",cooked_meats
+Mutton Stew,"mutton, potato, coconut milk, whole spices, curry leaves, salt",cooked_meats
+Beef Do Pyaza,"beef, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Rawas Coconut Curry,"rawas, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Garlic Kulthi Dal Tadka,"kulthi dal, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Amritsari Prawn,"prawn, gram flour, carom seeds, ginger garlic paste, red chilli powder, oil, salt",cooked_seafood
+Turkey Curry Rice,"turkey, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, rice","cooked_rice,cooked_poultry"
+Tandoori Roti With Egg Bhurji,"tandoori roti, egg bhurji, spices, oil, salt","cooked_roti,cooked_egg"
+Egg Drop Soup,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Masala Dosa,"rice, urad dal, potato, onion, mustard seeds, oil, salt","cooked_rice,cooked_lentils,cooked_veggies"
+Dal Tadka With Jeera Rice,"toor dal, jeera rice, ghee, garlic, salt","cooked_rice,cooked_lentils"
+Rajasthani Mixed Dal,"mixed dal, asafoetida, red chilli, ghee, salt",cooked_lentils
+Bengali Masoor Dal,"masoor dal, panch phoron, ginger, coconut, ghee, salt",cooked_lentils
+Cauliflower Curry,"cauliflower, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Chicken 65,"chicken, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_poultry
+Mussels In Mustard Sauce,"mussels, mustard paste, green chilli, mustard oil, turmeric, salt",cooked_seafood
+Paneer Tikka,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Broccoli Sabzi,"broccoli, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Kerala Lamb Fry,"lamb, kerala spices, onion, curry leaves, oil, salt",cooked_meats
+Country Chicken Kadai,"country chicken, capsicum, onion, tomato, kadai masala, oil, salt",cooked_poultry
+Rabbit Korma,"rabbit, curd, cashew paste, onion, garam masala, ghee, salt",cooked_meats
+Grilled Tuna,"tuna, lemon juice, garlic, pepper, olive oil, salt",cooked_seafood
+Ivy Gourd Do Pyaza,"ivy gourd, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Country Chicken 65,"country chicken, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_poultry
+Coorgi Pork Fry,"pork, coorgi spices, onion, curry leaves, oil, salt",cooked_meats
+Chicken Hariyali,"chicken, mint, coriander, spinach paste, green chilli, oil, salt",cooked_poultry
+Mackerel Coconut Curry,"mackerel, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Mutton Khichdi,"rice, moong dal, mutton, turmeric, ghee, salt","cooked_rice,cooked_lentils,cooked_meats"
+Bangda Rava Fry,"bangda, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Mangalorean Egg Fry,"egg, mangalorean spices, onion, tomato, oil, salt",cooked_egg
+Kashmiri Mutton Fry,"mutton, kashmiri spices, onion, curry leaves, oil, salt",cooked_meats
+Bhakri And Beef Curry,"bhakri, beef curry, spices, oil, salt","cooked_roti,cooked_meats"
+Tomato Urad Dal,"urad dal, tomato, turmeric, mustard seeds, curry leaves, salt",cooked_lentils
+Fish And Chips,"fish fillet, batter, potato, oil, salt","cooked_seafood,cooked_veggies"
+Duck 65,"duck, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_poultry
+Colocasia Stir Fry,"colocasia, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Fish Roll,"paratha, fish fry, onion, sauces","cooked_roti,cooked_seafood"
+Bhindi Masala,"okra, onion, tomato, besan, red chilli powder, oil, salt",cooked_veggies
+Goan Bangda Curry,"bangda, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Thalassery Prawn Biryani,"prawn, basmati rice, thalassery spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Baby Corn Achari,"baby corn, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Chicken Korma With Bhakri,"bhakri, chicken korma, spices, oil, salt","cooked_roti,cooked_poultry"
+Beef Curry With Phulka,"phulka, beef curry, spices, oil, salt","cooked_roti,cooked_meats"
+Ridge Gourd Curry,"ridge gourd, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Keema Matar,"mutton mince, green peas, onion, tomato, garam masala, oil, salt","cooked_meats,cooked_veggies"
+Mangalorean Lamb Curry,"lamb, mangalorean spices, onion, curry leaves, oil, salt",cooked_meats
+Bengali Egg Roast,"egg, bengali spices, onion, tomato, oil, salt",cooked_egg
+Pepper Rasam,"toor dal water, pepper, cumin, tamarind, curry leaves, salt",cooked_lentils
+Sindhi Fish Biryani,"fish, basmati rice, sindhi spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Capsicum Biryani,"capsicum, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Lobster Coconut Curry,"lobster, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Dhaba Style Moth Dal,"moth dal, butter, onion, tomato, ginger garlic paste, cream, garam masala, salt",cooked_lentils
+Malabar Rawas Curry,"rawas, coconut milk, kudampuli, green chilli, curry leaves, coconut oil, salt",cooked_seafood
+Sweet Potato Stir Fry,"sweet potato, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Goan Basa Curry,"basa, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Capsicum Masala,"capsicum, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Andhra Chicken Curry,"chicken, andhra spices, onion, curry leaves, oil, salt",cooked_poultry
+Tinda Stir Fry,"tinda, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Hilsa Rava Fry,"hilsa, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Venison Do Pyaza,"venison, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Mixed Vegetable Curry,"mixed vegetable, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Lauki Paratha,"wheat flour, lauki, spices, ghee, salt","cooked_roti,cooked_veggies"
+Steamed Tiger Prawn,"tiger prawn, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Garlic Black Masoor Dal Tadka,"black masoor dal, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Brinjal Sabzi,"brinjal, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Bengali Mixed Dal,"mixed dal, panch phoron, ginger, coconut, ghee, salt",cooked_lentils
+Coorgi Pork Curry,"pork, coorgi spices, onion, curry leaves, oil, salt",cooked_meats
+Mushroom Fried Rice,"mushroom, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Grilled Hilsa,"hilsa, lemon juice, garlic, pepper, olive oil, salt",cooked_seafood
+Mutton Do Pyaza,"mutton, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Corn Curry,"corn, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Chapati And Paneer Butter Masala,"chapati, paneer butter masala, spices, oil, salt","cooked_roti,cooked_veggies"
+Simple Chana Dal,"chana dal, turmeric, salt, water, ghee",cooked_lentils
+Kadhi Chawal,"rice, dal or curry, ghee, cumin seeds, salt",cooked_rice
+Kingfish Fry,"kingfish, turmeric, red chilli powder, rice flour, lemon juice, oil, salt",cooked_seafood
+Paneer Pulao,"paneer, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Chettinad Chicken Fry,"chicken, chettinad spices, onion, curry leaves, oil, salt",cooked_poultry
+Tomato Masala,"tomato, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Onion Sabzi,"onion, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+White Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Tomato Rasam,"toor dal water, tomato, tamarind, pepper, cumin, curry leaves, salt",cooked_lentils
+Aloo Matar With Phulka,"phulka, aloo matar, spices, oil, salt","cooked_roti,cooked_veggies"
+Hyderabadi Mutton Curry,"mutton, hyderabadi spices, onion, curry leaves, oil, salt",cooked_meats
+Chicken Saagwala,"chicken, spinach, onion, tomato, garam masala, oil, salt","cooked_poultry,cooked_veggies"
+Country Chicken Chilli,"country chicken, capsicum, onion, soy sauce, corn flour, green chilli, oil, salt",cooked_poultry
+Matta Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Dry Bottle Gourd Fry,"bottle gourd, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Andhra Beef Curry,"beef, andhra spices, onion, curry leaves, oil, salt",cooked_meats
+Puri And Matar Paneer,"puri, matar paneer, spices, oil, salt","cooked_roti,cooked_veggies"
+Dry Turnip Fry,"turnip, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Dry Ash Gourd Fry,"ash gourd, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Goan Lamb Curry,"lamb, goan spices, onion, curry leaves, oil, salt",cooked_meats
+Country Chicken Pepper Fry,"country chicken, black pepper, curry leaves, garlic, onion, oil, salt",cooked_poultry
+Simple Mixed Dal,"mixed dal, turmeric, salt, water, ghee",cooked_lentils
+Malai Kofta,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Tandoori Roti With Crab Curry,"tandoori roti, crab curry, spices, oil, salt","cooked_roti,cooked_seafood"
+Stuffed Snake Gourd,"snake gourd, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Appam,"rice batter, coconut milk, yeast, sugar, salt",cooked_rice
+Roti With Egg Bhurji,"roti, egg bhurji, spices, oil, salt","cooked_roti,cooked_egg"
+Snake Gourd Achari,"snake gourd, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Basa Tikka,"basa, curd, ginger garlic paste, red chilli powder, ajwain, mustard oil, salt",cooked_seafood
+Kulthi Dal Tadka,"kulthi dal, turmeric, onion, tomato, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Quail Stew,"quail, potato, coconut milk, whole spices, curry leaves, salt",cooked_poultry
+Tomato Moth Dal,"moth dal, tomato, turmeric, mustard seeds, curry leaves, salt",cooked_lentils
+Drumstick Sambar,"toor dal, drumstick, tamarind, sambar powder, curry leaves, salt","cooked_lentils,cooked_veggies"
+Kerala Chicken Fry,"chicken, kerala spices, onion, curry leaves, oil, salt",cooked_poultry
+Hilsa Tikka,"hilsa, curd, ginger garlic paste, red chilli powder, ajwain, mustard oil, salt",cooked_seafood
+Yam Masala,"yam, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Malabar Pomfret Curry,"pomfret, coconut milk, kudampuli, green chilli, curry leaves, coconut oil, salt",cooked_seafood
+Venison Masala,"venison, onion, tomato, garam masala, coriander powder, ginger garlic paste, oil, salt",cooked_meats
+Chole Rice,"chole, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Moong Dal Soup,"moong dal, turmeric, garlic, pepper, ghee, salt",cooked_lentils
+Bangda Tawa Fry,"bangda, red chilli powder, turmeric, lemon juice, oil, salt",cooked_seafood
+Country Chicken Masala,"country chicken, onion, tomato, garam masala, coriander powder, ginger garlic paste, oil, salt",cooked_poultry
+Malabar Clam Curry,"clam, coconut milk, kudampuli, green chilli, curry leaves, coconut oil, salt",cooked_seafood
+Seer Fish Curry,"seer fish, coconut milk, tamarind, red chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_seafood
+Konkani Lamb Fry,"lamb, konkani spices, onion, curry leaves, oil, salt",cooked_meats
+Yellow Moong Dal Tadka,"yellow moong dal, turmeric, onion, tomato, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Punjabi Masoor Dal,"masoor dal, onion, tomato, ginger, garlic, ghee, garam masala, salt",cooked_lentils
+Mutton Kofta Curry,"mutton mince, onion, tomato gravy, garam masala, oil, salt",cooked_meats
+Raw Banana Curry,"raw banana, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Bengali Yellow Moong Dal,"yellow moong dal, panch phoron, ginger, coconut, ghee, salt",cooked_lentils
+Awadhi Lamb Fry,"lamb, awadhi spices, onion, curry leaves, oil, salt",cooked_meats
+Duck Sukka,"duck, coconut, black pepper, curry leaves, onion, oil, salt",cooked_poultry
+French Beans Stir Fry,"french beans, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Turkey Roast,"turkey, onion, coconut, black pepper, curry leaves, oil, salt",cooked_poultry
+Dhaba Style Mutton Fry,"mutton, dhaba style spices, onion, curry leaves, oil, salt",cooked_meats
+Spicy Egg Curry,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Ivy Gourd Stir Fry,"ivy gourd, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Andhra Mutton Fry,"mutton, andhra spices, onion, curry leaves, oil, salt",cooked_meats
+Kolhapuri Chicken Curry,"chicken, kolhapuri spices, onion, curry leaves, oil, salt",cooked_poultry
+Hyderabadi Egg Curry,"egg, hyderabadi spices, onion, tomato, oil, salt",cooked_egg
+Onion Rice,"onion, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Phulka With Rajma,"phulka, rajma, spices, oil, salt","cooked_roti,cooked_lentils"
+Rabbit Keema,"rabbit mince, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Urad Dal Tadka,"urad dal, turmeric, onion, tomato, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Egg Dal Tadka,"egg, toor dal, garlic, cumin, ghee, salt","cooked_lentils,cooked_egg"
+Ridge Gourd Bhaji,"ridge gourd, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Tomato Lobia,"lobia, tomato, turmeric, mustard seeds, curry leaves, salt",cooked_lentils
+Bitter Gourd Do Pyaza,"bitter gourd, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Stuffed Mushroom,"mushroom, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Mutton Fry,"mutton, turmeric, red chilli powder, ginger garlic paste, curry leaves, oil, salt",cooked_meats
+Peas Rice,"peas, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Punjabi Mutton Fry,"mutton, punjabi spices, onion, curry leaves, oil, salt",cooked_meats
+Prawn Ghee Roast,"prawn, ghee, red chilli, garlic, curry leaves, salt",cooked_seafood
+Mangalorean Pork Curry,"pork, mangalorean spices, onion, curry leaves, oil, salt",cooked_meats
+Potato Masala,"potato, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Punjabi Pork Fry,"pork, punjabi spices, onion, curry leaves, oil, salt",cooked_meats
+Awadhi Chicken Curry,"chicken, awadhi spices, onion, curry leaves, oil, salt",cooked_poultry
+Bhakri With Dal Makhani,"bhakri, dal makhani, spices, oil, salt","cooked_roti,cooked_lentils"
+Restaurant Style Masoor Dal,"masoor dal, butter, cream, onion, tomato, garam masala, salt",cooked_lentils
+Chana Dal Chawal,"chana dal, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Hyderabadi Chicken Roast,"chicken, hyderabadi spices, onion, curry leaves, oil, salt",cooked_poultry
+Banana Flower Do Pyaza,"banana flower, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Beans Rice,"beans, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Awadhi Pork Fry,"pork, awadhi spices, onion, curry leaves, oil, salt",cooked_meats
+Chicken Dum Biryani,"chicken, basmati rice, curd, biryani masala, saffron, fried onion, ghee, salt","cooked_rice,cooked_poultry"
+Lotus Stem Achari,"lotus stem, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Dal Tadka With Bhakri,"bhakri, dal tadka, spices, oil, salt","cooked_roti,cooked_lentils"
+Goan Chicken Fry,"chicken, goan spices, onion, curry leaves, oil, salt",cooked_poultry
+Macher Jhol,"rohu fish, potato, turmeric, cumin, mustard oil, salt","cooked_seafood,cooked_veggies"
+Amritsari Catla,"catla, gram flour, carom seeds, ginger garlic paste, red chilli powder, oil, salt",cooked_seafood
+Fish Coconut Curry,"fish, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Hyderabadi Egg Masala,"egg, hyderabadi spices, onion, tomato, oil, salt",cooked_egg
+Black Masoor Dal Soup,"black masoor dal, turmeric, garlic, pepper, ghee, salt",cooked_lentils
+Surmai Tikka,"surmai, curd, ginger garlic paste, red chilli powder, ajwain, mustard oil, salt",cooked_seafood
+Pumpkin Toor Dal,"toor dal, pumpkin, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Hilsa Masala,"hilsa, onion, tomato, coconut, red chilli powder, ginger garlic paste, oil, salt",cooked_seafood
+Lobster 65,"lobster, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_seafood
+Andhra Egg Fry,"egg, andhra spices, onion, tomato, oil, salt",cooked_egg
+Turkey Fried Rice,"turkey, rice, spring onion, soy sauce, garlic, oil, salt","cooked_rice,cooked_poultry"
+Mixed Veg Mixed Dal,"mixed dal, mixed veg, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Coorgi Chicken Roast,"chicken, coorgi spices, onion, curry leaves, oil, salt",cooked_poultry
+Naan With Chicken Kadai,"naan, chicken kadai, spices, oil, salt","cooked_roti,cooked_poultry"
+Mixed Dal Fry,"mixed dal, onion, tomato, ginger garlic paste, red chilli powder, oil, salt",cooked_lentils
+Squid Biryani,"squid, basmati rice, curd, biryani masala, saffron, fried onion, ghee, mint, salt","cooked_rice,cooked_seafood"
+Dry Paneer Fry,"paneer, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Methi Chicken,"chicken, fenugreek leaves, onion, tomato, spices, oil, salt","cooked_poultry,cooked_veggies"
+Ambur Mutton Biryani,"mutton, basmati rice, ambur spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Rumali Roti,"wheat flour, water, salt, oil or ghee",cooked_roti
+Malabar Egg Masala,"egg, malabar spices, onion, tomato, oil, salt",cooked_egg
+Dal Pakwan,"maida, chana dal, spices, oil, salt","cooked_roti,cooked_lentils"
+Kulcha And Crab Curry,"kulcha, crab curry, spices, oil, salt","cooked_roti,cooked_seafood"
+Poha,"flattened rice, onion, peanuts, mustard seeds, curry leaves, turmeric, salt",cooked_rice
+Puri And Prawn Masala,"puri, prawn masala, spices, oil, salt","cooked_roti,cooked_seafood"
+Punjabi Lobia,"lobia, onion, tomato, ginger, garlic, ghee, garam masala, salt",cooked_lentils
+Seer Fish Fry,"seer fish, turmeric, red chilli powder, rice flour, lemon juice, oil, salt",cooked_seafood
+Punjabi Beef Curry,"beef, punjabi spices, onion, curry leaves, oil, salt",cooked_meats
+Ambur Chicken Biryani,"chicken, basmati rice, ambur spices, curd, saffron, ghee, salt","cooked_rice,cooked_poultry"
+Kashmiri Lamb Curry,"lamb, kashmiri spices, onion, curry leaves, oil, salt",cooked_meats
+Seer Fish 65,"seer fish, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_seafood
+Ajwain Paratha,"wheat flour, water, salt, oil or ghee",cooked_roti
+Egg Vindaloo,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Paneer Naan,"flour, paneer, spices, butter, salt","cooked_roti,cooked_veggies"
+Turkey Sukka,"turkey, coconut, black pepper, curry leaves, onion, oil, salt",cooked_poultry
+Beef Roll,"paratha, beef, onion, sauces","cooked_roti,cooked_meats"
+Mushroom Kofta Curry,"mushroom, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Turkey Rice Bowl,"turkey, rice, onion, soy sauce, vegetables, oil, salt","cooked_rice,cooked_poultry"
+Stuffed Okra,"okra, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Malabar Mutton Fry,"mutton, malabar spices, onion, curry leaves, oil, salt",cooked_meats
+Chicken Nuggets,"chicken, bread crumbs, egg, spices, oil, salt",cooked_poultry
+Pork Shami Kebab,"pork mince, chana dal, spices, egg, oil, salt",cooked_meats
+Mixed Vegetable Rice,"mixed vegetable, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Mughlai Egg Curry,"egg, mughlai spices, onion, tomato, oil, salt",cooked_egg
+Gobi Paratha,"wheat flour, gobi, spices, ghee, salt","cooked_roti,cooked_veggies"
+Moth Dal Curry,"moth dal, onion, tomato, garam masala, turmeric, oil, salt",cooked_lentils
+Dhaba Style Mixed Dal,"mixed dal, butter, onion, tomato, ginger garlic paste, cream, garam masala, salt",cooked_lentils
+Green Moong Dal Curry,"green moong dal, onion, tomato, garam masala, turmeric, oil, salt",cooked_lentils
+Urad Dal Soup,"urad dal, turmeric, garlic, pepper, ghee, salt",cooked_lentils
+Roti And Egg Masala,"roti, egg masala, spices, oil, salt","cooked_roti,cooked_egg"
+Beetroot Bhaji,"beetroot, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Restaurant Style Egg Bhurji,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Turkey Chilli,"turkey, capsicum, onion, soy sauce, corn flour, green chilli, oil, salt",cooked_poultry
+Kerala Mutton Curry,"mutton, kerala spices, onion, curry leaves, oil, salt",cooked_meats
+Puri And Palak Paneer,"puri, palak paneer, spices, oil, salt","cooked_roti,cooked_veggies"
+Green Peas Curry,"green peas, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Duck Manchurian,"duck, corn flour, garlic, soy sauce, spring onion, capsicum, oil, salt",cooked_poultry
+Cabbage Curry,"cabbage, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Mixed Veg Urad Dal,"urad dal, mixed veg, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Simple Toor Dal,"toor dal, turmeric, salt, water, ghee",cooked_lentils
+Duck Curry Rice,"duck, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, rice","cooked_rice,cooked_poultry"
+Cabbage Do Pyaza,"cabbage, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Bhetki Tikka,"bhetki, curd, ginger garlic paste, red chilli powder, ajwain, mustard oil, salt",cooked_seafood
+Idiyappam,"rice flour, hot water, salt",cooked_rice
+Mild Egg Bhurji,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Tandoori Roti With Moong Dal,"tandoori roti, moong dal, spices, oil, salt","cooked_roti,cooked_lentils"
+Beef Pepper Fry,"beef, black pepper, curry leaves, garlic, onion, oil, salt",cooked_meats
+Dry Banana Flower Fry,"banana flower, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Kulcha And Pork Curry,"kulcha, pork curry, spices, oil, salt","cooked_roti,cooked_meats"
+Turkey Achari,"turkey, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_poultry
+Egg Kurma,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Lauki Chana Dal,"chana dal, lauki, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Egg Salad Cooked,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Bombay Duck Fry,"bombay duck, turmeric, red chilli powder, rice flour, lemon juice, oil, salt",cooked_seafood
+Konkani Egg Curry,"egg, konkani spices, onion, tomato, oil, salt",cooked_egg
+Beef Keema,"beef mince, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Paratha With Aloo Matar,"paratha, aloo matar, spices, oil, salt","cooked_roti,cooked_veggies"
+Yam Stir Fry,"yam, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Cauliflower Kofta Curry,"cauliflower, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Venison Korma,"venison, curd, cashew paste, onion, garam masala, ghee, salt",cooked_meats
+Moong Dal Tadka,"moong dal, turmeric, onion, tomato, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Mughlai Egg Fry,"egg, mughlai spices, onion, tomato, oil, salt",cooked_egg
+Bitter Gourd Kofta Curry,"bitter gourd, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Thick Kulthi Dal,"kulthi dal, turmeric, ghee, salt",cooked_lentils
+Chicken Xacuti,"chicken, coconut, poppy seeds, goan spices, onion, oil, salt",cooked_poultry
+Anda Ghotala,"egg, onion, tomato, pav bhaji masala, butter, salt","cooked_egg,cooked_veggies"
+Grilled Chicken Breast,"chicken breast, garlic, pepper, olive oil, salt",cooked_poultry
+Awadhi Egg Fry,"egg, awadhi spices, onion, tomato, oil, salt",cooked_egg
+Pork Kolhapuri,"pork, kolhapuri masala, coconut, onion, oil, salt",cooked_meats
+Dhaba Style Toor Dal,"toor dal, butter, onion, tomato, ginger garlic paste, cream, garam masala, salt",cooked_lentils
+Egg Korma,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Squid Tikka,"squid, curd, ginger garlic paste, red chilli powder, ajwain, mustard oil, salt",cooked_seafood
+Fish Sambar,"fish, toor dal, drumstick, tamarind, sambar powder, salt","cooked_lentils,cooked_seafood"
+Bengali Moth Dal,"moth dal, panch phoron, ginger, coconut, ghee, salt",cooked_lentils
+Lamb Pulao,"lamb, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_meats"
+Dindigul Mutton Biryani,"mutton, basmati rice, dindigul spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Chettinad Egg Roast,"egg, chettinad spices, onion, tomato, oil, salt",cooked_egg
+Rajasthani Chana Dal,"chana dal, asafoetida, red chilli, ghee, salt",cooked_lentils
+Bengali Toor Dal,"toor dal, panch phoron, ginger, coconut, ghee, salt",cooked_lentils
+Creamy Egg Curry,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Rajma With Chapati,"chapati, rajma, spices, oil, salt","cooked_roti,cooked_lentils"
+Egg Mushroom Curry,"egg, mushroom, onion, tomato, spices, oil, salt","cooked_egg,cooked_veggies"
+Thick Green Moong Dal,"green moong dal, turmeric, ghee, salt",cooked_lentils
+Puri And Chicken Masala,"puri, chicken masala, spices, oil, salt","cooked_roti,cooked_poultry"
+Clam Tawa Fry,"clam, red chilli powder, turmeric, lemon juice, oil, salt",cooked_seafood
+Mangalorean Chicken Masala,"chicken, mangalorean spices, onion, curry leaves, oil, salt",cooked_poultry
+Chicken Masala Rice,"chicken, rice, onion, tomato, garam masala, oil, salt","cooked_rice,cooked_poultry"
+Tomato Yellow Moong Dal,"yellow moong dal, tomato, turmeric, mustard seeds, curry leaves, salt",cooked_lentils
+Tandoori Roti With Pork Curry,"tandoori roti, pork curry, spices, oil, salt","cooked_roti,cooked_meats"
+Stuffed Zucchini,"zucchini, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Chicken Keema Paratha,"wheat flour, chicken mince, spices, ghee, salt","cooked_roti,cooked_poultry"
+Sindhi Chicken Biryani,"chicken, basmati rice, sindhi spices, curd, saffron, ghee, salt","cooked_rice,cooked_poultry"
+Turkey Stew,"turkey, potato, coconut milk, whole spices, curry leaves, salt",cooked_poultry
+Afghani Chicken,"chicken, cream, curd, cashew, white pepper, salt",cooked_poultry
+Puri With Egg Bhurji,"puri, egg bhurji, spices, oil, salt","cooked_roti,cooked_egg"
+Chettinad Lamb Fry,"lamb, chettinad spices, onion, curry leaves, oil, salt",cooked_meats
+Capsicum Pulao,"capsicum, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Prawn Dum Biryani,"prawn, basmati rice, curd, biryani masala, saffron, fried onion, ghee, salt","cooked_rice,cooked_seafood"
+Pomfret Fry,"pomfret, turmeric, red chilli powder, rice flour, lemon juice, oil, salt",cooked_seafood
+Egg Salna,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Methi Moong Dal,"moong dal, methi, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Goan Beef Curry,"beef, goan spices, onion, curry leaves, oil, salt",cooked_meats
+Schezwan Egg Roll,"paratha, egg, schezwan sauce, onion","cooked_roti,cooked_egg"
+Kolkata Beef Biryani,"beef, basmati rice, kolkata spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Home Style Urad Dal,"urad dal, turmeric, onion, tomato, ghee, salt",cooked_lentils
+Bombay Beef Biryani,"beef, basmati rice, bombay spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Spinach Toor Dal,"toor dal, spinach, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Tandoori Chicken With Bhakri,"bhakri, tandoori chicken, spices, oil, salt","cooked_roti,cooked_poultry"
+Rajasthani Kulthi Dal,"kulthi dal, asafoetida, red chilli, ghee, salt",cooked_lentils
+Vegetable Omelette,"egg, mixed vegetables, salt, pepper, oil","cooked_egg,cooked_veggies"
+Dhaba Style Beef Curry,"beef, dhaba style spices, onion, curry leaves, oil, salt",cooked_meats
+Curd Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Paneer Curry,"paneer, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Butter Chicken,"chicken, butter, tomato puree, cream, kasuri methi, garam masala, salt",cooked_poultry
+Onion Pulao,"onion, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Onion Kulcha,"flour, onion, spices, butter, salt","cooked_roti,cooked_veggies"
+Mackerel Curry,"mackerel, coconut milk, tamarind, red chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_seafood
+Tandoori Roti And Matar Paneer,"tandoori roti, matar paneer, spices, oil, salt","cooked_roti,cooked_veggies"
+Rabbit Chilli Fry,"rabbit, capsicum, onion, soy sauce, green chilli, garlic, oil, salt",cooked_meats
+Puri With Chicken Kadai,"puri, chicken kadai, spices, oil, salt","cooked_roti,cooked_poultry"
+Goat Ghee Roast,"goat, ghee, red chilli, garlic, curry leaves, salt",cooked_meats
+Creamy Egg Bhurji,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Set Dosa,"rice, urad dal, poha, oil, salt","cooked_rice,cooked_lentils"
+Radish Curry,"radish, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Turkey Cafreal,"turkey, green masala, coriander, mint, green chilli, oil, salt",cooked_poultry
+Grilled Tiger Prawn,"tiger prawn, lemon juice, garlic, pepper, olive oil, salt",cooked_seafood
+French Beans Bhaji,"french beans, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Beef Vindaloo,"beef, vinegar, red chilli, garlic, goan spices, oil, salt",cooked_meats
+Mixed Veg Lobia,"lobia, mixed veg, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Clam 65,"clam, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_seafood
+Broccoli Masala,"broccoli, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Egg Achari,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Zucchini Masala,"zucchini, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Cauliflower Pulao,"cauliflower, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Snake Gourd Stir Fry,"snake gourd, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Venison Curry,"venison, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt",cooked_meats
+Mixed Vegetable Achari,"mixed vegetable, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Coorgi Lamb Curry,"lamb, coorgi spices, onion, curry leaves, oil, salt",cooked_meats
+Goat Fry,"goat, turmeric, red chilli powder, ginger garlic paste, curry leaves, oil, salt",cooked_meats
+Methi Thepla,"wheat flour, water, salt, oil or ghee",cooked_roti
+Lamb Shami Kebab,"lamb mince, chana dal, spices, egg, oil, salt",cooked_meats
+Yellow Moong Chawal,"yellow moong, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Paratha With Fish Fry,"paratha, fish fry, spices, oil, salt","cooked_roti,cooked_seafood"
+Quail Chilli,"quail, capsicum, onion, soy sauce, corn flour, green chilli, oil, salt",cooked_poultry
+Egg Kofta Curry,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Soya Fried Rice,"soya, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Kashmiri Chicken Roast,"chicken, kashmiri spices, onion, curry leaves, oil, salt",cooked_poultry
+Baby Corn Rice,"baby corn, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Potato Fried Rice,"potato, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Surmai Rava Fry,"surmai, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Palak Chicken,"chicken, spinach, onion, tomato, garam masala, oil, salt","cooked_poultry,cooked_veggies"
+Moong Dal With Puri,"puri, moong dal, spices, oil, salt","cooked_roti,cooked_lentils"
+Phulka With Egg Bhurji,"phulka, egg bhurji, spices, oil, salt","cooked_roti,cooked_egg"
+Amritsari Tiger Prawn,"tiger prawn, gram flour, carom seeds, ginger garlic paste, red chilli powder, oil, salt",cooked_seafood
+Squid Fried Rice,"squid, rice, spring onion, soy sauce, garlic, oil, salt","cooked_rice,cooked_seafood"
+Phulka With Fish Fry,"phulka, fish fry, spices, oil, salt","cooked_roti,cooked_seafood"
+Clam Fry,"clam, turmeric, red chilli powder, rice flour, lemon juice, oil, salt",cooked_seafood
+Lauki Toor Dal,"toor dal, lauki, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Bisi Bele Bath,"rice, toor dal, mixed vegetables, bisi bele bath masala, tamarind, ghee, salt","cooked_rice,cooked_lentils,cooked_veggies"
+Whole Wheat Roti,"wheat flour, water, salt, oil or ghee",cooked_roti
+Sardine Pepper Fry,"sardine, black pepper, curry leaves, garlic, onion, oil, salt",cooked_seafood
+Venison Sukka,"venison, coconut, black pepper, curry leaves, onion, oil, salt",cooked_meats
+Lobia Soup,"lobia, turmeric, garlic, pepper, ghee, salt",cooked_lentils
+Cauliflower Fried Rice,"cauliflower, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Mutton Masala Rice,"mutton, rice, onion, tomato, garam masala, oil, salt","cooked_rice,cooked_meats"
+Toor Dal Rice,"toor dal, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Bengali Lamb Fry,"lamb, bengali spices, onion, curry leaves, oil, salt",cooked_meats
+Crab Fried Rice,"crab, rice, spring onion, soy sauce, garlic, oil, salt","cooked_rice,cooked_seafood"
+Quail Vindaloo,"quail, vinegar, red chilli, garlic, goan spices, oil, salt",cooked_poultry
+Tomato Biryani,"tomato, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Turkey Kebab,"turkey mince, ginger garlic paste, green chilli, garam masala, oil, salt",cooked_poultry
+Chicken Achari,"chicken, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_poultry
+Fenugreek Leaves Kofta Curry,"fenugreek leaves, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Salmon Coconut Curry,"salmon, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Amritsari Tilapia,"tilapia, gram flour, carom seeds, ginger garlic paste, red chilli powder, oil, salt",cooked_seafood
+Sabudana Khichdi,"rice, dal, vegetables, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Curry Leaf Chicken,"chicken, curry leaves, green chilli, ginger garlic paste, oil, salt",cooked_poultry
+Country Chicken Fry,"country chicken, turmeric, red chilli powder, ginger garlic paste, curry leaves, oil, salt",cooked_poultry
+Awadhi Beef Biryani,"beef, basmati rice, awadhi spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Moth Dal Tadka,"moth dal, turmeric, onion, tomato, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Spicy Egg Masala,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Hilsa 65,"hilsa, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_seafood
+Rohu Coconut Curry,"rohu, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Duck Kadai,"duck, capsicum, onion, tomato, kadai masala, oil, salt",cooked_poultry
+Bajra Roti,"wheat flour, water, salt, oil or ghee",cooked_roti
+Bengali Chana Dal,"chana dal, panch phoron, ginger, coconut, ghee, salt",cooked_lentils
+Pork Sorpotel,"pork, pork liver, vinegar, chilli, spices, salt",cooked_meats
+Dry Parwal Fry,"parwal, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Mixed Dal Rice,"mixed dal, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Cauliflower Lobia,"lobia, cauliflower, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Schezwan Mutton Fried Rice,"mutton, rice, schezwan sauce, spring onion, garlic, oil, salt","cooked_rice,cooked_meats"
+Red Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Tandoori Roti And Fish Curry,"tandoori roti, fish curry, spices, oil, salt","cooked_roti,cooked_seafood"
+Dry Lotus Stem Fry,"lotus stem, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Chicken Stew With Vegetables,"chicken, potato, carrot, coconut milk, whole spices, salt","cooked_poultry,cooked_veggies"
+Coorgi Egg Curry,"egg, coorgi spices, onion, tomato, oil, salt",cooked_egg
+Thick Masoor Dal,"masoor dal, turmeric, ghee, salt",cooked_lentils
+Omelette With Kulcha,"kulcha, omelette, spices, oil, salt","cooked_roti,cooked_egg"
+Toor Dal Khichdi,"toor dal, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Kerala Mutton Fry,"mutton, kerala spices, onion, curry leaves, oil, salt",cooked_meats
+Palak Paneer With Paratha,"paratha, palak paneer, spices, oil, salt","cooked_roti,cooked_veggies"
+Beef Seekh Kebab,"beef mince, ginger garlic paste, green chilli, spices, oil, salt",cooked_meats
+Toor Dal Soup,"toor dal, turmeric, garlic, pepper, ghee, salt",cooked_lentils
+Carrot Rice,"carrot, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Goan Tilapia Curry,"tilapia, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Punjabi Lamb Curry,"lamb, punjabi spices, onion, curry leaves, oil, salt",cooked_meats
+Coorgi Chicken Fry,"chicken, coorgi spices, onion, curry leaves, oil, salt",cooked_poultry
+Kashmiri Egg Fry,"egg, kashmiri spices, onion, tomato, oil, salt",cooked_egg
+Quail Kadai,"quail, capsicum, onion, tomato, kadai masala, oil, salt",cooked_poultry
+Schezwan Squid Fried Rice,"squid, rice, schezwan sauce, spring onion, garlic, oil, salt","cooked_rice,cooked_seafood"
+Beef Ularthiyathu,"beef, coconut slices, curry leaves, pepper, shallots, coconut oil, salt",cooked_meats
+Bombay Egg Biryani,"egg, basmati rice, bombay spices, curd, saffron, ghee, salt","cooked_rice,cooked_egg"
+Kingfish Pepper Fry,"kingfish, black pepper, curry leaves, garlic, onion, oil, salt",cooked_seafood
+Cabbage Masala,"cabbage, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Dhaba Style Moong Dal,"moong dal, butter, onion, tomato, ginger garlic paste, cream, garam masala, salt",cooked_lentils
+Yam Kofta Curry,"yam, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Shrimp Fry,"shrimp, turmeric, red chilli powder, rice flour, lemon juice, oil, salt",cooked_seafood
+Chettinad Beef Curry,"beef, chettinad spices, onion, curry leaves, oil, salt",cooked_meats
+Dry Paneer Masala,"paneer, onion, tomato, garam masala, ginger garlic paste, oil, salt",cooked_veggies
+Cauliflower Masoor Dal,"masoor dal, cauliflower, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Chapati And Prawn Masala,"chapati, prawn masala, spices, oil, salt","cooked_roti,cooked_seafood"
+Raw Mango Fried Rice,"raw mango, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Anchovy In Mustard Sauce,"anchovy, mustard paste, green chilli, mustard oil, turmeric, salt",cooked_seafood
+Egg Chettinad,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Anchovy Masala,"anchovy, onion, tomato, coconut, red chilli powder, ginger garlic paste, oil, salt",cooked_seafood
+Black Chana Curry,"black chickpeas, onion, tomato, garam masala, oil, salt",cooked_lentils
+Gujarati Lobia,"lobia, jaggery, kokum, mustard seeds, curry leaves, ghee, salt",cooked_lentils
+Chicken Kadai With Tandoori Roti,"tandoori roti, chicken kadai, spices, oil, salt","cooked_roti,cooked_poultry"
+Mackerel Tawa Fry,"mackerel, red chilli powder, turmeric, lemon juice, oil, salt",cooked_seafood
+Grilled Bhetki,"bhetki, lemon juice, garlic, pepper, olive oil, salt",cooked_seafood
+Gujarati Mixed Dal,"mixed dal, jaggery, kokum, mustard seeds, curry leaves, ghee, salt",cooked_lentils
+Butter Naan,"wheat flour, water, salt, oil or ghee",cooked_roti
+Corn Achari,"corn, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Paneer Wrap,"tortilla, paneer, vegetables, sauce","cooked_roti,cooked_veggies"
+Raw Banana Masala,"raw banana, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Garlic Lobia Tadka,"lobia, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Lotus Stem Sabzi,"lotus stem, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Crab Pulao,"crab, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_seafood"
+Goat Stew,"goat, potato, coconut milk, whole spices, curry leaves, salt",cooked_meats
+Bombil Fry,"bombay duck, rice flour, red chilli powder, oil, salt",cooked_seafood
+Vegetable Khichdi,"rice, dal, vegetables, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils,cooked_veggies"
+Dhaba Style Panchmel Dal,"panchmel dal, butter, onion, tomato, ginger garlic paste, cream, garam masala, salt",cooked_lentils
+Chicken Pumpkin Curry,"chicken, pumpkin, onion, tomato, spices, oil, salt","cooked_poultry,cooked_veggies"
+Lemon Moth Dal,"moth dal, lemon juice, turmeric, cumin seeds, ghee, salt",cooked_lentils
+Mixed Dal Curry,"mixed dal, onion, tomato, garam masala, turmeric, oil, salt",cooked_lentils
+Tilapia Coconut Curry,"tilapia, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Stuffed Spinach,"spinach, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Konkani Egg Roast,"egg, konkani spices, onion, tomato, oil, salt",cooked_egg
+Mixed Veg Paratha,"wheat flour, mixed veg, spices, ghee, salt","cooked_roti,cooked_veggies"
+Grilled Tilapia,"tilapia, lemon juice, garlic, pepper, olive oil, salt",cooked_seafood
+Malabar Beef Fry,"beef, malabar spices, onion, curry leaves, oil, salt",cooked_meats
+Lemon Chicken,"chicken, lemon juice, garlic, pepper, oil, salt",cooked_poultry
+Onion Do Pyaza,"onion, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Gujarati Green Moong Dal,"green moong dal, jaggery, kokum, mustard seeds, curry leaves, ghee, salt",cooked_lentils
+Restaurant Style Panchmel Dal,"panchmel dal, butter, cream, onion, tomato, garam masala, salt",cooked_lentils
+Stuffed Soya Chunks,"soya chunks, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Bengali Lobia,"lobia, panch phoron, ginger, coconut, ghee, salt",cooked_lentils
+Ivy Gourd Kofta Curry,"ivy gourd, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Usal,"sprouted moth beans, onion, tomato, goda masala, oil, salt",cooked_lentils
+Chicken Roast,"chicken, onion, coconut, black pepper, curry leaves, oil, salt",cooked_poultry
+Rabbit Shami Kebab,"rabbit mince, chana dal, spices, egg, oil, salt",cooked_meats
+Urad Dal Curry,"urad dal, onion, tomato, garam masala, turmeric, oil, salt",cooked_lentils
+Amritsari Basa,"basa, gram flour, carom seeds, ginger garlic paste, red chilli powder, oil, salt",cooked_seafood
+Roadside Style Paneer Curry,"paneer, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Chicken Tikka,"chicken, curd, ginger garlic paste, red chilli powder, garam masala, mustard oil, lemon juice, salt",cooked_poultry
+Bottle Gourd Bhaji,"bottle gourd, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Mangalorean Chicken Curry,"chicken, mangalorean spices, onion, curry leaves, oil, salt",cooked_poultry
+Akuri,"egg, onion, tomato, green chilli, turmeric, coriander leaves, salt",cooked_egg
+Potato Rice,"potato, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Spanish Omelette,"egg, potato, onion, olive oil, salt","cooked_egg,cooked_veggies"
+Naan,"wheat flour, water, salt, oil or ghee",cooked_roti
+Kashmiri Beef Fry,"beef, kashmiri spices, onion, curry leaves, oil, salt",cooked_meats
+Chicken Kadai With Chapati,"chapati, chicken kadai, spices, oil, salt","cooked_roti,cooked_poultry"
+Stuffed Green Peas,"green peas, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Egg Keema,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Chapati And Nihari,"chapati, nihari, spices, oil, salt","cooked_roti,cooked_meats"
+Rava Idli,"rice, ghee or oil, salt, spices",cooked_rice
+Egg Fry,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Fish And Brinjal Curry,"fish, brinjal, tamarind, spices, oil, salt","cooked_seafood,cooked_veggies"
+Beef Biryani,"beef, basmati rice, curd, biryani masala, saffron, fried onion, ghee, mint, salt","cooked_rice,cooked_meats"
+Andhra Chicken Masala,"chicken, andhra spices, onion, curry leaves, oil, salt",cooked_poultry
+Paneer Kolhapuri,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Keema Dal,"mutton mince, toor dal, onion, tomato, spices, oil, salt","cooked_lentils,cooked_meats"
+Mussels Coconut Curry,"mussels, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Lamb Kofta Curry,"lamb mince, onion, tomato gravy, garam masala, oil, salt",cooked_meats
+Phulka And Baingan Bharta,"phulka, baingan bharta, spices, oil, salt","cooked_roti,cooked_veggies"
+Dry Corn Fry,"corn, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Kashmiri Pulao,"rice, ghee or oil, salt, spices",cooked_rice
+Restaurant Style Egg Roast,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Rawas 65,"rawas, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_seafood
+Lamb Chops Grilled,"lamb chops, garlic, rosemary, olive oil, salt, pepper",cooked_meats
+Matar Paneer With Phulka,"phulka, matar paneer, spices, oil, salt","cooked_roti,cooked_veggies"
+Tandoori Roti And Mix Veg,"tandoori roti, mix veg, spices, oil, salt","cooked_roti,cooked_veggies"
+Chicken Manchurian,"chicken, corn flour, garlic, soy sauce, spring onion, capsicum, oil, salt",cooked_poultry
+Goat Korma,"goat, curd, cashew paste, onion, garam masala, ghee, salt",cooked_meats
+Chicken Curry Rice,"chicken, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, rice","cooked_rice,cooked_poultry"
+Konkani Beef Fry,"beef, konkani spices, onion, curry leaves, oil, salt",cooked_meats
+Baby Corn Kofta Curry,"baby corn, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Thick Urad Dal,"urad dal, turmeric, ghee, salt",cooked_lentils
+Gujarati Kadhi,"besan, curd, jaggery, mustard seeds, curry leaves, ghee, salt",cooked_lentils
+Turkey Kadai,"turkey, capsicum, onion, tomato, kadai masala, oil, salt",cooked_poultry
+Paneer Bhurji,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Goat Jalfrezi,"goat, capsicum, onion, tomato, spices, oil, salt",cooked_meats
+Stuffed French Beans,"french beans, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Veg Roll,"paratha, mixed vegetables, onion, sauces","cooked_roti,cooked_veggies"
+Restaurant Style Toor Dal,"toor dal, butter, cream, onion, tomato, garam masala, salt",cooked_lentils
+Paneer Fried Rice,"paneer, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Stuffed Colocasia,"colocasia, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Crab Coconut Curry,"crab, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Restaurant Style Green Moong Dal,"green moong dal, butter, cream, onion, tomato, garam masala, salt",cooked_lentils
+Goat Kebab,"goat mince, ginger garlic paste, green chilli, garam masala, gram flour, oil, salt",cooked_meats
+Kashmiri Beef Curry,"beef, kashmiri spices, onion, curry leaves, oil, salt",cooked_meats
+Duck Chilli,"duck, capsicum, onion, soy sauce, corn flour, green chilli, oil, salt",cooked_poultry
+Naan And Keema,"naan, keema, spices, oil, salt","cooked_roti,cooked_meats"
+Idli,"rice, ghee or oil, salt, spices","cooked_rice,cooked_lentils"
+Puri And Keema,"puri, keema, spices, oil, salt","cooked_roti,cooked_meats"
+Andhra Lamb Fry,"lamb, andhra spices, onion, curry leaves, oil, salt",cooked_meats
+Mackerel Rava Fry,"mackerel, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Drumstick Stir Fry,"drumstick, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Konkani Chicken Fry,"chicken, konkani spices, onion, curry leaves, oil, salt",cooked_poultry
+Egg Masala,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Chicken Lollipop,"chicken wings, corn flour, ginger garlic paste, red chilli sauce, oil, salt",cooked_poultry
+Chettinad Beef Fry,"beef, chettinad spices, onion, curry leaves, oil, salt",cooked_meats
+Catla Rava Fry,"catla, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Tandoori Roti With Dal Fry,"tandoori roti, dal fry, spices, oil, salt","cooked_roti,cooked_lentils"
+Squid Masala,"squid, onion, tomato, coconut, red chilli powder, ginger garlic paste, oil, salt",cooked_seafood
+Chana Dal Curry,"chana dal, onion, tomato, garam masala, turmeric, oil, salt",cooked_lentils
+Basmati Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Goat Biryani,"goat, basmati rice, curd, biryani masala, saffron, fried onion, ghee, mint, salt","cooked_rice,cooked_meats"
+Awadhi Chicken Fry,"chicken, awadhi spices, onion, curry leaves, oil, salt",cooked_poultry
+Okra Bhaji,"okra, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Tinda Kofta Curry,"tinda, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Mutton Korma With Chapati,"chapati, mutton korma, spices, oil, salt","cooked_roti,cooked_meats"
+Mixed Dal Chawal,"mixed dal, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Tiger Prawn Pepper Fry,"tiger prawn, black pepper, curry leaves, garlic, onion, oil, salt",cooked_seafood
+Mutton Sukka,"mutton, coconut, black pepper, curry leaves, onion, oil, salt",cooked_meats
+Crab Rava Fry,"crab, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Beef Handi,"beef, curd, onion, tomato, garam masala, ghee, salt",cooked_meats
+Ghee Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Bhetki Pepper Fry,"bhetki, black pepper, curry leaves, garlic, onion, oil, salt",cooked_seafood
+Quail Fry,"quail, turmeric, red chilli powder, ginger garlic paste, curry leaves, oil, salt",cooked_poultry
+Squid Pulao,"squid, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_seafood"
+Egg Rice Bowl,"egg, rice, onion, soy sauce, vegetables, oil, salt","cooked_rice,cooked_egg"
+Restaurant Style Urad Dal,"urad dal, butter, cream, onion, tomato, garam masala, salt",cooked_lentils
+Tomato Moong Dal,"moong dal, tomato, turmeric, mustard seeds, curry leaves, salt",cooked_lentils
+Mughlai Pork Curry,"pork, mughlai spices, onion, curry leaves, oil, salt",cooked_meats
+Egg Chilli,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Methi Paneer,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Chettinad Egg Masala,"egg, chettinad spices, onion, tomato, oil, salt",cooked_egg
+Home Style Paneer Masala,"paneer, onion, tomato, garam masala, ginger garlic paste, oil, salt",cooked_veggies
+Tandoori Roti With Baingan Bharta,"tandoori roti, baingan bharta, spices, oil, salt","cooked_roti,cooked_veggies"
+Chicken Malai Tikka,"chicken, cream, curd, ginger garlic paste, white pepper, salt",cooked_poultry
+Quail Malai Tikka,"quail, cream, curd, ginger garlic paste, white pepper, salt",cooked_poultry
+Turkey Tandoori,"turkey, curd, tandoori masala, lemon juice, mustard oil, salt",cooked_poultry
+Brinjal Stir Fry,"brinjal, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Home Style Chana Dal,"chana dal, turmeric, onion, tomato, ghee, salt",cooked_lentils
+Thick Lobia,"lobia, turmeric, ghee, salt",cooked_lentils
+Surmai 65,"surmai, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_seafood
+Achari Paneer,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Tuna Rava Fry,"tuna, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Chana Dal Fry,"chana dal, onion, tomato, ginger garlic paste, red chilli powder, oil, salt",cooked_lentils
+Chicken Mushroom Curry,"chicken, mushroom, onion, tomato, spices, oil, salt","cooked_poultry,cooked_veggies"
+Puri And Paneer Butter Masala,"puri, paneer butter masala, spices, oil, salt","cooked_roti,cooked_veggies"
+Dhaba Style Egg Fry,"egg, dhaba style spices, onion, tomato, oil, salt",cooked_egg
+Rabbit Vindaloo,"rabbit, vinegar, red chilli, garlic, goan spices, oil, salt",cooked_meats
+Home Style Egg Bhurji,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Coorgi Egg Masala,"egg, coorgi spices, onion, tomato, oil, salt",cooked_egg
+Sindhi Beef Biryani,"beef, basmati rice, sindhi spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Goan Egg Masala,"egg, goan spices, onion, tomato, oil, salt",cooked_egg
+Potato Pulao,"potato, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Hyderabadi Fish Biryani,"fish, basmati rice, hyderabadi spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Naan With Palak Paneer,"naan, palak paneer, spices, oil, salt","cooked_roti,cooked_veggies"
+Ambur Beef Biryani,"beef, basmati rice, ambur spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Soft Boiled Egg,"egg, water, salt",cooked_egg
+Mutton Korma,"mutton, curd, cashew paste, onion, garam masala, ghee, salt",cooked_meats
+Gujarati Kulthi Dal,"kulthi dal, jaggery, kokum, mustard seeds, curry leaves, ghee, salt",cooked_lentils
+Restaurant Style Mixed Dal,"mixed dal, butter, cream, onion, tomato, garam masala, salt",cooked_lentils
+Chicken Ghee Roast,"chicken, ghee, red chilli, garlic, curry leaves, salt",cooked_poultry
+Egg Varuval,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Mint Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Tinda Curry,"tinda, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Egg Capsicum Masala,"egg, capsicum, onion, tomato, spices, oil, salt","cooked_egg,cooked_veggies"
+Dry Fenugreek Leaves Fry,"fenugreek leaves, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Fenugreek Leaves Do Pyaza,"fenugreek leaves, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Zucchini Curry,"zucchini, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Raw Banana Bhaji,"raw banana, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Paratha And Chicken Curry,"paratha, chicken curry, spices, oil, salt","cooked_roti,cooked_poultry"
+Egg Pepper Masala,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Lobia Tadka,"lobia, turmeric, onion, tomato, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Fish Fry With Naan,"naan, fish fry, spices, oil, salt","cooked_roti,cooked_seafood"
+Spinach Pulao,"spinach, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Pav Bhaji,"mixed vegetables, butter, pav bhaji masala, onion, tomato, salt",cooked_veggies
+Kolhapuri Chicken Fry,"chicken, kolhapuri spices, onion, curry leaves, oil, salt",cooked_poultry
+Konkani Egg Fry,"egg, konkani spices, onion, tomato, oil, salt",cooked_egg
+Rajma With Bhakri,"bhakri, rajma, spices, oil, salt","cooked_roti,cooked_lentils"
+Surmai In Mustard Sauce,"surmai, mustard paste, green chilli, mustard oil, turmeric, salt",cooked_seafood
+Mild Egg Masala,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Dry Tinda Fry,"tinda, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Dal Palak,"toor dal, spinach, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Drumstick Toor Dal,"toor dal, drumstick, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Goan Egg Curry,"egg, goan spices, onion, tomato, oil, salt",cooked_egg
+Goat Dum Biryani,"goat, basmati rice, curd, biryani masala, saffron, fried onion, ghee, salt","cooked_rice,cooked_meats"
+French Beans Curry,"french beans, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Masoor Dal Chawal,"masoor dal, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Dhaba Style Chicken Curry,"chicken, dhaba style spices, onion, curry leaves, oil, salt",cooked_poultry
+Andhra Pork Fry,"pork, andhra spices, onion, curry leaves, oil, salt",cooked_meats
+Stuffed Brinjal,"brinjal, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Chicken Dalcha,"chicken, chana dal, drumstick, tamarind, spices, oil, salt","cooked_lentils,cooked_poultry"
+Turnip Masala,"turnip, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Paneer Ghee Roast,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Punjabi Toor Dal,"toor dal, onion, tomato, ginger, garlic, ghee, garam masala, salt",cooked_lentils
+Fish Curry Rice,"fish, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, rice","cooked_rice,cooked_seafood"
+Squid Pepper Fry,"squid, black pepper, curry leaves, garlic, onion, oil, salt",cooked_seafood
+Dry Paneer Curry,"paneer, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Grilled Surmai,"surmai, lemon juice, garlic, pepper, olive oil, salt",cooked_seafood
+Goan Kingfish Curry,"kingfish, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Spicy Egg Roast,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Dum Aloo,"baby potato, curd, onion, tomato, kashmiri chilli, oil, salt",cooked_veggies
+Dry Raw Jackfruit Fry,"raw jackfruit, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Coorgi Mutton Curry,"mutton, coorgi spices, onion, curry leaves, oil, salt",cooked_meats
+Dhaba Style Pork Curry,"pork, dhaba style spices, onion, curry leaves, oil, salt",cooked_meats
+Dhaba Style Egg Roast,"egg, dhaba style spices, onion, tomato, oil, salt",cooked_egg
+Baingan Bharta With Roti,"roti, baingan bharta, spices, oil, salt","cooked_roti,cooked_veggies"
+Naan And Egg Curry,"naan, egg curry, spices, oil, salt","cooked_roti,cooked_egg"
+Tomato Rice,"tomato, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Cluster Beans Do Pyaza,"cluster beans, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Mutton Curry With Kulcha,"kulcha, mutton curry, spices, oil, salt","cooked_roti,cooked_meats"
+Beetroot Achari,"beetroot, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Duck Pepper Fry,"duck, black pepper, curry leaves, garlic, onion, oil, salt",cooked_poultry
+Punjabi Chole,"chole, onion, tomato, chole masala, oil, salt",cooked_lentils
+Mushroom Masala,"mushroom, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Boiled Egg Masala,"boiled egg, onion, spices, oil, salt",cooked_egg
+Prawn Rice Bowl,"prawn, rice, onion, soy sauce, vegetables, oil, salt","cooked_rice,cooked_seafood"
+Ambur Prawn Biryani,"prawn, basmati rice, ambur spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Kulthi Dal Curry,"kulthi dal, onion, tomato, garam masala, turmeric, oil, salt",cooked_lentils
+Clam In Mustard Sauce,"clam, mustard paste, green chilli, mustard oil, turmeric, salt",cooked_seafood
+Garlic Masoor Dal Tadka,"masoor dal, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Gujarati Moth Dal,"moth dal, jaggery, kokum, mustard seeds, curry leaves, ghee, salt",cooked_lentils
+Egg Handi,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Dry Cabbage Fry,"cabbage, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Tomato Onion Panchmel Dal,"panchmel dal, tomato onion, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Duck Pulao,"duck, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_poultry"
+Lamb Curry,"lamb, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt",cooked_meats
+Garlic Mixed Dal Tadka,"mixed dal, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Green Peas Achari,"green peas, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Fish Fry,"fish, turmeric, red chilli powder, rice flour, lemon juice, oil, salt",cooked_seafood
+Clam Tikka,"clam, curd, ginger garlic paste, red chilli powder, ajwain, mustard oil, salt",cooked_seafood
+Hyderabadi Lamb Fry,"lamb, hyderabadi spices, onion, curry leaves, oil, salt",cooked_meats
+Tomato Curry,"tomato, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Potato Sabzi,"potato, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Cauliflower Sabzi,"cauliflower, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Kingfish Rava Fry,"kingfish, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Rabbit Kolhapuri,"rabbit, kolhapuri masala, coconut, onion, oil, salt",cooked_meats
+Spinach Kofta Curry,"spinach, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Turnip Sabzi,"turnip, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Seer Fish Coconut Curry,"seer fish, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Dry Onion Fry,"onion, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Home Style Masoor Dal,"masoor dal, turmeric, onion, tomato, ghee, salt",cooked_lentils
+Kashmiri Chicken Masala,"chicken, kashmiri spices, onion, curry leaves, oil, salt",cooked_poultry
+Nihari With Roti,"roti, nihari, spices, oil, salt","cooked_roti,cooked_meats"
+Creamy Egg Masala,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Lamb Ghee Roast,"lamb, ghee, red chilli, garlic, curry leaves, salt",cooked_meats
+Kolhapuri Beef Curry,"beef, kolhapuri spices, onion, curry leaves, oil, salt",cooked_meats
+Hyderabadi Mutton Biryani,"mutton, basmati rice, hyderabadi spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Onion Biryani,"onion, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Mixed Vegetable Pulao,"mixed vegetable, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Lotus Stem Stir Fry,"lotus stem, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Konkani Pork Fry,"pork, konkani spices, onion, curry leaves, oil, salt",cooked_meats
+Lauki Panchmel Dal,"panchmel dal, lauki, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Lauki Masoor Dal,"masoor dal, lauki, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Prawn Masala With Roti,"roti, prawn masala, spices, oil, salt","cooked_roti,cooked_seafood"
+Tilapia Pepper Fry,"tilapia, black pepper, curry leaves, garlic, onion, oil, salt",cooked_seafood
+Tandoori Roti And Mutton Rogan Josh,"tandoori roti, mutton rogan josh, spices, oil, salt","cooked_roti,cooked_meats"
+Bengali Lamb Curry,"lamb, bengali spices, onion, curry leaves, oil, salt",cooked_meats
+Colocasia Sabzi,"colocasia, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Kolkata Chicken Biryani,"chicken, basmati rice, kolkata spices, curd, saffron, ghee, salt","cooked_rice,cooked_poultry"
+Fenugreek Leaves Masala,"fenugreek leaves, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Chicken Lauki Curry,"chicken, bottle gourd, onion, tomato, spices, oil, salt","cooked_poultry,cooked_veggies"
+Dal Makhani,"urad dal, rajma, butter, cream, tomato, ginger garlic paste, garam masala, salt",cooked_lentils
+Stuffed Drumstick,"drumstick, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Bhatura,"wheat flour, water, salt, oil or ghee",cooked_roti
+Lamb Bhuna,"lamb, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Shrimp Coconut Curry,"shrimp, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Spinach Sabzi,"spinach, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Vegetable Jalfrezi,"mixed vegetables, onion, capsicum, tomato, soy sauce, oil, salt",cooked_veggies
+Mutton Dum Biryani,"mutton, basmati rice, curd, biryani masala, saffron, fried onion, ghee, salt","cooked_rice,cooked_meats"
+Roti And Matar Paneer,"roti, matar paneer, spices, oil, salt","cooked_roti,cooked_veggies"
+Konkani Egg Masala,"egg, konkani spices, onion, tomato, oil, salt",cooked_egg
+Tandoori Roti With Chicken Curry,"tandoori roti, chicken curry, spices, oil, salt","cooked_roti,cooked_poultry"
+Prawn Pepper Fry,"prawn, black pepper, curry leaves, garlic, onion, oil, salt",cooked_seafood
+Broccoli Biryani,"broccoli, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Quail Kebab,"quail mince, ginger garlic paste, green chilli, garam masala, oil, salt",cooked_poultry
+Turkey Chettinad,"turkey, coconut, black pepper, fennel seeds, curry leaves, onion, oil, salt",cooked_poultry
+Tandoori Roti With Paneer Butter Masala,"tandoori roti, paneer butter masala, spices, oil, salt","cooked_roti,cooked_veggies"
+Puri And Rajma,"puri, rajma, spices, oil, salt","cooked_roti,cooked_lentils"
+Dhaba Style Lobia,"lobia, butter, onion, tomato, ginger garlic paste, cream, garam masala, salt",cooked_lentils
+Mutton Chilli Fry,"mutton, capsicum, onion, soy sauce, green chilli, garlic, oil, salt",cooked_meats
+Prawn Fried Rice,"prawn, rice, spring onion, soy sauce, garlic, oil, salt","cooked_rice,cooked_seafood"
+Garlic Chana Dal Tadka,"chana dal, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Aloo Gosht,"mutton, potato, onion, tomato, garam masala, oil, salt","cooked_meats,cooked_veggies"
+Prawn Tawa Fry,"prawn, red chilli powder, turmeric, lemon juice, oil, salt",cooked_seafood
+French Beans Kofta Curry,"french beans, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Venison Shami Kebab,"venison mince, chana dal, spices, egg, oil, salt",cooked_meats
+Lauki Lobia,"lobia, lauki, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Kashmiri Egg Biryani,"egg, basmati rice, kashmiri spices, curd, saffron, ghee, salt","cooked_rice,cooked_egg"
+Paneer Butter Masala,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Quail Tikka,"quail, curd, ginger garlic paste, red chilli powder, garam masala, mustard oil, lemon juice, salt",cooked_poultry
+Venison Chops,"venison chops, curd, ginger garlic paste, garam masala, mustard oil, salt",cooked_meats
+Tandoori Roti With Egg Masala,"tandoori roti, egg masala, spices, oil, salt","cooked_roti,cooked_egg"
+Matar Paneer With Naan,"naan, matar paneer, spices, oil, salt","cooked_roti,cooked_veggies"
+Beetroot Fried Rice,"beetroot, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Rohu 65,"rohu, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_seafood
+Goat Pulao,"goat, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_meats"
+Thick Chana Dal,"chana dal, turmeric, ghee, salt",cooked_lentils
+Baingan Bharta,"brinjal, onion, tomato, garlic, green chilli, mustard oil, salt",cooked_veggies
+Radish Achari,"radish, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Goan Lamb Fry,"lamb, goan spices, onion, curry leaves, oil, salt",cooked_meats
+Shahi Paneer,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Sushi Fish,"rice, raw fish, nori, soy sauce","cooked_rice,cooked_seafood"
+Mixed Veg Chana Dal,"chana dal, mixed veg, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Tomato Omelette,"egg, tomato, onion, green chilli, oil, salt","cooked_egg,cooked_veggies"
+Pumpkin Chana Dal,"chana dal, pumpkin, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Spinach Omelette,"egg, spinach, onion, salt, oil","cooked_egg,cooked_veggies"
+Mixed Dal Soup,"mixed dal, turmeric, garlic, pepper, ghee, salt",cooked_lentils
+Carrot Stir Fry,"carrot, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Spinach Mixed Dal,"mixed dal, spinach, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Duck Stew,"duck, potato, coconut milk, whole spices, curry leaves, salt",cooked_poultry
+Radish Kofta Curry,"radish, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Butter Chicken With Chapati,"chapati, butter chicken, spices, oil, salt","cooked_roti,cooked_poultry"
+Egg Butter Masala,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Chana Dal Gosht,"mutton, chana dal, onion, tomato, garam masala, oil, salt","cooked_lentils,cooked_meats"
+Brinjal Masala,"brinjal, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Puri With Chicken Korma,"puri, chicken korma, spices, oil, salt","cooked_roti,cooked_poultry"
+Pumpkin Masoor Dal,"masoor dal, pumpkin, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Chettinad Chicken Curry,"chicken, chettinad spices, onion, curry leaves, oil, salt",cooked_poultry
+Chicken Keema,"chicken mince, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_poultry
+Goan Bhetki Curry,"bhetki, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Kashmiri Beef Biryani,"beef, basmati rice, kashmiri spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Beef Fry,"beef, turmeric, red chilli powder, ginger garlic paste, curry leaves, oil, salt",cooked_meats
+Restaurant Style Moong Dal,"moong dal, butter, cream, onion, tomato, garam masala, salt",cooked_lentils
+Lotus Stem Bhaji,"lotus stem, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Bhakri With Mix Veg,"bhakri, mix veg, spices, oil, salt","cooked_roti,cooked_veggies"
+Hyderabadi Beef Biryani,"beef, basmati rice, hyderabadi spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Kerala Pork Fry,"pork, kerala spices, onion, curry leaves, oil, salt",cooked_meats
+Country Chicken Lollipop,"country chicken wings, corn flour, ginger garlic paste, red chilli sauce, oil, salt",cooked_poultry
+Kashmiri Prawn Biryani,"prawn, basmati rice, kashmiri spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Omelette With Bhakri,"bhakri, omelette, spices, oil, salt","cooked_roti,cooked_egg"
+Ivy Gourd Achari,"ivy gourd, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Lachha Paratha,"wheat flour, water, salt, oil or ghee",cooked_roti
+Punjabi Panchmel Dal,"panchmel dal, onion, tomato, ginger, garlic, ghee, garam masala, salt",cooked_lentils
+Egg Roast,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Sundal,"chickpeas, coconut, mustard seeds, curry leaves, salt",cooked_lentils
+Tandoori Roti And Chole,"tandoori roti, chole, spices, oil, salt","cooked_roti,cooked_lentils"
+Country Chicken Do Pyaza,"country chicken, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_poultry
+Duck Rice Bowl,"duck, rice, onion, soy sauce, vegetables, oil, salt","cooked_rice,cooked_poultry"
+Quail Masala,"quail, onion, tomato, garam masala, coriander powder, ginger garlic paste, oil, salt",cooked_poultry
+Roti And Rajma,"roti, rajma, spices, oil, salt","cooked_roti,cooked_lentils"
+Awadhi Beef Fry,"beef, awadhi spices, onion, curry leaves, oil, salt",cooked_meats
+Drumstick Chana Dal,"chana dal, drumstick, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+South Indian Egg Masala,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Beef Rice Bowl,"beef, rice, onion, soy sauce, vegetables, oil, salt","cooked_rice,cooked_meats"
+Punjabi Kulthi Dal,"kulthi dal, onion, tomato, ginger, garlic, ghee, garam masala, salt",cooked_lentils
+Tuna Tawa Fry,"tuna, red chilli powder, turmeric, lemon juice, oil, salt",cooked_seafood
+Fried Rice Plain,"rice, ghee or oil, salt, spices",cooked_rice
+Malabar Egg Biryani,"egg, basmati rice, malabar spices, curd, saffron, ghee, salt","cooked_rice,cooked_egg"
+Dhaba Style Chicken Fry,"chicken, dhaba style spices, onion, curry leaves, oil, salt",cooked_poultry
+Methi Lobia,"lobia, methi, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Dry Snake Gourd Fry,"snake gourd, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Chingri Malai Curry,"prawn, coconut milk, onion, spices, ghee, salt",cooked_seafood
+Shrimp Curry,"shrimp, coconut milk, tamarind, red chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_seafood
+Corn Sabzi,"corn, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Dry Spinach Fry,"spinach, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Kolhapuri Pork Fry,"pork, kolhapuri spices, onion, curry leaves, oil, salt",cooked_meats
+Malabar Chicken Fry,"chicken, malabar spices, onion, curry leaves, oil, salt",cooked_poultry
+Country Chicken Curry,"country chicken, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, coriander leaves",cooked_poultry
+Lauki Mixed Dal,"mixed dal, lauki, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Sambar,"toor dal, drumstick, mixed vegetables, tamarind, sambar powder, mustard seeds, curry leaves, oil, salt","cooked_lentils,cooked_veggies"
+Kulcha And Egg Masala,"kulcha, egg masala, spices, oil, salt","cooked_roti,cooked_egg"
+Bhindi Masala With Bhakri,"bhakri, bhindi masala, spices, oil, salt","cooked_roti,cooked_veggies"
+Drumstick Mixed Dal,"mixed dal, drumstick, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Anchovy Fry,"anchovy, turmeric, red chilli powder, rice flour, lemon juice, oil, salt",cooked_seafood
+Veg Kolhapuri,"mixed vegetables, kolhapuri masala, onion, tomato, oil, salt",cooked_veggies
+Drumstick Panchmel Dal,"panchmel dal, drumstick, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Kashmiri Pork Curry,"pork, kashmiri spices, onion, curry leaves, oil, salt",cooked_meats
+Turkey Manchurian,"turkey, corn flour, garlic, soy sauce, spring onion, capsicum, oil, salt",cooked_poultry
+Awadhi Chicken Masala,"chicken, awadhi spices, onion, curry leaves, oil, salt",cooked_poultry
+Pesarattu,"green moong, rice, ginger, green chilli, oil, salt",cooked_lentils
+Stuffed Bottle Gourd,"bottle gourd, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Kulcha With Egg Curry,"kulcha, egg curry, spices, oil, salt","cooked_roti,cooked_egg"
+Thick Black Masoor Dal,"black masoor dal, turmeric, ghee, salt",cooked_lentils
+Mughlai Chicken Fry,"chicken, mughlai spices, onion, curry leaves, oil, salt",cooked_poultry
+Tiffin Sambar,"toor dal, onion, tomato, sambar powder, tamarind, curry leaves, salt",cooked_lentils
+Puliyogare,"rice, ghee or oil, salt, spices",cooked_rice
+Tomato Toor Dal,"toor dal, tomato, turmeric, mustard seeds, curry leaves, salt",cooked_lentils
+Kolhapuri Egg Masala,"egg, kolhapuri spices, onion, tomato, oil, salt",cooked_egg
+Pumpkin Masala,"pumpkin, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Malabar Rohu Curry,"rohu, coconut milk, kudampuli, green chilli, curry leaves, coconut oil, salt",cooked_seafood
+Lamb Handi,"lamb, curd, onion, tomato, garam masala, ghee, salt",cooked_meats
+Restaurant Style Yellow Moong Dal,"yellow moong dal, butter, cream, onion, tomato, garam masala, salt",cooked_lentils
+Kolhapuri Lamb Fry,"lamb, kolhapuri spices, onion, curry leaves, oil, salt",cooked_meats
+Dhaba Style Mutton Curry,"mutton, dhaba style spices, onion, curry leaves, oil, salt",cooked_meats
+Lamb Kebab,"lamb mince, ginger garlic paste, green chilli, garam masala, gram flour, oil, salt",cooked_meats
+Lamb Fry,"lamb, turmeric, red chilli powder, ginger garlic paste, curry leaves, oil, salt",cooked_meats
+Squid Fry,"squid, turmeric, red chilli powder, rice flour, lemon juice, oil, salt",cooked_seafood
+Sindhi Prawn Biryani,"prawn, basmati rice, sindhi spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Rabbit Curry,"rabbit, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt",cooked_meats
+Mutton Rice Bowl,"mutton, rice, onion, soy sauce, vegetables, oil, salt","cooked_rice,cooked_meats"
+Goan Crab Curry,"crab, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Stuffed Tinda,"tinda, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Pomfret Tikka,"pomfret, curd, ginger garlic paste, red chilli powder, ajwain, mustard oil, salt",cooked_seafood
+Scrambled Eggs,"egg, butter, salt, pepper",cooked_egg
+Dry Beetroot Fry,"beetroot, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Vegetable Poha,"flattened rice, peas, carrot, onion, peanuts, turmeric, salt","cooked_rice,cooked_veggies"
+Dal Dhokli,"wheat flour, toor dal, tamarind, jaggery, spices, ghee, salt","cooked_roti,cooked_lentils"
+Surmai Tawa Fry,"surmai, red chilli powder, turmeric, lemon juice, oil, salt",cooked_seafood
+Dal Fry Rice,"rice, dal or curry, ghee, cumin seeds, salt","cooked_rice,cooked_lentils"
+Pomfret 65,"pomfret, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_seafood
+Rawas Tawa Fry,"rawas, red chilli powder, turmeric, lemon juice, oil, salt",cooked_seafood
+Hilsa Tawa Fry,"hilsa, red chilli powder, turmeric, lemon juice, oil, salt",cooked_seafood
+Turkey Curry,"turkey, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, coriander leaves",cooked_poultry
+Gujarati Yellow Moong Dal,"yellow moong dal, jaggery, kokum, mustard seeds, curry leaves, ghee, salt",cooked_lentils
+Egg Curry Rice,"egg, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, rice","cooked_rice,cooked_egg"
+Chana Dal Rice,"chana dal, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Goat Chilli Fry,"goat, capsicum, onion, soy sauce, green chilli, garlic, oil, salt",cooked_meats
+Mutton Kebab,"mutton mince, ginger garlic paste, green chilli, garam masala, gram flour, oil, salt",cooked_meats
+Pork Masala,"pork, onion, tomato, garam masala, coriander powder, ginger garlic paste, oil, salt",cooked_meats
+Palak Paneer,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Awadhi Pork Curry,"pork, awadhi spices, onion, curry leaves, oil, salt",cooked_meats
+Mixed Vegetable Kofta Curry,"mixed vegetable, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Raw Jackfruit Stir Fry,"raw jackfruit, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Dal Fry With Paratha,"paratha, dal fry, spices, oil, salt","cooked_roti,cooked_lentils"
+Corn Masala,"corn, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Chapati And Egg Curry,"chapati, egg curry, spices, oil, salt","cooked_roti,cooked_egg"
+Mangalorean Egg Roast,"egg, mangalorean spices, onion, tomato, oil, salt",cooked_egg
+Turkey Ghee Roast,"turkey, ghee, red chilli, garlic, curry leaves, salt",cooked_poultry
+Fish Finger,"fish, bread crumbs, egg, flour, oil, salt",cooked_seafood
+Chicken Drumstick Fry,"chicken drumstick, ginger garlic paste, red chilli powder, oil, salt",cooked_poultry
+Fish Fry With Puri,"puri, fish fry, spices, oil, salt","cooked_roti,cooked_seafood"
+Goan Rawas Curry,"rawas, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Tuna Masala,"tuna, onion, tomato, coconut, red chilli powder, ginger garlic paste, oil, salt",cooked_seafood
+Bangda Masala,"bangda, onion, tomato, coconut, red chilli powder, ginger garlic paste, oil, salt",cooked_seafood
+Sticky Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Home Style Egg Roast,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Masala Scrambled Eggs,"egg, onion, tomato, green chilli, turmeric, salt, oil","cooked_egg,cooked_veggies"
+Kolhapuri Egg Roast,"egg, kolhapuri spices, onion, tomato, oil, salt",cooked_egg
+Chicken Masala With Tandoori Roti,"tandoori roti, chicken masala, spices, oil, salt","cooked_roti,cooked_poultry"
+Dal Puri,"wheat flour, chana dal, spices, oil, salt","cooked_roti,cooked_lentils"
+Ragi Roti,"wheat flour, water, salt, oil or ghee",cooked_roti
+Country Chicken Tandoori,"country chicken, curd, tandoori masala, lemon juice, mustard oil, salt",cooked_poultry
+Raw Mango Rice,"raw mango, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Puri With Beef Curry,"puri, beef curry, spices, oil, salt","cooked_roti,cooked_meats"
+Cheese Omelette,"egg, cheese, butter, salt, pepper",cooked_egg
+Salmon In Mustard Sauce,"salmon, mustard paste, green chilli, mustard oil, turmeric, salt",cooked_seafood
+Pork Korma,"pork, curd, cashew paste, onion, garam masala, ghee, salt",cooked_meats
+Soya Chunks Bhaji,"soya chunks, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Chicken Seekh Kebab,"chicken mince, ginger garlic paste, green chilli, spices, oil, salt",cooked_poultry
+Prawn Curry,"prawn, coconut milk, tamarind, red chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_seafood
+Lotus Stem Kofta Curry,"lotus stem, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Raw Banana Sabzi,"raw banana, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Lamb Chilli Fry,"lamb, capsicum, onion, soy sauce, green chilli, garlic, oil, salt",cooked_meats
+Egg Masala Rice,"egg, rice, onion, tomato, garam masala, oil, salt","cooked_rice,cooked_egg"
+Tiger Prawn Masala,"tiger prawn, onion, tomato, coconut, red chilli powder, ginger garlic paste, oil, salt",cooked_seafood
+Mixed Vegetable Fried Rice,"mixed vegetable, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Yellow Moong Rice,"yellow moong, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Goan Chicken Roast,"chicken, goan spices, onion, curry leaves, oil, salt",cooked_poultry
+Bottle Gourd Do Pyaza,"bottle gourd, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Country Chicken Hariyali,"country chicken, mint, coriander, spinach paste, green chilli, oil, salt",cooked_poultry
+Seer Fish Rava Fry,"seer fish, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Carrot Biryani,"carrot, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Kaddu Gosht,"mutton, pumpkin, onion, tomato, garam masala, oil, salt","cooked_meats,cooked_veggies"
+Dhaba Style Egg Masala,"egg, dhaba style spices, onion, tomato, oil, salt",cooked_egg
+Yellow Moong Dal Fry,"yellow moong dal, onion, tomato, ginger garlic paste, red chilli powder, oil, salt",cooked_lentils
+Lucknowi Egg Biryani,"egg, basmati rice, lucknowi spices, curd, saffron, ghee, salt","cooked_rice,cooked_egg"
+Dhaba Style Egg Curry,"egg, dhaba style spices, onion, tomato, oil, salt",cooked_egg
+Broccoli Kofta Curry,"broccoli, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Mackerel 65,"mackerel, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_seafood
+Lucknowi Chicken Biryani,"chicken, basmati rice, lucknowi spices, curd, saffron, ghee, salt","cooked_rice,cooked_poultry"
+Cluster Beans Curry,"cluster beans, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Pomfret Coconut Curry,"pomfret, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Quail Do Pyaza,"quail, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_poultry
+Rabbit Ghee Roast,"rabbit, ghee, red chilli, garlic, curry leaves, salt",cooked_meats
+Restaurant Style Egg Masala,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Kerala Vegetable Stew,"mixed vegetables, coconut milk, whole spices, curry leaves, salt",cooked_veggies
+Mutton Rogan Josh With Naan,"naan, mutton rogan josh, spices, oil, salt","cooked_roti,cooked_meats"
+Crab Biryani,"crab, basmati rice, curd, biryani masala, saffron, fried onion, ghee, mint, salt","cooked_rice,cooked_seafood"
+Kerala Beef Curry,"beef, kerala spices, onion, curry leaves, oil, salt",cooked_meats
+Mild Paneer Curry,"paneer, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Sweet Potato Sabzi,"sweet potato, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Bengali Chicken Masala,"chicken, bengali spices, onion, curry leaves, oil, salt",cooked_poultry
+Bhetki In Mustard Sauce,"bhetki, mustard paste, green chilli, mustard oil, turmeric, salt",cooked_seafood
+Turkey Dum Biryani,"turkey, basmati rice, curd, biryani masala, saffron, fried onion, ghee, salt","cooked_rice,cooked_poultry"
+Memoni Beef Biryani,"beef, basmati rice, memoni spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Stuffed Broccoli,"broccoli, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Kolkata Mutton Biryani,"mutton, basmati rice, kolkata spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Egg Lababdar,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Paneer Vindaloo,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Lamb Sukka,"lamb, coconut, black pepper, curry leaves, onion, oil, salt",cooked_meats
+Duck Roast,"duck, onion, coconut, black pepper, curry leaves, oil, salt",cooked_poultry
+Dry Tomato Fry,"tomato, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Tiger Prawn Rava Fry,"tiger prawn, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Aloo Chicken Curry,"chicken, potato, onion, tomato, garam masala, oil, salt","cooked_poultry,cooked_veggies"
+Gujarati Panchmel Dal,"panchmel dal, jaggery, kokum, mustard seeds, curry leaves, ghee, salt",cooked_lentils
+Home Style Toor Dal,"toor dal, turmeric, onion, tomato, ghee, salt",cooked_lentils
+Chicken Vindaloo,"chicken, vinegar, red chilli, garlic, goan spices, oil, salt",cooked_poultry
+Palak Urad Dal,"urad dal, palak, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Quail Achari,"quail, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_poultry
+Tuna Coconut Curry,"tuna, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Malabar Lamb Curry,"lamb, malabar spices, onion, curry leaves, oil, salt",cooked_meats
+Quail Hariyali,"quail, mint, coriander, spinach paste, green chilli, oil, salt",cooked_poultry
+Black Chana Khichdi,"black chana, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Malabar Mussels Curry,"mussels, coconut milk, kudampuli, green chilli, curry leaves, coconut oil, salt",cooked_seafood
+Green Peas Do Pyaza,"green peas, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Steamed Salmon,"salmon, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Toor Dal Curry,"toor dal, onion, tomato, garam masala, turmeric, oil, salt",cooked_lentils
+Venison Keema,"venison mince, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Lemon Masoor Dal,"masoor dal, lemon juice, turmeric, cumin seeds, ghee, salt",cooked_lentils
+Banana Flower Sabzi,"banana flower, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Venison Kebab,"venison mince, ginger garlic paste, green chilli, garam masala, gram flour, oil, salt",cooked_meats
+Salmon Fry,"salmon, turmeric, red chilli powder, rice flour, lemon juice, oil, salt",cooked_seafood
+Duck Cafreal,"duck, green masala, coriander, mint, green chilli, oil, salt",cooked_poultry
+Mackerel Fry,"mackerel, turmeric, red chilli powder, rice flour, lemon juice, oil, salt",cooked_seafood
+Beef Kebab,"beef mince, ginger garlic paste, green chilli, garam masala, gram flour, oil, salt",cooked_meats
+Pumpkin Moong Dal,"moong dal, pumpkin, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Mussels Pepper Fry,"mussels, black pepper, curry leaves, garlic, onion, oil, salt",cooked_seafood
+Lamb Fried Rice,"lamb, rice, spring onion, soy sauce, garlic, oil, salt","cooked_rice,cooked_meats"
+Aloo Puri,"potato curry, wheat flour, oil, salt","cooked_roti,cooked_veggies"
+Egg Palak,"egg, spinach, onion, garlic, spices, oil, salt","cooked_egg,cooked_veggies"
+Amritsari Kulcha,"wheat flour, water, salt, oil or ghee",cooked_roti
+Egg Thoran,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Quail Xacuti,"quail, coconut, poppy seeds, goan spices, onion, oil, salt",cooked_poultry
+Thalassery Mutton Biryani,"mutton, basmati rice, thalassery spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Egg Sandwich Filling,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Squid Dum Biryani,"squid, basmati rice, curd, biryani masala, saffron, fried onion, ghee, salt","cooked_rice,cooked_seafood"
+Sweet Potato Bhaji,"sweet potato, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Goan Mussels Curry,"mussels, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Dhaba Style Yellow Moong Dal,"yellow moong dal, butter, onion, tomato, ginger garlic paste, cream, garam masala, salt",cooked_lentils
+Home Style Moth Dal,"moth dal, turmeric, onion, tomato, ghee, salt",cooked_lentils
+Bagara Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Spinach Biryani,"spinach, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Capsicum Rice,"capsicum, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Drumstick Moong Dal,"moong dal, drumstick, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Seer Fish Tawa Fry,"seer fish, red chilli powder, turmeric, lemon juice, oil, salt",cooked_seafood
+Schezwan Prawn Fried Rice,"prawn, rice, schezwan sauce, spring onion, garlic, oil, salt","cooked_rice,cooked_seafood"
+Awadhi Egg Curry,"egg, awadhi spices, onion, tomato, oil, salt",cooked_egg
+Turkey Biryani,"turkey, basmati rice, curd, biryani masala, saffron, fried onion, ghee, mint, salt","cooked_rice,cooked_poultry"
+Konkani Chicken Curry,"chicken, konkani spices, onion, curry leaves, oil, salt",cooked_poultry
+Beef Chilli Fry,"beef, capsicum, onion, soy sauce, green chilli, garlic, oil, salt",cooked_meats
+Duck Biryani,"duck, basmati rice, curd, biryani masala, saffron, fried onion, ghee, mint, salt","cooked_rice,cooked_poultry"
+Andhra Chicken Fry,"chicken, andhra spices, onion, curry leaves, oil, salt",cooked_poultry
+Steamed Hilsa,"hilsa, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Memoni Fish Biryani,"fish, basmati rice, memoni spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Spinach Do Pyaza,"spinach, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Kerala Lamb Curry,"lamb, kerala spices, onion, curry leaves, oil, salt",cooked_meats
+Paneer Paratha,"wheat flour, paneer, spices, ghee, salt","cooked_roti,cooked_veggies"
+Fenugreek Leaves Sabzi,"fenugreek leaves, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Tandoori Roti And Dal Makhani,"tandoori roti, dal makhani, spices, oil, salt","cooked_roti,cooked_lentils"
+Matar Paneer With Paratha,"paratha, matar paneer, spices, oil, salt","cooked_roti,cooked_veggies"
+Banana Flower Stir Fry,"banana flower, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Bottle Gourd Masala,"bottle gourd, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Mangalorean Egg Masala,"egg, mangalorean spices, onion, tomato, oil, salt",cooked_egg
+Bangda In Mustard Sauce,"bangda, mustard paste, green chilli, mustard oil, turmeric, salt",cooked_seafood
+Punjabi Beef Fry,"beef, punjabi spices, onion, curry leaves, oil, salt",cooked_meats
+Baby Corn Bhaji,"baby corn, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Chettinad Pork Fry,"pork, chettinad spices, onion, curry leaves, oil, salt",cooked_meats
+Duck Lollipop,"duck wings, corn flour, ginger garlic paste, red chilli sauce, oil, salt",cooked_poultry
+Malabar Chicken Curry,"chicken, malabar spices, onion, curry leaves, oil, salt",cooked_poultry
+Grilled Salmon,"salmon, lemon juice, garlic, pepper, olive oil, salt",cooked_seafood
+Goat Vindaloo,"goat, vinegar, red chilli, garlic, goan spices, oil, salt",cooked_meats
+Dry Drumstick Fry,"drumstick, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Cauliflower Stir Fry,"cauliflower, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Mix Veg With Chapati,"chapati, mix veg, spices, oil, salt","cooked_roti,cooked_veggies"
+Clam Curry,"clam, coconut milk, tamarind, red chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_seafood
+Bombay Prawn Biryani,"prawn, basmati rice, bombay spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Chicken Chettinad,"chicken, coconut, black pepper, fennel seeds, curry leaves, onion, oil, salt",cooked_poultry
+Stuffed Capsicum,"capsicum, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Tandoori Roti With Egg Curry,"tandoori roti, egg curry, spices, oil, salt","cooked_roti,cooked_egg"
+Pork Chilli Fry,"pork, capsicum, onion, soy sauce, green chilli, garlic, oil, salt",cooked_meats
+Turkey Korma,"turkey, curd, cashew paste, onion, garam masala, ghee, salt",cooked_poultry
+Goan Seer Fish Curry,"seer fish, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Lemon Green Moong Dal,"green moong dal, lemon juice, turmeric, cumin seeds, ghee, salt",cooked_lentils
+Rabbit Bhuna,"rabbit, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Paratha With Butter Chicken,"paratha, butter chicken, spices, oil, salt","cooked_roti,cooked_poultry"
+Cauliflower Achari,"cauliflower, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Methi Masoor Dal,"masoor dal, methi, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Lobia Rice,"lobia, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Garlic Urad Dal Tadka,"urad dal, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Multigrain Roti,"wheat flour, water, salt, oil or ghee",cooked_roti
+Thick Yellow Moong Dal,"yellow moong dal, turmeric, ghee, salt",cooked_lentils
+Lauki Kofta,"bottle gourd, gram flour, onion, tomato gravy, spices, oil, salt",cooked_veggies
+Corn Do Pyaza,"corn, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Malabar Paratha,"wheat flour, water, salt, oil or ghee",cooked_roti
+Dry Mushroom Fry,"mushroom, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Pork Curry Rice,"pork, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, rice","cooked_rice,cooked_meats"
+Rajasthani Lobia,"lobia, asafoetida, red chilli, ghee, salt",cooked_lentils
+Baby Corn Biryani,"baby corn, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Bombay Duck Tikka,"bombay duck, curd, ginger garlic paste, red chilli powder, ajwain, mustard oil, salt",cooked_seafood
+Paneer Achari,"paneer, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Awadhi Fish Biryani,"fish, basmati rice, awadhi spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Kolkata Prawn Biryani,"prawn, basmati rice, kolkata spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Naan With Chicken Korma,"naan, chicken korma, spices, oil, salt","cooked_roti,cooked_poultry"
+Palak Moong Dal,"moong dal, palak, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Kulcha With Palak Paneer,"kulcha, palak paneer, spices, oil, salt","cooked_roti,cooked_veggies"
+Mughlai Chicken Curry,"chicken, mughlai spices, onion, curry leaves, oil, salt",cooked_poultry
+Egg Stew,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Methi Urad Dal,"urad dal, methi, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Pork Rice Bowl,"pork, rice, onion, soy sauce, vegetables, oil, salt","cooked_rice,cooked_meats"
+Crab Rice Bowl,"crab, rice, onion, soy sauce, vegetables, oil, salt","cooked_rice,cooked_seafood"
+Gujarati Black Masoor Dal,"black masoor dal, jaggery, kokum, mustard seeds, curry leaves, ghee, salt",cooked_lentils
+Lucknowi Fish Biryani,"fish, basmati rice, lucknowi spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Pork Curry With Roti,"roti, pork curry, spices, oil, salt","cooked_roti,cooked_meats"
+Naan With Moong Dal,"naan, moong dal, spices, oil, salt","cooked_roti,cooked_lentils"
+Urad Dal Rice,"urad dal, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Chapati With Egg Masala,"chapati, egg masala, spices, oil, salt","cooked_roti,cooked_egg"
+Shakshuka,"egg, tomato, capsicum, onion, cumin, olive oil, salt","cooked_egg,cooked_veggies"
+Memoni Egg Biryani,"egg, basmati rice, memoni spices, curd, saffron, ghee, salt","cooked_rice,cooked_egg"
+Chana Masala,"chickpeas, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_lentils
+Drumstick Masala,"drumstick, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Tomato Onion Urad Dal,"urad dal, tomato onion, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Dry Mixed Vegetable Fry,"mixed vegetable, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Mushroom Do Pyaza,"mushroom, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Mixed Vegetable Stir Fry,"mixed vegetable, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Tandoori Chicken With Chapati,"chapati, tandoori chicken, spices, oil, salt","cooked_roti,cooked_poultry"
+Drumstick Bhaji,"drumstick, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Bhindi Masala With Phulka,"phulka, bhindi masala, spices, oil, salt","cooked_roti,cooked_veggies"
+Masoor Dal Paratha,"wheat flour, masoor dal, spices, ghee, salt","cooked_roti,cooked_lentils"
+Chicken Korma With Chapati,"chapati, chicken korma, spices, oil, salt","cooked_roti,cooked_poultry"
+Goan Pork Curry,"pork, goan spices, onion, curry leaves, oil, salt",cooked_meats
+Roti With Palak Paneer,"roti, palak paneer, spices, oil, salt","cooked_roti,cooked_veggies"
+Turkey Fry,"turkey, turmeric, red chilli powder, ginger garlic paste, curry leaves, oil, salt",cooked_poultry
+Mild Paneer Masala,"paneer, onion, tomato, garam masala, ginger garlic paste, oil, salt",cooked_veggies
+Goat Kolhapuri,"goat, kolhapuri masala, coconut, onion, oil, salt",cooked_meats
+Pork Jalfrezi,"pork, capsicum, onion, tomato, spices, oil, salt",cooked_meats
+Mutton Curry,"mutton, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt",cooked_meats
+Simple Masoor Dal,"masoor dal, turmeric, salt, water, ghee",cooked_lentils
+Paneer Rice,"paneer, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Poori Bhaji,"wheat flour, potato, spices, oil, salt","cooked_roti,cooked_veggies"
+Coorgi Beef Curry,"beef, coorgi spices, onion, curry leaves, oil, salt",cooked_meats
+Egg Biryani,"egg, basmati rice, curd, biryani masala, saffron, fried onion, ghee, mint, salt","cooked_rice,cooked_egg"
+North Indian Egg Curry,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Moong Dal Chilla,"moong dal batter, onion, green chilli, coriander leaves, oil, salt",cooked_lentils
+Spinach Fried Rice,"spinach, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Dhaba Style Chicken Masala,"chicken, dhaba style spices, onion, curry leaves, oil, salt",cooked_poultry
+Prawn Masala With Phulka,"phulka, prawn masala, spices, oil, salt","cooked_roti,cooked_seafood"
+Steamed Bombay Duck,"bombay duck, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Lemon Yellow Moong Dal,"yellow moong dal, lemon juice, turmeric, cumin seeds, ghee, salt",cooked_lentils
+Lauki Urad Dal,"urad dal, lauki, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Naan With Dal Fry,"naan, dal fry, spices, oil, salt","cooked_roti,cooked_lentils"
+Broccoli Do Pyaza,"broccoli, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Kulcha And Chicken Kadai,"kulcha, chicken kadai, spices, oil, salt","cooked_roti,cooked_poultry"
+Simple Lobia,"lobia, turmeric, salt, water, ghee",cooked_lentils
+Goan Mutton Fry,"mutton, goan spices, onion, curry leaves, oil, salt",cooked_meats
+Black Masoor Dal Fry,"black masoor dal, onion, tomato, ginger garlic paste, red chilli powder, oil, salt",cooked_lentils
+Three Egg Omelette,"three eggs, onion, salt, oil",cooked_egg
+Soya Pulao,"soya, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Pork Pulao,"pork, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_meats"
+Dhaba Style Chana Dal,"chana dal, butter, onion, tomato, ginger garlic paste, cream, garam masala, salt",cooked_lentils
+Malabar Chicken Roast,"chicken, malabar spices, onion, curry leaves, oil, salt",cooked_poultry
+Phulka With Mutton Korma,"phulka, mutton korma, spices, oil, salt","cooked_roti,cooked_meats"
+Kolhapuri Egg Fry,"egg, kolhapuri spices, onion, tomato, oil, salt",cooked_egg
+Simple Green Moong Dal,"green moong dal, turmeric, salt, water, ghee",cooked_lentils
+Dal Fry With Bhakri,"bhakri, dal fry, spices, oil, salt","cooked_roti,cooked_lentils"
+Paneer Chettinad,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Kashmiri Pork Fry,"pork, kashmiri spices, onion, curry leaves, oil, salt",cooked_meats
+Snake Gourd Curry,"snake gourd, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Mangalorean Lamb Fry,"lamb, mangalorean spices, onion, curry leaves, oil, salt",cooked_meats
+Paratha And Fish Curry,"paratha, fish curry, spices, oil, salt","cooked_roti,cooked_seafood"
+Konkani Chicken Roast,"chicken, konkani spices, onion, curry leaves, oil, salt",cooked_poultry
+Grilled Fish,"fish, lemon juice, garlic, pepper, olive oil, salt",cooked_seafood
+Chicken Haleem,"wheat, chicken, lentils, ghee, fried onion, garam masala, salt","cooked_lentils,cooked_poultry"
+Rajasthani Yellow Moong Dal,"yellow moong dal, asafoetida, red chilli, ghee, salt",cooked_lentils
+Malabar Mutton Curry,"mutton, malabar spices, onion, curry leaves, oil, salt",cooked_meats
+Thick Moong Dal,"moong dal, turmeric, ghee, salt",cooked_lentils
+Goan Fish Curry,"fish, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Creamy Paneer Curry,"paneer, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Sardine 65,"sardine, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_seafood
+Bhindi Masala With Roti,"roti, bhindi masala, spices, oil, salt","cooked_roti,cooked_veggies"
+Tinda Do Pyaza,"tinda, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Crab In Mustard Sauce,"crab, mustard paste, green chilli, mustard oil, turmeric, salt",cooked_seafood
+Awadhi Egg Masala,"egg, awadhi spices, onion, tomato, oil, salt",cooked_egg
+Phulka With Dal Fry,"phulka, dal fry, spices, oil, salt","cooked_roti,cooked_lentils"
+Turkey Do Pyaza,"turkey, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_poultry
+Paneer Manchurian,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Soya Chunks Sabzi,"soya chunks, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Bottle Gourd Curry,"bottle gourd, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Spinach Masoor Dal,"masoor dal, spinach, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Egg Bhurji With Peas,"egg, green peas, onion, tomato, spices, oil, salt","cooked_egg,cooked_veggies"
+Turkey Masala Rice,"turkey, rice, onion, tomato, garam masala, oil, salt","cooked_rice,cooked_poultry"
+Steamed Basa,"basa, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Egg Curry,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Mutton Roast,"mutton, onion, coconut, black pepper, curry leaves, ginger garlic paste, oil, salt",cooked_meats
+Duck Masala Rice,"duck, rice, onion, tomato, garam masala, oil, salt","cooked_rice,cooked_poultry"
+Beef Dum Biryani,"beef, basmati rice, curd, biryani masala, saffron, fried onion, ghee, salt","cooked_rice,cooked_meats"
+Awadhi Beef Curry,"beef, awadhi spices, onion, curry leaves, oil, salt",cooked_meats
+Duck Do Pyaza,"duck, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_poultry
+Punjabi Yellow Moong Dal,"yellow moong dal, onion, tomato, ginger, garlic, ghee, garam masala, salt",cooked_lentils
+Quail Manchurian,"quail, corn flour, garlic, soy sauce, spring onion, capsicum, oil, salt",cooked_poultry
+Brinjal Bhaji,"brinjal, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Egg-Less Fried Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Konkani Mutton Curry,"mutton, konkani spices, onion, curry leaves, oil, salt",cooked_meats
+Brinjal Rice,"brinjal, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Puri With Chicken Curry,"puri, chicken curry, spices, oil, salt","cooked_roti,cooked_poultry"
+Cabbage Stir Fry,"cabbage, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Rajasthani Moong Dal,"moong dal, asafoetida, red chilli, ghee, salt",cooked_lentils
+Egg 65,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Beef Roast,"beef, onion, coconut, black pepper, curry leaves, ginger garlic paste, oil, salt",cooked_meats
+Pork Masala Rice,"pork, rice, onion, tomato, garam masala, oil, salt","cooked_rice,cooked_meats"
+Navratan Korma,"mixed vegetables, paneer, dry fruits, cream, spices, salt",cooked_veggies
+Kulcha With Fish Curry,"kulcha, fish curry, spices, oil, salt","cooked_roti,cooked_seafood"
+Kerala Chicken Masala,"chicken, kerala spices, onion, curry leaves, oil, salt",cooked_poultry
+Turkey 65,"turkey, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_poultry
+Tuna Tikka,"tuna, curd, ginger garlic paste, red chilli powder, ajwain, mustard oil, salt",cooked_seafood
+Rajasthani Toor Dal,"toor dal, asafoetida, red chilli, ghee, salt",cooked_lentils
+Tomato Do Pyaza,"tomato, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Bombay Chicken Biryani,"chicken, basmati rice, bombay spices, curd, saffron, ghee, salt","cooked_rice,cooked_poultry"
+Country Chicken Cafreal,"country chicken, green masala, coriander, mint, green chilli, oil, salt",cooked_poultry
+Dal Tikki,"chana dal, potato, spices, oil, salt","cooked_lentils,cooked_veggies"
+Chicken Shami Kebab,"chicken mince, chana dal, spices, egg, oil, salt",cooked_poultry
+Thepla,"wheat flour, water, salt, oil or ghee",cooked_roti
+Aloo Roll,"paratha, potato, onion, chaat masala","cooked_roti,cooked_veggies"
+Mussels 65,"mussels, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_seafood
+Country Chicken Chettinad,"country chicken, coconut, black pepper, fennel seeds, curry leaves, onion, oil, salt",cooked_poultry
+Beetroot Stir Fry,"beetroot, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Zucchini Kofta Curry,"zucchini, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Duck Vindaloo,"duck, vinegar, red chilli, garlic, goan spices, oil, salt",cooked_poultry
+Egg Cutlet,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Coorgi Chicken Masala,"chicken, coorgi spices, onion, curry leaves, oil, salt",cooked_poultry
+Pork Seekh Kebab,"pork mince, ginger garlic paste, green chilli, spices, oil, salt",cooked_meats
+Stuffed Beetroot,"beetroot, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Palak Masoor Dal,"masoor dal, palak, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Stuffed Turnip,"turnip, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Crab Curry With Bhakri,"bhakri, crab curry, spices, oil, salt","cooked_roti,cooked_seafood"
+Thick Toor Dal,"toor dal, turmeric, ghee, salt",cooked_lentils
+Venison Chilli Fry,"venison, capsicum, onion, soy sauce, green chilli, garlic, oil, salt",cooked_meats
+Malabar Pork Fry,"pork, malabar spices, onion, curry leaves, oil, salt",cooked_meats
+Roti With Moong Dal,"roti, moong dal, spices, oil, salt","cooked_roti,cooked_lentils"
+Butter Roti,"wheat flour, water, salt, oil or ghee",cooked_roti
+Kashmiri Mutton Curry,"mutton, kashmiri spices, onion, curry leaves, oil, salt",cooked_meats
+Tandoori Roti And Beef Curry,"tandoori roti, beef curry, spices, oil, salt","cooked_roti,cooked_meats"
+Home Style Green Moong Dal,"green moong dal, turmeric, onion, tomato, ghee, salt",cooked_lentils
+Macher Matha Diye Dal,"moong dal, fish head, ginger, ghee, spices, salt","cooked_lentils,cooked_seafood"
+Paratha With Prawn Masala,"paratha, prawn masala, spices, oil, salt","cooked_roti,cooked_seafood"
+Fish Masala,"fish, onion, tomato, coconut, red chilli powder, ginger garlic paste, oil, salt",cooked_seafood
+Tomato Fried Rice,"tomato, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Baby Corn Curry,"baby corn, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Kulcha And Dal Tadka,"kulcha, dal tadka, spices, oil, salt","cooked_roti,cooked_lentils"
+Kashmiri Chicken Fry,"chicken, kashmiri spices, onion, curry leaves, oil, salt",cooked_poultry
+Thalassery Beef Biryani,"beef, basmati rice, thalassery spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Kerala Chicken Roast,"chicken, kerala spices, onion, curry leaves, oil, salt",cooked_poultry
+Country Chicken Ghee Roast,"country chicken, ghee, red chilli, garlic, curry leaves, salt",cooked_poultry
+Chole Khichdi,"chole, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+French Beans Masala,"french beans, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Paneer Angara,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Awadhi Prawn Biryani,"prawn, basmati rice, awadhi spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Bengali Egg Curry,"egg, bengali spices, onion, tomato, oil, salt",cooked_egg
+Venison Jalfrezi,"venison, capsicum, onion, tomato, spices, oil, salt",cooked_meats
+Rohu Curry,"rohu, coconut milk, tamarind, red chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_seafood
+Steamed Lobster,"lobster, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Bhakri And Aloo Matar,"bhakri, aloo matar, spices, oil, salt","cooked_roti,cooked_veggies"
+Tinda Sabzi,"tinda, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Beef Shami Kebab,"beef mince, chana dal, spices, egg, oil, salt",cooked_meats
+Stuffed Raw Jackfruit,"raw jackfruit, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Fish Fry With Chapati,"chapati, fish fry, spices, oil, salt","cooked_roti,cooked_seafood"
+Chicken Masala With Phulka,"phulka, chicken masala, spices, oil, salt","cooked_roti,cooked_poultry"
+Poached Eggs,"egg, water, vinegar, salt",cooked_egg
+Paratha With Baingan Bharta,"paratha, baingan bharta, spices, oil, salt","cooked_roti,cooked_veggies"
+Bottle Gourd Achari,"bottle gourd, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Thalassery Chicken Biryani,"chicken, basmati rice, thalassery spices, curd, saffron, ghee, salt","cooked_rice,cooked_poultry"
+Punjabi Egg Masala,"egg, punjabi spices, onion, tomato, oil, salt",cooked_egg
+Egg Kadai,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Prawn Cocktail,"prawn, mayonnaise, tomato ketchup, lemon, salt",cooked_seafood
+Dindigul Egg Biryani,"egg, basmati rice, dindigul spices, curd, saffron, ghee, salt","cooked_rice,cooked_egg"
+Kashmiri Fish Biryani,"fish, basmati rice, kashmiri spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Punjabi Moong Dal,"moong dal, onion, tomato, ginger, garlic, ghee, garam masala, salt",cooked_lentils
+Cabbage Chana Dal,"chana dal, cabbage, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Awadhi Chicken Biryani,"chicken, basmati rice, awadhi spices, curd, saffron, ghee, salt","cooked_rice,cooked_poultry"
+Naan And Rajma,"naan, rajma, spices, oil, salt","cooked_roti,cooked_lentils"
+Mangalorean Pork Fry,"pork, mangalorean spices, onion, curry leaves, oil, salt",cooked_meats
+Chicken Tikka Masala,"chicken tikka, tomato gravy, cream, butter, garam masala, salt",cooked_poultry
+Lobster Fry,"lobster, turmeric, red chilli powder, rice flour, lemon juice, oil, salt",cooked_seafood
+Beef Fried Rice,"beef, rice, spring onion, soy sauce, garlic, oil, salt","cooked_rice,cooked_meats"
+Phulka With Chicken Korma,"phulka, chicken korma, spices, oil, salt","cooked_roti,cooked_poultry"
+Banana Flower Kofta Curry,"banana flower, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Home Style Moong Dal,"moong dal, turmeric, onion, tomato, ghee, salt",cooked_lentils
+Lemon Urad Dal,"urad dal, lemon juice, turmeric, cumin seeds, ghee, salt",cooked_lentils
+Prawn Paratha,"wheat flour, prawn, spices, ghee, salt","cooked_roti,cooked_seafood"
+Chana Dal Khichdi,"chana dal, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Spinach Rice,"spinach, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Beef Bhuna,"beef, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Duck Kebab,"duck mince, ginger garlic paste, green chilli, garam masala, oil, salt",cooked_poultry
+Lamb Korma,"lamb, curd, cashew paste, onion, garam masala, ghee, salt",cooked_meats
+Panchmel Dal Curry,"panchmel dal, onion, tomato, garam masala, turmeric, oil, salt",cooked_lentils
+Ridge Gourd Sabzi,"ridge gourd, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Dry Potato Fry,"potato, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Fish Rice Bowl,"fish, rice, onion, soy sauce, vegetables, oil, salt","cooked_rice,cooked_seafood"
+Brown Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Grilled Basa,"basa, lemon juice, garlic, pepper, olive oil, salt",cooked_seafood
+Crab Curry Rice,"crab, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, rice","cooked_rice,cooked_seafood"
+Dal Rice Combo,"dal, rice, ghee, pickle, papad","cooked_rice,cooked_lentils"
+Spinach Chana Dal,"chana dal, spinach, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Black Chana Chawal,"black chana, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Malabar Egg Fry,"egg, malabar spices, onion, tomato, oil, salt",cooked_egg
+Lamb Keema,"lamb mince, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Beans Pulao,"beans, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Prawn Rava Fry,"prawn, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Phulka And Chicken Curry,"phulka, chicken curry, spices, oil, salt","cooked_roti,cooked_poultry"
+Anchovy Coconut Curry,"anchovy, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Pork Handi,"pork, curd, onion, tomato, garam masala, ghee, salt",cooked_meats
+Cauliflower Biryani,"cauliflower, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Simple Panchmel Dal,"panchmel dal, turmeric, salt, water, ghee",cooked_lentils
+Paneer Khurchan,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Malabar Lamb Fry,"lamb, malabar spices, onion, curry leaves, oil, salt",cooked_meats
+Stuffed Banana Flower,"banana flower, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Brinjal Fried Rice,"brinjal, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Dhaba Style Beef Fry,"beef, dhaba style spices, onion, curry leaves, oil, salt",cooked_meats
+Bengali Kulthi Dal,"kulthi dal, panch phoron, ginger, coconut, ghee, salt",cooked_lentils
+Restaurant Style Black Masoor Dal,"black masoor dal, butter, cream, onion, tomato, garam masala, salt",cooked_lentils
+Egg Tikka,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Garlic Panchmel Dal Tadka,"panchmel dal, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Tuna In Mustard Sauce,"tuna, mustard paste, green chilli, mustard oil, turmeric, salt",cooked_seafood
+Roti And Mutton Rogan Josh,"roti, mutton rogan josh, spices, oil, salt","cooked_roti,cooked_meats"
+Egg White Omelette,"egg white, salt, pepper, oil",cooked_egg
+Lamb Curry Rice,"lamb, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, rice","cooked_rice,cooked_meats"
+Dry Green Peas Fry,"green peas, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Country Chicken Stew,"country chicken, potato, coconut milk, whole spices, curry leaves, salt",cooked_poultry
+Roti And Chicken Masala,"roti, chicken masala, spices, oil, salt","cooked_roti,cooked_poultry"
+Prawn Pulao,"prawn, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_seafood"
+Tomato Sabzi,"tomato, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Cabbage Bhaji,"cabbage, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Pumpkin Bhaji,"pumpkin, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Quail Cafreal,"quail, green masala, coriander, mint, green chilli, oil, salt",cooked_poultry
+Mixed Veg Moong Dal,"moong dal, mixed veg, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Tomato Mixed Dal,"mixed dal, tomato, turmeric, mustard seeds, curry leaves, salt",cooked_lentils
+Chettinad Chicken Masala,"chicken, chettinad spices, onion, curry leaves, oil, salt",cooked_poultry
+Dal Makhani With Roti,"roti, dal makhani, spices, oil, salt","cooked_roti,cooked_lentils"
+Tamarind Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Dhaba Style Pork Fry,"pork, dhaba style spices, onion, curry leaves, oil, salt",cooked_meats
+Steamed Squid,"squid, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Awadhi Egg Roast,"egg, awadhi spices, onion, tomato, oil, salt",cooked_egg
+Drumstick Lobia,"lobia, drumstick, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Soya Chunks Curry,"soya chunks, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Clam Pepper Fry,"clam, black pepper, curry leaves, garlic, onion, oil, salt",cooked_seafood
+Punjabi Mixed Dal,"mixed dal, onion, tomato, ginger, garlic, ghee, garam masala, salt",cooked_lentils
+Chapati With Moong Dal,"chapati, moong dal, spices, oil, salt","cooked_roti,cooked_lentils"
+Sesame Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Egg Kolhapuri,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Hyderabadi Chicken Fry,"chicken, hyderabadi spices, onion, curry leaves, oil, salt",cooked_poultry
+Mutton Dalcha,"mutton, chana dal, tamarind, spices, oil, salt","cooked_lentils,cooked_meats"
+Corn Pulao,"corn, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Restaurant Style Chana Dal,"chana dal, butter, cream, onion, tomato, garam masala, salt",cooked_lentils
+Goan Egg Fry,"egg, goan spices, onion, tomato, oil, salt",cooked_egg
+Boiled Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Mangalorean Beef Fry,"beef, mangalorean spices, onion, curry leaves, oil, salt",cooked_meats
+Masala Khichdi,"rice, dal, vegetables, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils,cooked_veggies"
+Dhaba Style Egg Bhurji,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Hilsa In Mustard Sauce,"hilsa, mustard paste, green chilli, mustard oil, turmeric, salt",cooked_seafood
+Egg Khichdi,"rice, moong dal, egg, turmeric, ghee, salt","cooked_rice,cooked_lentils,cooked_egg"
+Steamed Mackerel,"mackerel, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Lobia Chawal,"lobia, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Radish Masala,"radish, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Okra Kofta Curry,"okra, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Soya Biryani,"soya, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Green Moong Dal Soup,"green moong dal, turmeric, garlic, pepper, ghee, salt",cooked_lentils
+Coorgi Egg Fry,"egg, coorgi spices, onion, tomato, oil, salt",cooked_egg
+Mughlai Chicken Masala,"chicken, mughlai spices, onion, curry leaves, oil, salt",cooked_poultry
+Bitter Gourd Stir Fry,"bitter gourd, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Curd Rice With Pomegranate,"rice, curd, pomegranate, mustard seeds, salt",cooked_rice
+Egg Malai Curry,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Rajma Khichdi,"rajma, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Goan Beef Fry,"beef, goan spices, onion, curry leaves, oil, salt",cooked_meats
+Raw Jackfruit Bhaji,"raw jackfruit, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Chicken Korma,"chicken, curd, cashew paste, onion, garam masala, ghee, salt",cooked_poultry
+Hyderabadi Chicken Curry,"chicken, hyderabadi spices, onion, curry leaves, oil, salt",cooked_poultry
+Grilled Rohu,"rohu, lemon juice, garlic, pepper, olive oil, salt",cooked_seafood
+Amritsari Lobster,"lobster, gram flour, carom seeds, ginger garlic paste, red chilli powder, oil, salt",cooked_seafood
+Home Style Egg Curry,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Hilsa Fry,"hilsa, turmeric, red chilli powder, rice flour, lemon juice, oil, salt",cooked_seafood
+Tomato Onion Toor Dal,"toor dal, tomato onion, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Baby Corn Masala,"baby corn, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Duck Chettinad,"duck, coconut, black pepper, fennel seeds, curry leaves, onion, oil, salt",cooked_poultry
+Mixed Veg Masoor Dal,"masoor dal, mixed veg, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Palak Mutton,"mutton, spinach, onion, tomato, garam masala, oil, salt","cooked_meats,cooked_veggies"
+Kulthi Dal Soup,"kulthi dal, turmeric, garlic, pepper, ghee, salt",cooked_lentils
+Chicken Fry,"chicken, turmeric, red chilli powder, ginger garlic paste, curry leaves, oil, salt",cooked_poultry
+Rohu Rava Fry,"rohu, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Hyderabadi Mutton Fry,"mutton, hyderabadi spices, onion, curry leaves, oil, salt",cooked_meats
+Turnip Curry,"turnip, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Drumstick Do Pyaza,"drumstick, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Pork Roast,"pork, onion, coconut, black pepper, curry leaves, ginger garlic paste, oil, salt",cooked_meats
+Drumstick Urad Dal,"urad dal, drumstick, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Amritsari Bhetki,"bhetki, gram flour, carom seeds, ginger garlic paste, red chilli powder, oil, salt",cooked_seafood
+Jeera Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Calamari Fry,"squid rings, flour, spices, oil, salt",cooked_seafood
+Kashmiri Egg Curry,"egg, kashmiri spices, onion, tomato, oil, salt",cooked_egg
+Clam Coconut Curry,"clam, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Punjabi Paneer Curry,"paneer, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Seer Fish Masala,"seer fish, onion, tomato, coconut, red chilli powder, ginger garlic paste, oil, salt",cooked_seafood
+Capsicum Fried Rice,"capsicum, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Surmai Pepper Fry,"surmai, black pepper, curry leaves, garlic, onion, oil, salt",cooked_seafood
+Crab Pepper Fry,"crab, black pepper, curry leaves, garlic, onion, oil, salt",cooked_seafood
+Paratha With Crab Curry,"paratha, crab curry, spices, oil, salt","cooked_roti,cooked_seafood"
+Country Chicken Malai Tikka,"country chicken, cream, curd, ginger garlic paste, white pepper, salt",cooked_poultry
+Egg Sukka,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Cauliflower Urad Dal,"urad dal, cauliflower, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Beef Stew,"beef, potato, coconut milk, whole spices, curry leaves, salt",cooked_meats
+Carrot Bhaji,"carrot, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Goat Seekh Kebab,"goat mince, ginger garlic paste, green chilli, spices, oil, salt",cooked_meats
+Kerala Egg Curry,"egg, kerala spices, onion, tomato, oil, salt",cooked_egg
+Duck Xacuti,"duck, coconut, poppy seeds, goan spices, onion, oil, salt",cooked_poultry
+Steamed Sardine,"sardine, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Home Style Lobia,"lobia, turmeric, onion, tomato, ghee, salt",cooked_lentils
+Bhakri With Palak Paneer,"bhakri, palak paneer, spices, oil, salt","cooked_roti,cooked_veggies"
+Toor Dal Puri,"wheat flour, toor dal, spices, oil, salt","cooked_roti,cooked_lentils"
+Mutton Korma With Paratha,"paratha, mutton korma, spices, oil, salt","cooked_roti,cooked_meats"
+Chicken Wrap,"tortilla, chicken, vegetables, sauce","cooked_roti,cooked_poultry"
+Duck Fry,"duck, turmeric, red chilli powder, ginger garlic paste, curry leaves, oil, salt",cooked_poultry
+Chapati And Fish Curry,"chapati, fish curry, spices, oil, salt","cooked_roti,cooked_seafood"
+Egg Potato Curry,"egg, potato, onion, tomato, spices, oil, salt","cooked_egg,cooked_veggies"
+Rohu In Mustard Sauce,"rohu, mustard paste, green chilli, mustard oil, turmeric, salt",cooked_seafood
+Phulka With Mutton Curry,"phulka, mutton curry, spices, oil, salt","cooked_roti,cooked_meats"
+Awadhi Chicken Roast,"chicken, awadhi spices, onion, curry leaves, oil, salt",cooked_poultry
+Tomato Black Masoor Dal,"black masoor dal, tomato, turmeric, mustard seeds, curry leaves, salt",cooked_lentils
+Sweet Potato Do Pyaza,"sweet potato, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Rabbit Pepper Fry,"rabbit, black pepper, curry leaves, garlic, onion, oil, salt",cooked_meats
+Paneer Do Pyaza,"paneer, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Lucknowi Prawn Biryani,"prawn, basmati rice, lucknowi spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Kashmiri Egg Roast,"egg, kashmiri spices, onion, tomato, oil, salt",cooked_egg
+Beef Masala,"beef, onion, tomato, garam masala, coriander powder, ginger garlic paste, oil, salt",cooked_meats
+Veg Kothu Parotta,"parotta, mixed vegetables, onion, spices, oil, salt","cooked_roti,cooked_veggies"
+Moong Dal Khichdi,"moong dal, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Carrot Kofta Curry,"carrot, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Brinjal Pulao,"brinjal, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Schezwan Fish Fried Rice,"fish, rice, schezwan sauce, spring onion, garlic, oil, salt","cooked_rice,cooked_seafood"
+Gujarati Urad Dal,"urad dal, jaggery, kokum, mustard seeds, curry leaves, ghee, salt",cooked_lentils
+Brinjal Kofta Curry,"brinjal, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Goat Bhuna,"goat, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Dry Capsicum Fry,"capsicum, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Grilled Mussels,"mussels, lemon juice, garlic, pepper, olive oil, salt",cooked_seafood
+Beetroot Curry,"beetroot, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Egg Moilee,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Country Chicken Kebab,"country chicken mince, ginger garlic paste, green chilli, garam masala, oil, salt",cooked_poultry
+Chicken Khichdi,"rice, moong dal, chicken, turmeric, ghee, salt","cooked_rice,cooked_lentils,cooked_poultry"
+Tilapia Fry,"tilapia, turmeric, red chilli powder, rice flour, lemon juice, oil, salt",cooked_seafood
+Egg Kheema,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Venison Stew,"venison, potato, coconut milk, whole spices, curry leaves, salt",cooked_meats
+Lobster Tawa Fry,"lobster, red chilli powder, turmeric, lemon juice, oil, salt",cooked_seafood
+Andhra Chicken Roast,"chicken, andhra spices, onion, curry leaves, oil, salt",cooked_poultry
+Colocasia Do Pyaza,"colocasia, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Chicken Keema Matar,"chicken mince, green peas, onion, tomato, spices, oil, salt","cooked_poultry,cooked_veggies"
+Mutton Rogan Josh With Puri,"puri, mutton rogan josh, spices, oil, salt","cooked_roti,cooked_meats"
+Pork Keema,"pork mince, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Turkey Lollipop,"turkey wings, corn flour, ginger garlic paste, red chilli sauce, oil, salt",cooked_poultry
+Rajma Chawal,"rajma, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Ivy Gourd Masala,"ivy gourd, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Fish Tikka,"fish, curd, ginger garlic paste, red chilli powder, ajwain, mustard oil, salt",cooked_seafood
+Malabar Anchovy Curry,"anchovy, coconut milk, kudampuli, green chilli, curry leaves, coconut oil, salt",cooked_seafood
+Rajasthani Panchmel Dal,"panchmel dal, asafoetida, red chilli, ghee, salt",cooked_lentils
+Home Style Egg Masala,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Pomfret Pepper Fry,"pomfret, black pepper, curry leaves, garlic, onion, oil, salt",cooked_seafood
+Dhaba Style Urad Dal,"urad dal, butter, onion, tomato, ginger garlic paste, cream, garam masala, salt",cooked_lentils
+Shorshe Ilish,"hilsa, mustard paste, green chilli, mustard oil, salt",cooked_seafood
+Catla 65,"catla, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_seafood
+Basa Rava Fry,"basa, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Andhra Egg Curry,"egg, andhra spices, onion, tomato, oil, salt",cooked_egg
+Masoor Dal Khichdi,"masoor dal, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Konkani Pork Curry,"pork, konkani spices, onion, curry leaves, oil, salt",cooked_meats
+Okra Stir Fry,"okra, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Chilli Paneer,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Dindigul Beef Biryani,"beef, basmati rice, dindigul spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Venison Handi,"venison, curd, onion, tomato, garam masala, ghee, salt",cooked_meats
+Mixed Vegetable Masala,"mixed vegetable, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Fish Masala Rice,"fish, rice, onion, tomato, garam masala, oil, salt","cooked_rice,cooked_seafood"
+Cauliflower Mixed Dal,"mixed dal, cauliflower, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Pork Fry,"pork, turmeric, red chilli powder, ginger garlic paste, curry leaves, oil, salt",cooked_meats
+Beef Ghee Roast,"beef, ghee, red chilli, garlic, curry leaves, salt",cooked_meats
+Malabar Catla Curry,"catla, coconut milk, kudampuli, green chilli, curry leaves, coconut oil, salt",cooked_seafood
+Mangalorean Egg Curry,"egg, mangalorean spices, onion, tomato, oil, salt",cooked_egg
+Hilsa Pepper Fry,"hilsa, black pepper, curry leaves, garlic, onion, oil, salt",cooked_seafood
+Chicken Cafreal,"chicken, green masala, coriander, mint, green chilli, oil, salt",cooked_poultry
+Punjabi Chicken Curry,"chicken, punjabi spices, onion, curry leaves, oil, salt",cooked_poultry
+Quail Curry,"quail, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, coriander leaves",cooked_poultry
+Salmon Rava Fry,"salmon, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Turkey Tikka,"turkey, curd, ginger garlic paste, red chilli powder, garam masala, mustard oil, lemon juice, salt",cooked_poultry
+Peanut Rice,"rice, ghee or oil, salt, spices",cooked_rice
+Chicken Chilli,"chicken, capsicum, onion, soy sauce, corn flour, green chilli, oil, salt",cooked_poultry
+Duck Hariyali,"duck, mint, coriander, spinach paste, green chilli, oil, salt",cooked_poultry
+Prawn Masala Rice,"prawn, rice, onion, tomato, garam masala, oil, salt","cooked_rice,cooked_seafood"
+Kolhapuri Egg Curry,"egg, kolhapuri spices, onion, tomato, oil, salt",cooked_egg
+Squid Curry,"squid, coconut milk, tamarind, red chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_seafood
+Mussels Curry,"mussels, coconut milk, tamarind, red chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_seafood
+Duck Curry,"duck, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, coriander leaves",cooked_poultry
+Methi Mixed Dal,"mixed dal, methi, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Missi Roti,"wheat flour, water, salt, oil or ghee",cooked_roti
+Kingfish 65,"kingfish, curd, red chilli powder, corn flour, curry leaves, oil, salt",cooked_seafood
+Paneer Butter Masala With Phulka,"phulka, paneer butter masala, spices, oil, salt","cooked_roti,cooked_veggies"
+Paneer Kofta Curry,"paneer, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Rabbit Kebab,"rabbit mince, ginger garlic paste, green chilli, garam masala, gram flour, oil, salt",cooked_meats
+Egg Manchurian,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Dried Fish Curry,"dried fish, coconut, tamarind, spices, oil, salt",cooked_seafood
+Black Masoor Dal Tadka,"black masoor dal, turmeric, onion, tomato, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Urad Dal Fry,"urad dal, onion, tomato, ginger garlic paste, red chilli powder, oil, salt",cooked_lentils
+Dal Baati,"wheat flour, mixed dal, ghee, spices, salt","cooked_roti,cooked_lentils"
+Bombay Duck Masala,"bombay duck, onion, tomato, coconut, red chilli powder, ginger garlic paste, oil, salt",cooked_seafood
+Hyderabadi Egg Fry,"egg, hyderabadi spices, onion, tomato, oil, salt",cooked_egg
+Mutton Paya,"mutton trotters, onion, ginger garlic paste, whole spices, salt",cooked_meats
+Tawa Roti,"wheat flour, water, salt, oil or ghee",cooked_roti
+Spicy Egg Bhurji,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Naan And Mix Veg,"naan, mix veg, spices, oil, salt","cooked_roti,cooked_veggies"
+Egg Dosa,"dosa batter, egg, onion, pepper, oil, salt","cooked_rice,cooked_lentils,cooked_egg"
+Bhakri And Prawn Masala,"bhakri, prawn masala, spices, oil, salt","cooked_roti,cooked_seafood"
+Rajasthani Moth Dal,"moth dal, asafoetida, red chilli, ghee, salt",cooked_lentils
+Baby Corn Sabzi,"baby corn, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Mughlai Egg Masala,"egg, mughlai spices, onion, tomato, oil, salt",cooked_egg
+Corn Fried Rice,"corn, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Goat Pepper Fry,"goat, black pepper, curry leaves, garlic, onion, oil, salt",cooked_meats
+Drumstick Curry,"drumstick, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Chettinad Egg Curry,"egg, chettinad spices, onion, tomato, oil, salt",cooked_egg
+Steamed Kingfish,"kingfish, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Venison Kolhapuri,"venison, kolhapuri masala, coconut, onion, oil, salt",cooked_meats
+Masoor Dal Fry,"masoor dal, onion, tomato, ginger garlic paste, red chilli powder, oil, salt",cooked_lentils
+Lobia Khichdi,"lobia, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Mushroom Pulao,"mushroom, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Malabar Prawn Biryani,"prawn, basmati rice, malabar spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Garlic Yellow Moong Dal Tadka,"yellow moong dal, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Bengali Beef Curry,"beef, bengali spices, onion, curry leaves, oil, salt",cooked_meats
+Prawn Masala,"prawn, onion, tomato, coconut, red chilli powder, ginger garlic paste, oil, salt",cooked_seafood
+Pork Kebab,"pork mince, ginger garlic paste, green chilli, garam masala, gram flour, oil, salt",cooked_meats
+Bitter Gourd Sabzi,"bitter gourd, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Matar Paneer,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Goan Squid Curry,"squid, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Haleem,"wheat, mutton, lentils, ghee, fried onion, garam masala, salt","cooked_lentils,cooked_meats"
+Rajma Masala,"rajma, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_lentils
+Pomfret Masala,"pomfret, onion, tomato, coconut, red chilli powder, ginger garlic paste, oil, salt",cooked_seafood
+Country Chicken Tikka,"country chicken, curd, ginger garlic paste, red chilli powder, garam masala, mustard oil, lemon juice, salt",cooked_poultry
+Pork Do Pyaza,"pork, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Mughlai Lamb Curry,"lamb, mughlai spices, onion, curry leaves, oil, salt",cooked_meats
+Amritsari Seer Fish,"seer fish, gram flour, carom seeds, ginger garlic paste, red chilli powder, oil, salt",cooked_seafood
+Punjabi Chicken Fry,"chicken, punjabi spices, onion, curry leaves, oil, salt",cooked_poultry
+Panchmel Dal Tadka,"panchmel dal, turmeric, onion, tomato, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Malabar Crab Curry,"crab, coconut milk, kudampuli, green chilli, curry leaves, coconut oil, salt",cooked_seafood
+Turkey Xacuti,"turkey, coconut, poppy seeds, goan spices, onion, oil, salt",cooked_poultry
+Snake Gourd Masala,"snake gourd, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Pork Ghee Roast,"pork, ghee, red chilli, garlic, curry leaves, salt",cooked_meats
+Dahi Paneer,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Surmai Masala,"surmai, onion, tomato, coconut, red chilli powder, ginger garlic paste, oil, salt",cooked_seafood
+Bengali Chicken Curry,"chicken, bengali spices, onion, curry leaves, oil, salt",cooked_poultry
+Nihari,"mutton, wheat flour, ginger, garlic, garam masala, ghee, salt",cooked_meats
+Mussels Tikka,"mussels, curd, ginger garlic paste, red chilli powder, ajwain, mustard oil, salt",cooked_seafood
+Gujarati Moong Dal,"moong dal, jaggery, kokum, mustard seeds, curry leaves, ghee, salt",cooked_lentils
+Mutton Shami Kebab,"mutton mince, chana dal, spices, egg, oil, salt",cooked_meats
+Pork Pepper Fry,"pork, black pepper, curry leaves, garlic, onion, oil, salt",cooked_meats
+Chettinad Chicken Roast,"chicken, chettinad spices, onion, curry leaves, oil, salt",cooked_poultry
+Lemon Black Masoor Dal,"black masoor dal, lemon juice, turmeric, cumin seeds, ghee, salt",cooked_lentils
+Lauki Moong Dal,"moong dal, lauki, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Schezwan Pork Fried Rice,"pork, rice, schezwan sauce, spring onion, garlic, oil, salt","cooked_rice,cooked_meats"
+Kingfish In Mustard Sauce,"kingfish, mustard paste, green chilli, mustard oil, turmeric, salt",cooked_seafood
+Punjabi Mutton Curry,"mutton, punjabi spices, onion, curry leaves, oil, salt",cooked_meats
+Sarson Ka Saag Makki Roti,"mustard greens, maize flour, ghee, garlic, salt","cooked_roti,cooked_veggies"
+Goat Handi,"goat, curd, onion, tomato, garam masala, ghee, salt",cooked_meats
+Bengali Egg Masala,"egg, bengali spices, onion, tomato, oil, salt",cooked_egg
+Gobi Kulcha,"flour, gobi, spices, butter, salt","cooked_roti,cooked_veggies"
+Lemon Panchmel Dal,"panchmel dal, lemon juice, turmeric, cumin seeds, ghee, salt",cooked_lentils
+Coorgi Egg Roast,"egg, coorgi spices, onion, tomato, oil, salt",cooked_egg
+Prawn Drumstick Curry,"prawn, drumstick, coconut, spices, oil, salt","cooked_seafood,cooked_veggies"
+North Indian Egg Masala,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Paratha And Nihari,"paratha, nihari, spices, oil, salt","cooked_roti,cooked_meats"
+Chicken Do Pyaza,"chicken, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_poultry
+Capsicum Bhaji,"capsicum, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Pumpkin Sambar,"toor dal, pumpkin, tamarind, sambar powder, curry leaves, salt","cooked_lentils,cooked_veggies"
+Punjabi Egg Roast,"egg, punjabi spices, onion, tomato, oil, salt",cooked_egg
+Cabbage Toor Dal,"toor dal, cabbage, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Lamb Do Pyaza,"lamb, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_meats
+Toor Dal Fry,"toor dal, onion, tomato, ginger garlic paste, red chilli powder, oil, salt",cooked_lentils
+Fish Rava Fry,"fish, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Paneer Butter Masala With Roti,"roti, paneer butter masala, spices, oil, salt","cooked_roti,cooked_veggies"
+Hyderabadi Pork Curry,"pork, hyderabadi spices, onion, curry leaves, oil, salt",cooked_meats
+Lotus Stem Do Pyaza,"lotus stem, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Steamed Prawn,"prawn, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Rabbit Chops,"rabbit chops, curd, ginger garlic paste, garam masala, mustard oil, salt",cooked_meats
+Bacon Fry,"bacon, oil, pepper",cooked_meats
+Dry Radish Fry,"radish, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Bengali Green Moong Dal,"green moong dal, panch phoron, ginger, coconut, ghee, salt",cooked_lentils
+Beef Chops,"beef chops, curd, ginger garlic paste, garam masala, mustard oil, salt",cooked_meats
+Turkey Masala,"turkey, onion, tomato, garam masala, coriander powder, ginger garlic paste, oil, salt",cooked_poultry
+Bottle Gourd Kofta Curry,"bottle gourd, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Parwal Do Pyaza,"parwal, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Stuffed Raw Banana,"raw banana, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Beetroot Paratha,"wheat flour, beetroot, spices, ghee, salt","cooked_roti,cooked_veggies"
+Bengali Pork Fry,"pork, bengali spices, onion, curry leaves, oil, salt",cooked_meats
+Amritsari Salmon,"salmon, gram flour, carom seeds, ginger garlic paste, red chilli powder, oil, salt",cooked_seafood
+Kulcha With Keema,"kulcha, keema, spices, oil, salt","cooked_roti,cooked_meats"
+Moong Dal Curry,"moong dal, onion, tomato, garam masala, turmeric, oil, salt",cooked_lentils
+Drumstick Kofta Curry,"drumstick, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Dry Brinjal Fry,"brinjal, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Egg Ghee Roast,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Bhakri And Keema,"bhakri, keema, spices, oil, salt","cooked_roti,cooked_meats"
+Chicken Masala,"chicken, onion, tomato, garam masala, coriander powder, ginger garlic paste, oil, salt",cooked_poultry
+Ambur Egg Biryani,"egg, basmati rice, ambur spices, curd, saffron, ghee, salt","cooked_rice,cooked_egg"
+Panchmel Dal Soup,"panchmel dal, turmeric, garlic, pepper, ghee, salt",cooked_lentils
+Lemon Rasam,"toor dal water, lemon, pepper, cumin, curry leaves, salt",cooked_lentils
+Duck Ghee Roast,"duck, ghee, red chilli, garlic, curry leaves, salt",cooked_poultry
+Cabbage Lobia,"lobia, cabbage, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Parwal Curry,"parwal, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Chicken Tikka Roll,"paratha, chicken tikka, onion, chutney","cooked_roti,cooked_poultry"
+Shrimp In Mustard Sauce,"shrimp, mustard paste, green chilli, mustard oil, turmeric, salt",cooked_seafood
+Raw Banana Kofta Curry,"raw banana, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Ash Gourd Curry,"ash gourd, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Spicy Paneer Curry,"paneer, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Cauliflower Moong Dal,"moong dal, cauliflower, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Bitter Gourd Achari,"bitter gourd, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Soya Rice,"soya, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Chole Chawal,"chole, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Malabar Salmon Curry,"salmon, coconut milk, kudampuli, green chilli, curry leaves, coconut oil, salt",cooked_seafood
+Country Chicken Xacuti,"country chicken, coconut, poppy seeds, goan spices, onion, oil, salt",cooked_poultry
+Goan Anchovy Curry,"anchovy, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Colocasia Achari,"colocasia, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Home Style Kulthi Dal,"kulthi dal, turmeric, onion, tomato, ghee, salt",cooked_lentils
+Chettinad Pork Curry,"pork, chettinad spices, onion, curry leaves, oil, salt",cooked_meats
+Steamed Bangda,"bangda, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Coorgi Mutton Fry,"mutton, coorgi spices, onion, curry leaves, oil, salt",cooked_meats
+Mushroom Bhaji,"mushroom, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Bajra Khichdi,"rice, dal, vegetables, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils,cooked_veggies"
+Tomato Green Moong Dal,"green moong dal, tomato, turmeric, mustard seeds, curry leaves, salt",cooked_lentils
+Mutton Vindaloo,"mutton, vinegar, red chilli, garlic, goan spices, oil, salt",cooked_meats
+Simple Urad Dal,"urad dal, turmeric, salt, water, ghee",cooked_lentils
+Simple Black Masoor Dal,"black masoor dal, turmeric, salt, water, ghee",cooked_lentils
+Kashmiri Mutton Biryani,"mutton, basmati rice, kashmiri spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Catla Fry,"catla, turmeric, red chilli powder, rice flour, lemon juice, oil, salt",cooked_seafood
+Mixed Vegetable Biryani,"mixed vegetable, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Fish Khichdi,"rice, moong dal, fish, turmeric, ghee, salt","cooked_rice,cooked_lentils,cooked_seafood"
+Dindigul Fish Biryani,"fish, basmati rice, dindigul spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Bombay Fish Biryani,"fish, basmati rice, bombay spices, curd, saffron, ghee, salt","cooked_rice,cooked_seafood"
+Egg Do Pyaza,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+Dry Bitter Gourd Fry,"bitter gourd, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Egg Kothu Parotta,"parotta, egg, onion, tomato, spices, oil, salt","cooked_roti,cooked_egg"
+Beetroot Do Pyaza,"beetroot, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Butter Chicken With Kulcha,"kulcha, butter chicken, spices, oil, salt","cooked_roti,cooked_poultry"
+Phulka And Nihari,"phulka, nihari, spices, oil, salt","cooked_roti,cooked_meats"
+Mughlai Mutton Curry,"mutton, mughlai spices, onion, curry leaves, oil, salt",cooked_meats
+Memoni Chicken Biryani,"chicken, basmati rice, memoni spices, curd, saffron, ghee, salt","cooked_rice,cooked_poultry"
+Mutton Biryani,"mutton, basmati rice, curd, biryani masala, saffron, fried onion, ghee, mint, salt","cooked_rice,cooked_meats"
+Tandoori Roti With Tandoori Chicken,"tandoori roti, tandoori chicken, spices, oil, salt","cooked_roti,cooked_poultry"
+Spinach Panchmel Dal,"panchmel dal, spinach, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Andhra Beef Fry,"beef, andhra spices, onion, curry leaves, oil, salt",cooked_meats
+Home Style Panchmel Dal,"panchmel dal, turmeric, onion, tomato, ghee, salt",cooked_lentils
+Malabar Chicken Masala,"chicken, malabar spices, onion, curry leaves, oil, salt",cooked_poultry
+Paratha And Tandoori Chicken,"paratha, tandoori chicken, spices, oil, salt","cooked_roti,cooked_poultry"
+Cabbage Rice,"cabbage, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Green Moong Chawal,"green moong, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Grilled Bangda,"bangda, lemon juice, garlic, pepper, olive oil, salt",cooked_seafood
+Dhaba Style Kulthi Dal,"kulthi dal, butter, onion, tomato, ginger garlic paste, cream, garam masala, salt",cooked_lentils
+Simple Moth Dal,"moth dal, turmeric, salt, water, ghee",cooked_lentils
+Punjabi Black Masoor Dal,"black masoor dal, onion, tomato, ginger, garlic, ghee, garam masala, salt",cooked_lentils
+North Indian Egg Bhurji,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Kashmiri Chicken Curry,"chicken, kashmiri spices, onion, curry leaves, oil, salt",cooked_poultry
+Andhra Egg Masala,"egg, andhra spices, onion, tomato, oil, salt",cooked_egg
+Dry Raw Banana Fry,"raw banana, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Rajma Rice,"rajma, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Plain Khichdi,"rice, dal, vegetables, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Turkey Pepper Fry,"turkey, black pepper, curry leaves, garlic, onion, oil, salt",cooked_poultry
+Beef Jalfrezi,"beef, capsicum, onion, tomato, spices, oil, salt",cooked_meats
+Hyderabadi Chicken Masala,"chicken, hyderabadi spices, onion, curry leaves, oil, salt",cooked_poultry
+Medu Vada,"urad dal, black pepper, curry leaves, oil, salt",cooked_lentils
+Mild Egg Roast,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Amritsari Sardine,"sardine, gram flour, carom seeds, ginger garlic paste, red chilli powder, oil, salt",cooked_seafood
+Lobia Curry,"lobia, onion, tomato, garam masala, turmeric, oil, salt",cooked_lentils
+Moth Dal Fry,"moth dal, onion, tomato, ginger garlic paste, red chilli powder, oil, salt",cooked_lentils
+Paneer Tikka Masala,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Moong Dal Chawal,"moong dal, rice, turmeric, cumin seeds, ghee, salt","cooked_rice,cooked_lentils"
+Lemon Toor Dal,"toor dal, lemon juice, turmeric, cumin seeds, ghee, salt",cooked_lentils
+Country Chicken Sukka,"country chicken, coconut, black pepper, curry leaves, onion, oil, salt",cooked_poultry
+Parwal Bhaji,"parwal, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Venison Pepper Fry,"venison, black pepper, curry leaves, garlic, onion, oil, salt",cooked_meats
+Onion Omelette,"egg, onion, green chilli, salt, oil","cooked_egg,cooked_veggies"
+Bhakri And Chicken Curry,"bhakri, chicken curry, spices, oil, salt","cooked_roti,cooked_poultry"
+Omelette With Roti,"roti, omelette, spices, oil, salt","cooked_roti,cooked_egg"
+Mutton Mushroom Curry,"mutton, mushroom, onion, tomato, spices, oil, salt","cooked_meats,cooked_veggies"
+Kerala Egg Roast,"egg, kerala spices, onion, tomato, oil, salt",cooked_egg
+Mutton Kolhapuri,"mutton, kolhapuri masala, coconut, onion, oil, salt",cooked_meats
+Kerala Beef Fry,"beef, kerala spices, onion, curry leaves, oil, salt",cooked_meats
+Crab Curry With Phulka,"phulka, crab curry, spices, oil, salt","cooked_roti,cooked_seafood"
+Andhra Mutton Curry,"mutton, andhra spices, onion, curry leaves, oil, salt",cooked_meats
+Bangda Coconut Curry,"bangda, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+Paratha And Bhindi Masala,"paratha, bhindi masala, spices, oil, salt","cooked_roti,cooked_veggies"
+Turnip Achari,"turnip, pickle spices, mustard oil, fennel seeds, onion, salt",cooked_veggies
+Beetroot Kofta Curry,"beetroot, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Goan Tiger Prawn Curry,"tiger prawn, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Puri With Egg Masala,"puri, egg masala, spices, oil, salt","cooked_roti,cooked_egg"
+Kerala Duck Curry,"duck, coconut milk, pepper, curry leaves, spices, salt",cooked_poultry
+Mackerel Pepper Fry,"mackerel, black pepper, curry leaves, garlic, onion, oil, salt",cooked_seafood
+Salmon Masala,"salmon, onion, tomato, coconut, red chilli powder, ginger garlic paste, oil, salt",cooked_seafood
+Ridge Gourd Masala,"ridge gourd, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Dal Tadka With Tandoori Roti,"tandoori roti, dal tadka, spices, oil, salt","cooked_roti,cooked_lentils"
+Pork Fried Rice,"pork, rice, spring onion, soy sauce, garlic, oil, salt","cooked_rice,cooked_meats"
+Kashmiri Egg Masala,"egg, kashmiri spices, onion, tomato, oil, salt",cooked_egg
+Corn Biryani,"corn, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Shrimp Rava Fry,"shrimp, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Venison Seekh Kebab,"venison mince, ginger garlic paste, green chilli, spices, oil, salt",cooked_meats
+Chapati And Baingan Bharta,"chapati, baingan bharta, spices, oil, salt","cooked_roti,cooked_veggies"
+Restaurant Style Lobia,"lobia, butter, cream, onion, tomato, garam masala, salt",cooked_lentils
+Mutton Jalfrezi,"mutton, capsicum, onion, tomato, spices, oil, salt",cooked_meats
+Masala Idli,"rice, ghee or oil, salt, spices","cooked_rice,cooked_lentils"
+Kerala Chicken Curry,"chicken, kerala spices, onion, curry leaves, oil, salt",cooked_poultry
+Chicken Capsicum,"chicken, capsicum, onion, soy sauce, garlic, oil, salt","cooked_poultry,cooked_veggies"
+Kolhapuri Chicken Masala,"chicken, kolhapuri spices, onion, curry leaves, oil, salt",cooked_poultry
+Avial,"mixed vegetables, coconut, curd, curry leaves, coconut oil, salt",cooked_veggies
+Malabar Egg Curry,"egg, malabar spices, onion, tomato, oil, salt",cooked_egg
+Surmai Coconut Curry,"surmai, coconut, green chilli, turmeric, curry leaves, salt",cooked_seafood
+French Omelette,"egg, butter, herbs, salt",cooked_egg
+Kulcha And Baingan Bharta,"kulcha, baingan bharta, spices, oil, salt","cooked_roti,cooked_veggies"
+Steamed Mussels,"mussels, ginger, garlic, soy sauce, spring onion, salt",cooked_seafood
+Venison Ghee Roast,"venison, ghee, red chilli, garlic, curry leaves, salt",cooked_meats
+Parotta,"wheat flour, water, salt, oil or ghee",cooked_roti
+Punjabi Lamb Fry,"lamb, punjabi spices, onion, curry leaves, oil, salt",cooked_meats
+Turkey Vindaloo,"turkey, vinegar, red chilli, garlic, goan spices, oil, salt",cooked_poultry
+Basa Tawa Fry,"basa, red chilli powder, turmeric, lemon juice, oil, salt",cooked_seafood
+Pumpkin Panchmel Dal,"panchmel dal, pumpkin, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Amritsari Kingfish,"kingfish, gram flour, carom seeds, ginger garlic paste, red chilli powder, oil, salt",cooked_seafood
+Goan Rohu Curry,"rohu, coconut, kokum, red chilli, goan spices, oil, salt",cooked_seafood
+Methi Paratha,"wheat flour, methi, spices, ghee, salt","cooked_roti,cooked_veggies"
+Rawas Rava Fry,"rawas, semolina, red chilli powder, turmeric, oil, salt",cooked_seafood
+Raw Mango Pulao,"raw mango, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Mix Veg With Phulka,"phulka, mix veg, spices, oil, salt","cooked_roti,cooked_veggies"
+Tomato Onion Lobia,"lobia, tomato onion, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Mutton Pulao,"mutton, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_meats"
+Lamb Stew,"lamb, potato, coconut milk, whole spices, curry leaves, salt",cooked_meats
+Mughlai Lamb Fry,"lamb, mughlai spices, onion, curry leaves, oil, salt",cooked_meats
+Chole With Paratha,"paratha, chole, spices, oil, salt","cooked_roti,cooked_lentils"
+Mushroom Stir Fry,"mushroom, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Bengali Urad Dal,"urad dal, panch phoron, ginger, coconut, ghee, salt",cooked_lentils
+South Indian Egg Curry,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Baingan Bharta With Naan,"naan, baingan bharta, spices, oil, salt","cooked_roti,cooked_veggies"
+Egg Paratha,"wheat flour, egg, onion, green chilli, oil, salt","cooked_roti,cooked_egg"
+Punjabi Egg Fry,"egg, punjabi spices, onion, tomato, oil, salt",cooked_egg
+Plain Paratha,"wheat flour, water, salt, oil or ghee",cooked_roti
+Prawn Masala With Naan,"naan, prawn masala, spices, oil, salt","cooked_roti,cooked_seafood"
+Undhiyu,"mixed vegetables, fenugreek dumplings, green garlic, spices, oil, salt",cooked_veggies
+Yellow Moong Dal Curry,"yellow moong dal, onion, tomato, garam masala, turmeric, oil, salt",cooked_lentils
+Sarson Ka Saag,"mustard greens, spinach, garlic, ghee, salt",cooked_veggies
+Beef Burger Patty,"beef mince, onion, pepper, salt",cooked_meats
+Kulcha With Bhindi Masala,"kulcha, bhindi masala, spices, oil, salt","cooked_roti,cooked_veggies"
+Roti And Chicken Kadai,"roti, chicken kadai, spices, oil, salt","cooked_roti,cooked_poultry"
+Mixed Veg Kulcha,"flour, mixed veg, spices, butter, salt","cooked_roti,cooked_veggies"
+Bhetki Curry,"bhetki, coconut milk, tamarind, red chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_seafood
+Schezwan Crab Fried Rice,"crab, rice, schezwan sauce, spring onion, garlic, oil, salt","cooked_rice,cooked_seafood"
+Bombay Duck Tawa Fry,"bombay duck, red chilli powder, turmeric, lemon juice, oil, salt",cooked_seafood
+Crab Masala Rice,"crab, rice, onion, tomato, garam masala, oil, salt","cooked_rice,cooked_seafood"
+Cluster Beans Kofta Curry,"cluster beans, gram flour, onion, tomato, cream, garam masala, oil, salt",cooked_veggies
+Squid Curry Rice,"squid, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, rice","cooked_rice,cooked_seafood"
+Stuffed Tomato,"tomato, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Grilled Pomfret,"pomfret, lemon juice, garlic, pepper, olive oil, salt",cooked_seafood
+Ridge Gourd Stir Fry,"ridge gourd, garlic, soy sauce, spring onion, oil, salt",cooked_veggies
+Banana Flower Masala,"banana flower, onion, tomato, garam masala, coriander powder, ginger, garlic, oil, salt",cooked_veggies
+Goan Pork Fry,"pork, goan spices, onion, curry leaves, oil, salt",cooked_meats
+Methi Chana Dal,"chana dal, methi, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Duck Korma,"duck, curd, cashew paste, onion, garam masala, ghee, salt",cooked_poultry
+Garlic Toor Dal Tadka,"toor dal, garlic, cumin seeds, ghee, red chilli, salt",cooked_lentils
+Tuna Pepper Fry,"tuna, black pepper, curry leaves, garlic, onion, oil, salt",cooked_seafood
+Plain Dosa,"rice, urad dal, fenugreek seeds, oil, salt","cooked_rice,cooked_lentils"
+Beef Kofta Curry,"beef mince, onion, tomato gravy, garam masala, oil, salt",cooked_meats
+Goan Egg Roast,"egg, goan spices, onion, tomato, oil, salt",cooked_egg
+Venison Roast,"venison, onion, coconut, black pepper, curry leaves, ginger garlic paste, oil, salt",cooked_meats
+Cauliflower Chana Dal,"chana dal, cauliflower, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+Grilled Crab,"crab, lemon juice, garlic, pepper, olive oil, salt",cooked_seafood
+Quail Sukka,"quail, coconut, black pepper, curry leaves, onion, oil, salt",cooked_poultry
+Bhakri And Matar Paneer,"bhakri, matar paneer, spices, oil, salt","cooked_roti,cooked_veggies"
+Rohu Masala,"rohu, onion, tomato, coconut, red chilli powder, ginger garlic paste, oil, salt",cooked_seafood
+Dry Soya Chunks Fry,"soya chunks, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Sindhi Mutton Biryani,"mutton, basmati rice, sindhi spices, curd, saffron, ghee, salt","cooked_rice,cooked_meats"
+Fish Paratha,"wheat flour, fish, spices, ghee, salt","cooked_roti,cooked_seafood"
+Country Chicken Manchurian,"country chicken, corn flour, garlic, soy sauce, spring onion, capsicum, oil, salt",cooked_poultry
+Mughlai Beef Fry,"beef, mughlai spices, onion, curry leaves, oil, salt",cooked_meats
+Mushroom Sabzi,"mushroom, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Turkey Hariyali,"turkey, mint, coriander, spinach paste, green chilli, oil, salt",cooked_poultry
+Tomato Kulthi Dal,"kulthi dal, tomato, turmeric, mustard seeds, curry leaves, salt",cooked_lentils
+Kadai Paneer,"paneer, onion, tomato, cream, cashew, garam masala, spices, oil, salt",cooked_veggies
+Kulcha With Prawn Masala,"kulcha, prawn masala, spices, oil, salt","cooked_roti,cooked_seafood"
+Mughlai Beef Curry,"beef, mughlai spices, onion, curry leaves, oil, salt",cooked_meats
+Chicken Soup,"chicken, ginger, garlic, pepper, vegetables, salt",cooked_poultry
+Methi Panchmel Dal,"panchmel dal, methi, onion, garlic, cumin seeds, ghee, salt","cooked_lentils,cooked_veggies"
+South Indian Egg Bhurji,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Mushroom Omelette,"egg, mushroom, onion, pepper, oil, salt","cooked_egg,cooked_veggies"
+Duck Malai Tikka,"duck, cream, curd, ginger garlic paste, white pepper, salt",cooked_poultry
+Drumstick Sabzi,"drumstick, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Punjabi Egg Curry,"egg, punjabi spices, onion, tomato, oil, salt",cooked_egg
+Amritsari Bombay Duck,"bombay duck, gram flour, carom seeds, ginger garlic paste, red chilli powder, oil, salt",cooked_seafood
+Roti With Butter Chicken,"roti, butter chicken, spices, oil, salt","cooked_roti,cooked_poultry"
+Egg Bhurji,"egg, onion, tomato, ginger garlic paste, spices, oil, salt",cooked_egg
+North Indian Egg Roast,"egg, onion, tomato, spices, oil, salt",cooked_egg
+Turkey Malai Tikka,"turkey, cream, curd, ginger garlic paste, white pepper, salt",cooked_poultry
+Dry Carrot Fry,"carrot, mustard seeds, curry leaves, green chilli, turmeric, oil, salt",cooked_veggies
+Ivy Gourd Curry,"ivy gourd, onion, tomato, ginger garlic paste, red chilli powder, turmeric, garam masala, oil, salt, water",cooked_veggies
+Spinach Bhaji,"spinach, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Tandoori Roti With Aloo Gobi,"tandoori roti, aloo gobi, spices, oil, salt","cooked_roti,cooked_veggies"
+Omelette With Naan,"naan, omelette, spices, oil, salt","cooked_roti,cooked_egg"
+Baby Corn Pulao,"baby corn, basmati rice, whole spices, onion, ghee, salt","cooked_rice,cooked_veggies"
+Pomfret In Mustard Sauce,"pomfret, mustard paste, green chilli, mustard oil, turmeric, salt",cooked_seafood
+Stuffed Cauliflower,"cauliflower, gram flour, peanut, coconut, coriander seeds, red chilli powder, oil, salt",cooked_veggies
+Rabbit Fry,"rabbit, turmeric, red chilli powder, ginger garlic paste, curry leaves, oil, salt",cooked_meats
+Goat Masala,"goat, onion, tomato, garam masala, coriander powder, ginger garlic paste, oil, salt",cooked_meats
+Plain Omelette,"egg, salt, pepper, oil",cooked_egg
+Bengali Mutton Fry,"mutton, bengali spices, onion, curry leaves, oil, salt",cooked_meats
+Duck Tandoori,"duck, curd, tandoori masala, lemon juice, mustard oil, salt",cooked_poultry
+Okra Do Pyaza,"okra, onion, tomato, ginger garlic paste, garam masala, oil, salt",cooked_veggies
+Chicken Pepper Fry,"chicken, black pepper, curry leaves, garlic, onion, oil, salt",cooked_poultry
+Country Chicken Korma,"country chicken, curd, cashew paste, onion, garam masala, ghee, salt",cooked_poultry
+Grilled Lobster,"lobster, lemon juice, garlic, pepper, olive oil, salt",cooked_seafood
+Radish Bhaji,"radish, onion, green chilli, turmeric, mustard seeds, curry leaves, oil, salt",cooked_veggies
+Rajma With Tandoori Roti,"tandoori roti, rajma, spices, oil, salt","cooked_roti,cooked_lentils"
+Palak Paratha,"wheat flour, palak, spices, ghee, salt","cooked_roti,cooked_veggies"
+Prawn Tikka,"prawn, curd, ginger garlic paste, red chilli powder, ajwain, mustard oil, salt",cooked_seafood
+Rabbit Handi,"rabbit, curd, onion, tomato, garam masala, ghee, salt",cooked_meats
+Salmon Tikka,"salmon, curd, ginger garlic paste, red chilli powder, ajwain, mustard oil, salt",cooked_seafood
+Urad Dal Puri,"wheat flour, urad dal, spices, oil, salt","cooked_roti,cooked_lentils"
+Chicken Jalfrezi,"chicken, capsicum, onion, tomato, spices, oil, salt","cooked_poultry,cooked_veggies"
+Chana Dal Puri,"wheat flour, chana dal, spices, oil, salt","cooked_roti,cooked_lentils"
+Lemon Lobia,"lobia, lemon juice, turmeric, cumin seeds, ghee, salt",cooked_lentils
+Paneer Sabzi,"paneer, onion, tomato, turmeric, red chilli powder, coriander powder, cumin seeds, oil, salt",cooked_veggies
+Baby Corn Stir Fry,"baby corn, garlic, soy sauce, spring onion, oil, salt",cooked_veggies

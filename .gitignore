@@ -23,6 +23,12 @@ Thumbs.db
 # Python virtual environments
 hungerBridgeAi/venv/
 hungerBridgeAi/.venv/
+# HungerBridge AI training artifacts
+hungerBridgeAi/venv/
+hungerBridgeAi/__pycache__/
+hungerBridgeAi/models/
+hungerBridgeAi/data/__pycache__/
+*.py[cod] 
 
 # Python cache files
 __pycache__/
