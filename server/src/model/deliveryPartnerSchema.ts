@@ -5,6 +5,7 @@ import {
   text,
   boolean,
   timestamp,
+  doublePrecision,
 } from "drizzle-orm/pg-core";
 
 import { users } from "./userSchema";
@@ -22,7 +23,8 @@ export const deliveryPartners = pgTable("delivery_partners", {
   vehicleType: text("vehicle_type"),
 
   vehicleNumber: text("vehicle_number"),
-
+  latitude: doublePrecision("latitude"),
+  longitude: doublePrecision("longitude"),
   isAvailable: boolean("is_available")
     .default(true)
     .notNull(),

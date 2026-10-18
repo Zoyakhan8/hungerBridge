@@ -1,148 +1,106 @@
-
-
 export const NgoDocuments = ({ formData, handleChange, errors }) => {
+    const documents = [
+        {
+            name: "registrationDocument",
+            id: "ngo-registration-document",
+            title: "NGO Registration Certificate",
+            description: "Required • PDF, JPG, PNG",
+            image: "/src/assets/registeredDoc.png",
+            imageAlt: "Registration certificate",
+        },
+        {
+            name: "panCard",
+            id: "ngo-pancard-document",
+            title: "PAN Card",
+            description: "Required • PDF, JPG, PNG",
+            image: "/src/assets/id-card.png",
+            imageAlt: "PAN card",
+        },
+        {
+            name: "addressProof",
+            id: "ngo-address-document",
+            title: "Address Proof",
+            description: "Required • PDF, JPG, PNG",
+            image: "/src/assets/location.png",
+            imageAlt: "Address proof",
+        },
+    ];
+
     return (
-        <div className="py-1">
-            <div className="flex flex-col gap-6">
-                <div className="max-w-[650px] flex gap-1 text-inactive px-4 py-3 bg-background/20
-                             backdrop-blur-xl rounded-[8px] w-full border 
-                             border border-primary/20 shadow-xl shadow-black/10
-                             justify-between items-center hover:bg-tertiary transition-all duration-300">
-                    <div className="flex gap-4">
-                        <div className="p-3 rounded-md bg-background/90">
-                            <img src="/src/assets/registeredDoc.png" alt="" width={24} />
-                        </div>
-                        <div className="flex flex-col">
-                            <h1 className="text-md font-bold">NGO Registration Certificate</h1>
-                            <h1 className="text-inactive/70 text-sm">Required • PDF, JPG, PNG</h1>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-4">
-                        <div className="text-sm">
-                            <span className="text-secondary/70">
-                                {formData.registrationDocument
-                                    ? formData.registrationDocument.name
-                                    : "No file selected"}
-                            </span>
-                            {errors.registrationDocument && (
-                                <p className="mt-1 text-sm text-red-500">
-                                    {errors.registrationDocument}
+        <div className="w-full min-w-0 py-1">
+            <div className="flex min-w-0 flex-col gap-4 sm:gap-5">
+                {documents.map((document) => (
+                    <div
+                        key={document.name}
+                        className="flex w-full min-w-0 flex-col gap-4 rounded-xl border border-primary/20 bg-background/20 p-3 text-inactive shadow-xl shadow-black/10 backdrop-blur-xl transition-all duration-300 hover:bg-tertiary/70 sm:p-4 md:flex-row md:items-center md:justify-between"
+                    >
+                        {/* Document information */}
+                        <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+                            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-background/90 p-2 sm:h-12 sm:w-12">
+                                <img
+                                    src={document.image}
+                                    alt={document.imageAlt}
+                                    className="h-full w-full object-contain"
+                                />
+                            </div>
+
+                            <div className="flex min-w-0 flex-col gap-1">
+                                <h2 className="break-words text-sm font-bold sm:text-base">
+                                    {document.title}
+                                </h2>
+
+                                <p className="text-xs text-inactive/70 sm:text-sm">
+                                    {document.description}
                                 </p>
-                            )}
+                            </div>
                         </div>
-                        <div>
-                            <input
-                                type="file"
-                                id="ngo-registration-document"
-                                className="hidden"
-                                name="registrationDocument"
-                                onChange={handleChange}
-                                required
-                            />
-                            <label
-                                htmlFor="ngo-registration-document"
-                                className="inline-flex cursor-pointer gap-4 text-inactive px-4 py-3 bg-background/20
-                             backdrop-blur-xl rounded-[8px] w-fit border 
-                             border border-primary/20 shadow-xl shadow-black/10  hover:bg-primary/30"
-                            >
-                                Browse File
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div className="max-w-[650px] flex gap-1 text-inactive px-4 py-3 bg-background/20
-                             backdrop-blur-xl rounded-[8px] w-full border 
-                             border border-primary/20 shadow-xl shadow-black/10
-                             justify-between items-center hover:bg-tertiary transition-all duration-300">
-                    <div className="flex gap-4">
-                        <div className="p-3 rounded-md bg-background/90">
-                            <img src="/src/assets/id-card.png" alt="" />
-                        </div>
-                        <div className="flex flex-col">
-                            <h1 className="text-md font-bold">PAN Card</h1>
-                            <h1 className="text-inactive/70 text-sm">Required • PDF, JPG, PNG</h1>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-4">
-                        <div className="text-sm">
-                            <span className="text-secondary/70">
-                                {formData.panCard
-                                    ? formData.panCard.name
-                                    : "No file selected"}
-                            </span>
-                            {errors.panCard && (
-                                <p className="mt-1 text-sm text-red-500">
-                                    {errors.panCard}
+
+                        {/* Selected file and browse button */}
+                        <div className="flex min-w-0 flex-col gap-3 sm:flex-row sm:items-center md:max-w-[55%]">
+                            <div className="min-w-0 flex-1 text-sm">
+                                <p
+                                    className="break-all text-secondary/80"
+                                    title={
+                                        formData[document.name]?.name ||
+                                        "No file selected"
+                                    }
+                                >
+                                    {formData[document.name]?.name ||
+                                        "No file selected"}
                                 </p>
-                            )}
-                        </div>
-                        <div>
-                            <input
-                                type="file"
-                                id="ngo-pancard-document"
-                                className="hidden"
-                                name="panCard"
-                                onChange={handleChange}
-                                required
-                            />
-                            <label
-                                htmlFor="ngo-pancard-document"
-                                className="inline-flex cursor-pointer gap-4 text-inactive px-4 py-3 bg-background/20
-                             backdrop-blur-xl rounded-[8px] w-fit border 
-                             border border-primary/20 shadow-xl shadow-black/10  hover:bg-primary/30"
-                            >
-                                Browse File
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div className="max-w-[650px] flex gap-1 text-inactive px-4 py-3 bg-background/20
-                             backdrop-blur-xl rounded-[8px] w-full border 
-                             border border-primary/20 shadow-xl shadow-black/10
-                             justify-between items-center hover:bg-tertiary transition-all duration-300">
-                    <div className="flex gap-4">
-                        <div className="p-3 rounded-md bg-background/90">
-                            <img src="/src/assets/location.png" alt="" />
-                        </div>
-                        <div className="flex flex-col">
-                            <h1 className="text-md font-bold">Address Proof</h1>
-                            <h1 className="text-inactive/70 text-sm">Required • PDF, JPG, PNG</h1>
+
+                                {errors[document.name] && (
+                                    <p
+                                        className="mt-1 break-words text-xs text-red-500 sm:text-sm"
+                                        role="alert"
+                                    >
+                                        {errors[document.name]}
+                                    </p>
+                                )}
+                            </div>
+
+                            <div className="shrink-0">
+                                <input
+                                    type="file"
+                                    id={document.id}
+                                    className="peer sr-only"
+                                    name={document.name}
+                                    onChange={handleChange}
+                                    accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+                                    required
+                                />
+
+                                <label
+                                    htmlFor={document.id}
+                                    className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg border border-primary/20 bg-background/20 px-4 py-2.5 text-sm font-medium text-inactive transition-colors hover:bg-primary/30 focus-within:ring-2 focus-within:ring-primary peer-focus-visible:ring-2 peer-focus-visible:ring-primary sm:w-auto sm:whitespace-nowrap"
+                                >
+                                    Browse File
+                                </label>
+                            </div>
                         </div>
                     </div>
-                    <div className="flex items-center gap-4">
-                        <div className="text-sm">
-                            <span className="text-secondary/70">
-                                {formData.addressProof
-                                    ? formData.addressProof.name
-                                    : "No file selected"}
-                            </span>
-                            {errors.addressProof && (
-                                <p className="mt-1 text-sm text-red-500">
-                                    {errors.addressProof}
-                                </p>
-                            )}
-                        </div>
-                        <div>
-                            <input
-                                type="file"
-                                id="ngo-address-document"
-                                className="hidden"
-                                name="addressProof"
-                                onChange={handleChange}
-                                required
-                            />
-                            <label
-                                htmlFor="ngo-address-document"
-                                className="inline-flex cursor-pointer gap-4 text-inactive px-4 py-3 bg-background/20
-                             backdrop-blur-xl rounded-[8px] w-fit border 
-                             border border-primary/20 shadow-xl shadow-black/10  hover:bg-primary/30"
-                            >
-                                Browse File
-                            </label>
-                        </div>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
-    )
-}
+    );
+};

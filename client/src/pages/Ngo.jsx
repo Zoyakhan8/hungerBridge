@@ -1,314 +1,752 @@
-import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
+
+import { useCallback, useEffect, useRef, useState } from "react";
+import { NavLink } from "react-router-dom";
+import gsap from "gsap";
 import {
-    ArrowUpRight,
-    CheckCircle2,
-    ChevronDown,
-    Clock3,
-    Filter,
-    MapPin,
-    ShieldAlert,
-    Utensils,
-    Building2,
-    HandCoins,
-    TriangleAlert,
+  Activity,
+  ArrowRight,
+  CheckCircle2,
+  Clock3,
+  HandHeart,
+  LayoutDashboard,
+  LoaderCircle,
+  MapPin,
+  Menu,
+  Package,
+  RefreshCw,
+  Truck,
+  Utensils,
+  AlertCircle,
+  XCircle,
 } from "lucide-react";
 
-import { NgoSideBar, DEFAULT_NGO_NAVIGATION } from "./ngo/NgoSidebar";
-import { NgoHeader } from "./ngo/NgoHeader";
-const DEFAULT_STATS = [
-    { label: "Total Registered NGOs", value: "4,281", badge: "+12%", icon: Building2 },
-    { label: "Active Donors", value: "12,409", badge: "+5%", icon: HandCoins },
-    { label: "Meals Distributed", value: "842k", badge: "This Month", icon: Utensils },
-    { label: "Open Complaints", value: "14", badge: "Action Required", icon: TriangleAlert, alert: true },
-];
+import {
+  NgoSideBar,
+  DEFAULT_NGO_NAVIGATION,
+} from "./ngo/NgoSideBar";
 
+import {NgoHeader} from "./ngo/NgoHeader";
 
-const DEFAULT_TASKS = [
-    {
-        type: "NGO APPROVAL",
-        time: "2h ago",
-        title: "City Harvest Foundation",
-        description: "Requires review of updated documents.",
-    },
-    {
-        type: "HIGH PRIORITY",
-        time: "4h ago",
-        title: "Logistics Delay · Route B",
-        description: "Driver reported a vehicle breakdown near Andheri.",
-        priority: "high",
-    },
-    {
-        type: "DONOR REQUEST",
-        time: "5h ago",
-        title: "Community Meal Center",
-        description: "A new food donation is waiting for confirmation.",
-    },
-];
+const API_URL = "/api/ngo/dashboard";
 
-const DEFAULT_MAP_URL =
-    "https://www.openstreetmap.org/export/embed.html?bbox=72.795%2C18.91%2C72.91%2C19.13&layer=mapnik&marker=19.076%2C72.8777";
+const EMPTY_STATS = {
+  totalRequests: 0,
+  pendingRequests: 0,
+  activeDeliveries: 0,
+  completedDeliveries: 0,
+};
 
-const StatCard = ({ label, value, badge, icon: Icon, alert = false }) => (
-    <article
-        className={`stat-card min-w-0 rounded-xl border p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-md ${alert ? "border-red-200 bg-[#FDDAD6]" : "border-[#E9E6DB] bg-[#F0EEE5]"
-            }`}
+const EMPTY_DASHBOARD = {
+  stats: EMPTY_STATS,
+  recentRequests: [],
+  deliveries: [],
+};
+
+const formatDate = (value) => {
+  if (!value) return "Date unavailable";
+
+  const date = new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    return "Date unavailable";
+  }
+
+  return date.toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+};
+
+const formatDateTime = (value) => {
+  if (!value) return "Time unavailable";
+
+  const date = new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    return "Time unavailable";
+  }
+
+  return date.toLocaleString("en-IN", {
+    day: "numeric",
+    month: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+};
+
+const getStatusStyle = (status) => {
+  const normalizedStatus = String(status || "").toLowerCase();
+
+  const styles = {
+    pending: "bg-amber-50 text-amber-700 ring-amber-200",
+    accepted: "bg-blue-50 text-blue-700 ring-blue-200",
+    assigned: "bg-blue-50 text-blue-700 ring-blue-200",
+    in_transit: "bg-violet-50 text-violet-700 ring-violet-200",
+    delivered: "bg-emerald-50 text-emerald-700 ring-emerald-200",
+    declined: "bg-red-50 text-red-700 ring-red-200",
+  };
+
+  return (
+    styles[normalizedStatus] ||
+    "bg-stone-100 text-stone-600 ring-stone-200"
+  );
+};
+
+const formatStatus = (status) => {
+  if (!status) return "Unknown";
+
+  return String(status)
+    .replaceAll("_", " ")
+    .replace(/\b\w/g, (character) => character.toUpperCase());
+};
+
+function StatusBadge({ status }) {
+  return (
+    <span
+      className={`inline-flex items-center whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ring-inset ${getStatusStyle(
+        status
+      )}`}
     >
-        <div className="mb-3 flex items-start justify-between gap-2">
-            <span className={`grid h-8 w-8 place-items-center rounded-lg bg-white/80 ${alert ? "text-[#B42318]" : "text-[#A9430B]"}`}>
-                <Icon size={17} />
-            </span>
-            <span className={`max-w-[120px] rounded-full bg-white/80 px-2 py-1 text-[9px] font-semibold leading-tight ${alert ? "text-[#B42318]" : "text-[#6D625A]"}`}>
-                {badge}
-            </span>
-        </div>
-        <p className={`mb-1 font-app-body text-[10px] tracking-wide ${alert ? "text-[#9E2720]" : "text-[#75685E]"}`}>
-            {label}
-        </p>
-        <p className={`font-app-heading text-[29px] font-bold leading-none tracking-tight ${alert ? "text-[#9F1515]" : "text-[#111827]"}`}>
-            {value}
-        </p>
-    </article>
-);
+      {formatStatus(status)}
+    </span>
+  );
+}
 
-const PanelHeader = ({ title, description, action }) => (
-    <div className="flex items-center justify-between gap-3 px-4 py-4 md:px-5">
-        <div>
-            <h2 className="font-app-heading text-base font-bold text-[#171717]">{title}</h2>
-            <p className="mt-1 font-body text-[10px] text-[#806D61]">{description}</p>
-        </div>
-        {action}
+function SectionHeading({ title, description, action }) {
+  return (
+    <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+      <div>
+        <h2 className="text-base font-bold text-[#34251D] sm:text-lg">
+          {title}
+        </h2>
+
+        {description && (
+          <p className="mt-1 text-xs text-[#81736A] sm:text-sm">
+            {description}
+          </p>
+        )}
+      </div>
+
+      {action}
     </div>
-);
+  );
+}
 
-const DistributionMap = ({ mapUrl = DEFAULT_MAP_URL }) => (
-    <div className="relative h-full min-h-[270px] overflow-hidden bg-[#E4F0E9]">
-        <iframe
-            title="Mumbai distribution network map"
-            className="absolute inset-0 h-full w-full border-0"
-            loading="lazy"
-            src={mapUrl}
+function StatCard({ title, value, description, icon: Icon, color }) {
+  return (
+    <article className="min-w-0 rounded-2xl border border-[#EAE5DA] bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:p-5">
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="text-xs font-medium leading-5 text-[#82756A] sm:text-sm">
+            {title}
+          </p>
+
+          <p className="mt-2 break-words text-2xl font-extrabold tracking-tight text-[#34251D] sm:text-3xl">
+            {value}
+          </p>
+        </div>
+
+        <div
+          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${color}`}
+        >
+          <Icon size={20} />
+        </div>
+      </div>
+
+      <p className="mt-3 text-xs leading-5 text-[#81736A]">
+        {description}
+      </p>
+    </article>
+  );
+}
+
+function EmptyState({ icon: Icon, title, description }) {
+  return (
+    <div className="flex flex-col items-center justify-center px-4 py-10 text-center">
+      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#F7F1E7] text-[#B64B0C]">
+        <Icon size={23} />
+      </div>
+
+      <h3 className="mt-3 text-sm font-bold text-[#34251D]">
+        {title}
+      </h3>
+
+      <p className="mt-1 max-w-sm text-xs leading-5 text-[#81736A]">
+        {description}
+      </p>
+    </div>
+  );
+}
+
+function LoadingState() {
+  return (
+    <div className="flex min-h-52 items-center justify-center gap-3 text-sm text-[#76695F]">
+      <LoaderCircle size={20} className="animate-spin text-[#D85C1B]" />
+      Loading your dashboard...
+    </div>
+  );
+}
+
+function RequestRow({ request }) {
+  const donation = request.donation || {};
+
+  return (
+    <div className="flex flex-col gap-3 border-b border-[#F0ECE4] py-4 last:border-b-0 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex min-w-0 items-start gap-3">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FFF0E7] text-[#B64B0C]">
+          <Utensils size={19} />
+        </div>
+
+        <div className="min-w-0">
+          <p className="break-words text-sm font-semibold text-[#34251D]">
+            {donation.foodName || "Food donation"}
+          </p>
+
+          <p className="mt-1 text-xs text-[#81736A]">
+            {donation.foodType || "Food type unavailable"}
+            {donation.quantity ? ` · ${donation.quantity}` : ""}
+          </p>
+
+          <p className="mt-1 text-xs text-[#9A8B7F]">
+            Requested: {formatDateTime(request.requestedAt)}
+          </p>
+        </div>
+      </div>
+
+      <div className="flex items-center justify-between gap-3 sm:flex-col sm:items-end">
+        <StatusBadge status={request.status} />
+
+        {donation.expectedExpiryTime && (
+          <p className="text-xs text-[#81736A]">
+            Expires: {formatDate(donation.expectedExpiryTime)}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function DeliveryRow({ delivery }) {
+  const food = delivery.food || {};
+
+  return (
+    <div className="flex flex-col gap-3 border-b border-[#F0ECE4] py-4 last:border-b-0 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex min-w-0 items-start gap-3">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#EAF3EC] text-[#426C4B]">
+          <Truck size={19} />
+        </div>
+
+        <div className="min-w-0">
+          <p className="break-words text-sm font-semibold text-[#34251D]">
+            {food.name || "Food delivery"}
+          </p>
+
+          <p className="mt-1 text-xs text-[#81736A]">
+            {food.type || "Food type unavailable"}
+            {food.quantity ? ` · ${food.quantity}` : ""}
+          </p>
+
+          <p className="mt-1 text-xs text-[#9A8B7F]">
+            {delivery.partner?.name
+              ? `Delivery partner: ${delivery.partner.name}`
+              : "Delivery partner not assigned"}
+          </p>
+
+          {delivery.partner?.vehicleNumber && (
+            <p className="mt-1 text-xs text-[#9A8B7F]">
+              Vehicle: {delivery.partner.vehicleNumber}
+            </p>
+          )}
+        </div>
+      </div>
+
+      <div className="sm:text-right">
+        <StatusBadge status={delivery.status} />
+
+        <p className="mt-2 text-xs text-[#81736A]">
+          {formatDateTime(delivery.createdAt || delivery.assignedAt)}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export const Ngo=({
+  onNavigate,
+  onSearch,
+  mapUrl,
+}) =>{
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [dashboard, setDashboard] = useState(EMPTY_DASHBOARD);
+  const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
+  const [error, setError] = useState("");
+
+  const contentRef = useRef(null);
+  const animationRef = useRef(null);
+
+  const fetchDashboard = useCallback(async (signal, isRefresh = false) => {
+    if (isRefresh) {
+      setRefreshing(true);
+    } else {
+      setLoading(true);
+    }
+
+    setError("");
+
+    try {
+      const response = await fetch(API_URL, {
+        method: "GET",
+        credentials: "include",
+        headers: {
+          Accept: "application/json",
+        },
+        signal,
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(
+          data.message || "Unable to load the NGO dashboard."
+        );
+      }
+
+      if (data.success === false) {
+        throw new Error(
+          data.message || "Unable to load the NGO dashboard."
+        );
+      }
+
+      setDashboard({
+        stats: {
+          ...EMPTY_STATS,
+          ...(data.stats || {}),
+        },
+        recentRequests: Array.isArray(data.recentRequests)
+          ? data.recentRequests
+          : [],
+        deliveries: Array.isArray(data.deliveries)
+          ? data.deliveries
+          : [],
+      });
+    } catch (err) {
+      if (err.name === "AbortError") return;
+
+      setError(
+        err.message ||
+          "Something went wrong while loading your dashboard."
+      );
+    } finally {
+      if (!signal?.aborted) {
+        setLoading(false);
+        setRefreshing(false);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    fetchDashboard(controller.signal);
+
+    return () => controller.abort();
+  }, [fetchDashboard]);
+
+  useEffect(() => {
+    if (loading || error || !contentRef.current) return;
+
+    const ctx = gsap.context(() => {
+      animationRef.current = gsap.fromTo(
+        ".ngo-dashboard-item",
+        {
+          opacity: 0,
+          y: 12,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.45,
+          stagger: 0.07,
+          ease: "power2.out",
+          clearProps: "all",
+        }
+      );
+    }, contentRef);
+
+    return () => {
+      ctx.revert();
+    };
+  }, [loading, error, dashboard]);
+
+  const handleNavigate = useCallback(
+    (label) => {
+      setMobileOpen(false);
+
+      if (label) {
+        onNavigate?.(label);
+      }
+    },
+    [onNavigate]
+  );
+
+  const handleRefresh = () => {
+    fetchDashboard(undefined, true);
+  };
+
+  const stats = dashboard.stats;
+  const requests = dashboard.recentRequests;
+  const deliveries = dashboard.deliveries;
+
+  return (
+    <div className="min-h-screen bg-[#F8F7F2] text-[#34251D]">
+      <div className="flex min-h-screen">
+        <NgoSideBar
+          items={DEFAULT_NGO_NAVIGATION}
+          mobileOpen={mobileOpen}
+          onNavigate={handleNavigate}
+          brand="HungerBridge"
         />
 
-        <div className="pointer-events-none absolute left-3 top-3 max-w-[235px] rounded-lg border border-white/80 bg-[#FBF9F1]/95 p-3 shadow-md">
-            <p className="mb-2 font-app-body text-[9px] font-bold tracking-wide text-[#74675C]">
-                ZERO-WASTE ALERTS · MUMBAI
-            </p>
-            <p className="mb-1.5 flex items-center gap-2 font-app-body text-[10px] text-[#433A34]">
-                <span className="h-2 w-2 rounded-full bg-[#D94736]" />
-                Box #402 · Near capacity (95%)
-            </p>
-            <p className="flex items-center gap-2 font-app-body text-[10px] text-[#433A34]">
-                <span className="h-2 w-2 rounded-full bg-[#E5A23D]" />
-                Box #118 · Scheduled pickup
-            </p>
-        </div>
+        <div className="min-w-0 flex-1">
+          <div className="sticky top-0 z-20 flex h-14 items-center gap-3 border-b border-[#EAE5DA] bg-[#FBFAF6] px-4 md:hidden">
+            <button
+              type="button"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open navigation"
+              aria-expanded={mobileOpen}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[#EAE5DA] bg-white text-[#55483F] transition hover:bg-[#F4F2E9]"
+            >
+              <Menu size={20} />
+            </button>
 
-        <div className="pointer-events-none absolute inset-0">
-            <span className="absolute left-[52%] top-[48%] grid h-7 w-7 place-items-center rounded-full border-2 border-white bg-[#FF6D29] text-white shadow-lg">
-                <MapPin size={14} fill="currentColor" />
-            </span>
-            {["left-[30%] top-[67%]", "left-[73%] top-[34%]", "left-[67%] top-[72%]"].map((position) => (
-                <span
-                    key={position}
-                    className={`absolute ${position} grid h-5 w-5 place-items-center rounded-full border-2 border-white bg-[#1BAA78] text-white shadow`}
-                >
-                    <CheckCircle2 size={11} />
-                </span>
-            ))}
-        </div>
-    </div>
-);
+            <div className="min-w-0">
+              <p className="truncate text-lg font-extrabold text-[#B64B0C]">
+                HungerBridge
+              </p>
+              <p className="text-[9px] tracking-[0.16em] text-[#81736A]">
+                NGO CONSOLE
+              </p>
+            </div>
+          </div>
 
-const TaskCard = ({ task }) => {
-    const highPriority = task.priority === "high";
+          <div className="hidden md:block">
+            <NgoHeader onMenuClick={() => setMobileOpen(true)} onSearch={onSearch} />
+          </div>
 
-    return (
-        <article className="rounded-lg border border-[#E9E5DA] bg-[#FBF9F1] p-3 transition hover:border-[#E8B49A] hover:shadow-sm">
-            <div className="mb-2 flex items-center justify-between gap-2">
-                <span className={`flex items-center gap-1 font-app-body text-[8px] font-bold tracking-wide ${highPriority ? "text-[#B42318]" : "text-[#A9430B]"}`}>
-                    {highPriority ? <TriangleAlert size={10} /> : <ShieldAlert size={10} />}
-                    {task.type}
-                </span>
-                <span className="flex shrink-0 items-center gap-1 font-app-body text-[8px] text-[#8A7A6E]">
-                    <Clock3 size={9} />
-                    {task.time}
-                </span>
+          <main
+            ref={contentRef}
+            className="mx-auto w-full max-w-[1600px] p-4 sm:p-6 lg:p-8"
+          >
+            <div className="ngo-dashboard-item mb-6 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+              <div>
+                <div className="flex items-center gap-2 text-xs font-medium text-[#81736A]">
+                  <LayoutDashboard size={15} />
+                  <span>NGO / Dashboard</span>
+                </div>
+
+                <h1 className="mt-2 text-2xl font-extrabold tracking-tight text-[#34251D] sm:text-3xl">
+                  NGO Dashboard
+                </h1>
+
+                <p className="mt-2 max-w-xl text-sm leading-6 text-[#81736A]">
+                  Manage your donation requests and track food deliveries
+                  in one place.
+                </p>
+              </div>
+
+              <button
+                type="button"
+                onClick={handleRefresh}
+                disabled={refreshing || loading}
+                className="inline-flex min-h-10 items-center justify-center gap-2 self-start rounded-xl border border-[#E4DED1] bg-white px-4 py-2 text-sm font-semibold text-[#55483F] transition hover:bg-[#F8F4EC] disabled:cursor-not-allowed disabled:opacity-60 sm:self-auto"
+              >
+                <RefreshCw
+                  size={16}
+                  className={refreshing ? "animate-spin" : ""}
+                />
+                {refreshing ? "Refreshing..." : "Refresh"}
+              </button>
             </div>
 
-            <h3 className="mb-1 font-app-heading text-[11px] font-bold leading-snug text-[#201A17]">
-                {task.title}
-            </h3>
-            <p className="mb-3 line-clamp-2 font-app-body text-[9px] leading-relaxed text-[#7B6A5F]">
-                {task.description}
-            </p>
-            <button
-                type="button"
-                onClick={task.onReview}
-                className={`rounded-md px-3 py-1.5 font-app-body text-[9px] font-bold text-white transition hover:brightness-110 ${highPriority ? "bg-[#8F1003]" : "bg-[#A9430B]"
-                    }`}
-            >
-                Review
-            </button>
-        </article>
-    );
-};
+            {error && (
+              <div
+                role="alert"
+                className="ngo-dashboard-item mb-6 flex flex-col gap-3 rounded-2xl border border-red-200 bg-red-50 p-4 sm:flex-row sm:items-center sm:justify-between"
+              >
+                <div className="flex items-start gap-3">
+                  <AlertCircle
+                    size={20}
+                    className="mt-0.5 shrink-0 text-red-600"
+                  />
 
-export const Ngo = ({
-    stats = DEFAULT_STATS,
-    tasks = DEFAULT_TASKS,
-    navigation = DEFAULT_NGO_NAVIGATION,
-    mapUrl = DEFAULT_MAP_URL,
-    onNavigate,
-    onSearch,
-    onFilter,
-    onViewAllTasks,
-}) => {
-    const pageRef = useRef(null);
-    const [mobileOpen, setMobileOpen] = useState(false);
+                  <div>
+                    <p className="text-sm font-bold text-red-800">
+                      Dashboard could not be loaded
+                    </p>
+                    <p className="mt-1 break-words text-sm text-red-700">
+                      {error}
+                    </p>
+                  </div>
+                </div>
 
-    useEffect(() => {
-        const context = gsap.context(() => {
-            gsap.from(".dashboard-header", {
-                y: -10,
-                opacity: 0,
-                duration: 0.45,
-                ease: "power2.out",
-            });
-            gsap.from(".stat-card", {
-                y: 14,
-                opacity: 0,
-                duration: 0.4,
-                stagger: 0.01,
-                delay: 0.01,
-                ease: "power2.out",
-            });
-            gsap.from(".dashboard-panel", {
-                y: 16,
-                opacity: 0,
-                duration: 0.45,
-                stagger: 0.1,
-                delay: 0.18,
-                ease: "power2.out",
-            });
-        }, pageRef);
+                <button
+                  type="button"
+                  onClick={handleRefresh}
+                  disabled={refreshing}
+                  className="inline-flex items-center justify-center gap-2 self-start rounded-lg border border-red-200 bg-white px-3 py-2 text-sm font-semibold text-red-700 hover:bg-red-100 disabled:opacity-60 sm:self-center"
+                >
+                  <RefreshCw size={15} />
+                  Retry
+                </button>
+              </div>
+            )}
 
-        return () => context.revert();
-    }, []);
+            {loading ? (
+              <LoadingState />
+            ) : (
+              <>
+                <section
+                  aria-label="Donation statistics"
+                  className="mb-8 grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 xl:grid-cols-4"
+                >
+                  <div className="ngo-dashboard-item">
+                    <StatCard
+                      title="Total Requests"
+                      value={stats.totalRequests}
+                      description="All your donation requests"
+                      icon={Package}
+                      color="bg-[#FFF0E7] text-[#B64B0C]"
+                    />
+                  </div>
 
-    const handleNavigate = (label) => {
-        setMobileOpen(false);
-        onNavigate?.(label);
-    };
+                  <div className="ngo-dashboard-item">
+                    <StatCard
+                      title="Pending Requests"
+                      value={stats.pendingRequests}
+                      description="Waiting for a decision"
+                      icon={Clock3}
+                      color="bg-[#FFF4D8] text-[#A16C0A]"
+                    />
+                  </div>
 
-    const handleSearch = (event) => {
-        event.preventDefault();
-        onSearch?.(event.currentTarget.elements.search.value);
-    };
+                  <div className="ngo-dashboard-item">
+                    <StatCard
+                      title="Active Deliveries"
+                      value={stats.activeDeliveries}
+                      description="Deliveries still in progress"
+                      icon={Truck}
+                      color="bg-[#EDE8FF] text-[#6750A4]"
+                    />
+                  </div>
 
-    return (
-        <div ref={pageRef} className="min-h-screen bg-[#FBF9F1] text-[#2D3436]">
-            <div className="mx-auto flex min-h-screen max-w-[1600px] overflow-hidden bg-[#FBF9F1] shadow-[0_12px_35px_rgba(48,40,20,0.08)]">
-                <NgoSideBar
-                    items={navigation}
-                    mobileOpen={mobileOpen}
-                    onNavigate={handleNavigate}
-                />
+                  <div className="ngo-dashboard-item">
+                    <StatCard
+                      title="Completed Deliveries"
+                      value={stats.completedDeliveries}
+                      description="Successfully delivered"
+                      icon={CheckCircle2}
+                      color="bg-[#E5F4E8] text-[#347345]"
+                    />
+                  </div>
+                </section>
 
-                <main className="min-w-0 flex-1">
-
-                    <NgoHeader
-                        onMenuClick={() => setMobileOpen((open) => !open)}
-                        onSearch={onSearch}
+                <section className="ngo-dashboard-item mb-8 grid grid-cols-1 gap-5 xl:grid-cols-5">
+                  <div className="min-w-0 rounded-2xl border border-[#EAE5DA] bg-white p-4 shadow-sm sm:p-5 xl:col-span-3">
+                    <SectionHeading
+                      title="Recent Donation Requests"
+                      description="The latest requests associated with your NGO"
+                      action={
+                        <NavLink
+                          to="/ngo/request"
+                          onClick={() => handleNavigate("Donation Request")}
+                          className="inline-flex items-center gap-1 text-xs font-bold text-[#B64B0C] hover:underline sm:text-sm"
+                        >
+                          View all <ArrowRight size={15} />
+                        </NavLink>
+                      }
                     />
 
+                    {requests.length > 0 ? (
+                      <div>
+                        {requests.map((request, index) => (
+                          <RequestRow
+                            key={request.requestId || index}
+                            request={request}
+                          />
+                        ))}
+                      </div>
+                    ) : (
+                      <EmptyState
+                        icon={HandHeart}
+                        title="No donation requests yet"
+                        description="Your recent donation requests will appear here when available."
+                      />
+                    )}
+                  </div>
 
-                    <div className="px-4 py-6 md:px-8 md:py-8">
-                        <div className="dashboard-header mb-7 flex items-start justify-between gap-4">
-                            <div>
-                                <h1 className="font-app-heading text-[23px] font-bold tracking-tight text-[#111827] md:text-[26px]">
-                                    System Overview
-                                </h1>
-                                <p className="mt-1 font-body text-[11px] text-[#806D61]">
-                                    Real-time insights and network health metrics.
-                                </p>
-                            </div>
-                            <button
-                                type="button"
-                                className="hidden items-center gap-1 rounded-md border border-[#E7E1D6] bg-white/50 px-3 py-2 font-app-body text-[9px] text-[#6D625A] hover:bg-white sm:flex"
-                            >
-                                This month <ChevronDown size={12} />
-                            </button>
-                        </div>
+                  <div className="min-w-0 rounded-2xl border border-[#EAE5DA] bg-white p-4 shadow-sm sm:p-5 xl:col-span-2">
+                    <SectionHeading
+                      title="Quick Actions"
+                      description="Navigate to your NGO services"
+                    />
 
-                        <section aria-label="Key metrics" className="mb-7 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
-                            {stats.map((stat) => <StatCard key={stat.label} {...stat} />)}
-                        </section>
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-1">
+                      <NavLink
+                        to="/ngo/request"
+                        onClick={() => handleNavigate("Donation Request")}
+                        className="group flex items-center gap-3 rounded-xl border border-[#F0E6DB] bg-[#FFFAF4] p-4 transition hover:border-[#F1B18E] hover:bg-[#FFF0E7]"
+                      >
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FFE4D4] text-[#B64B0C]">
+                          <Package size={19} />
+                        </span>
 
-                        <section className="grid grid-cols-1 gap-4 xl:grid-cols-[minmax(0,1.65fr)_minmax(280px,0.9fr)]">
-                            <section className="dashboard-panel min-w-0 overflow-hidden rounded-xl border border-[#E9E5DA] bg-[#FBF9F1] shadow-sm">
-                                <PanelHeader
-                                    title="Live Distribution Network"
-                                    description="Monitoring active routes and ZeroWaste box statuses."
-                                    action={
-                                        <button
-                                            type="button"
-                                            onClick={onFilter}
-                                            className="flex shrink-0 items-center gap-1.5 rounded-md border border-[#E9E5DA] px-3 py-2 font-app-body text-[9px] text-[#6D625A] hover:bg-[#F0EEE5]"
-                                        >
-                                            <Filter size={12} /> Filter
-                                        </button>
-                                    }
-                                />
+                        <span className="min-w-0 flex-1">
+                          <span className="block text-sm font-bold text-[#34251D]">
+                            Donation Requests
+                          </span>
+                          <span className="mt-1 block text-xs text-[#81736A]">
+                            View and manage requests
+                          </span>
+                        </span>
 
-                                <div className="h-[300px] border-t border-[#E9E5DA] sm:h-[340px] xl:h-[390px]">
-                                    <DistributionMap mapUrl={mapUrl} />
-                                </div>
+                        <ArrowRight
+                          size={17}
+                          className="shrink-0 text-[#B64B0C] transition group-hover:translate-x-1"
+                        />
+                      </NavLink>
 
-                                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-[#E9E5DA] px-4 py-3 font-app-body text-[9px] text-[#76695F]">
-                                    <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[#1BAA78]" /> Active NGO</span>
-                                    <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[#FF6D29]" /> Distribution hub</span>
-                                    <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[#D94736]" /> Attention needed</span>
-                                    <button type="button" onClick={onFilter} className="ml-auto flex items-center gap-1 text-[#A9430B]">
-                                        View network <ArrowUpRight size={11} />
-                                    </button>
-                                </div>
-                            </section>
+                      <NavLink
+                        to="/ngo/donation"
+                        onClick={() => handleNavigate("Donation Delivery")}
+                        className="group flex items-center gap-3 rounded-xl border border-[#E4EBE3] bg-[#F7FBF6] p-4 transition hover:border-[#B8D5BA] hover:bg-[#EAF3EC]"
+                      >
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#DFEEDF] text-[#426C4B]">
+                          <Truck size={19} />
+                        </span>
 
-                            <aside className="dashboard-panel min-w-0 overflow-hidden rounded-xl border border-[#E9E5DA] bg-[#F0EEE5] shadow-sm">
-                                <div className="bg-[#FBF9F1] px-4 py-4 md:px-5">
-                                    <div className="flex items-center justify-between gap-2">
-                                        <h2 className="font-app-heading text-base font-bold text-[#171717]">Quick Actions</h2>
-                                        <span className="rounded-full bg-[#FCE7DF] px-2 py-1 font-app-body text-[8px] font-bold text-[#A9430B]">
-                                            {tasks.length} pending
-                                        </span>
-                                    </div>
-                                    <p className="mt-1 font-body text-[10px] text-[#806D61]">
-                                        Pending approvals and urgent tasks.
-                                    </p>
-                                </div>
+                        <span className="min-w-0 flex-1">
+                          <span className="block text-sm font-bold text-[#34251D]">
+                            Donation Deliveries
+                          </span>
+                          <span className="mt-1 block text-xs text-[#81736A]">
+                            Track delivery progress
+                          </span>
+                        </span>
 
-                                <div className="max-h-[430px] space-y-3 overflow-y-auto p-3 md:p-4">
-                                    {tasks.map((task) => <TaskCard key={task.title} task={task} />)}
-                                </div>
+                        <ArrowRight
+                          size={17}
+                          className="shrink-0 text-[#426C4B] transition group-hover:translate-x-1"
+                        />
+                      </NavLink>
 
-                                <button
-                                    type="button"
-                                    onClick={onViewAllTasks}
-                                    className="flex w-full items-center justify-center gap-1 border-t border-[#E4DFD3] bg-[#F7F5ED] py-3 font-app-body text-[10px] font-bold text-[#A9430B] hover:bg-white"
-                                >
-                                    View all tasks <ArrowUpRight size={12} />
-                                </button>
-                            </aside>
-                        </section>
+                      <NavLink
+                        to="/ngo/donation-history"
+                        onClick={() => handleNavigate("Donation History")}
+                        className="group flex items-center gap-3 rounded-xl border border-[#E6E1F1] bg-[#FAF8FF] p-4 transition hover:border-[#C9BDE9] hover:bg-[#F0EBFC]"
+                      >
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#EAE3FA] text-[#6750A4]">
+                          <Activity size={19} />
+                        </span>
 
-                        <footer className="mt-5 flex flex-wrap items-center justify-between gap-2 font-app-body text-[9px] text-[#9A8E83]">
-                            <span>HungerBridge Admin Console · Network overview</span>
-                            <span>Last synced just now</span>
-                        </footer>
+                        <span className="min-w-0 flex-1">
+                          <span className="block text-sm font-bold text-[#34251D]">
+                            Donation History
+                          </span>
+                          <span className="mt-1 block text-xs text-[#81736A]">
+                            Review past donations
+                          </span>
+                        </span>
+
+                        <ArrowRight
+                          size={17}
+                          className="shrink-0 text-[#6750A4] transition group-hover:translate-x-1"
+                        />
+                      </NavLink>
                     </div>
-                </main>
-            </div>
+                  </div>
+                </section>
+
+                <section className="ngo-dashboard-item mb-8 rounded-2xl border border-[#EAE5DA] bg-white p-4 shadow-sm sm:p-5">
+                  <SectionHeading
+                    title="Recent Deliveries"
+                    description="Track food donations assigned to your NGO"
+                    action={
+                      <NavLink
+                        to="/ngo/donation"
+                        onClick={() => handleNavigate("Donation Delivery")}
+                        className="inline-flex items-center gap-1 text-xs font-bold text-[#B64B0C] hover:underline sm:text-sm"
+                      >
+                        View all <ArrowRight size={15} />
+                      </NavLink>
+                    }
+                  />
+
+                  {deliveries.length > 0 ? (
+                    <div>
+                      {deliveries.map((delivery, index) => (
+                        <DeliveryRow
+                          key={delivery.deliveryId || index}
+                          delivery={delivery}
+                        />
+                      ))}
+                    </div>
+                  ) : (
+                    <EmptyState
+                      icon={Truck}
+                      title="No deliveries to display"
+                      description="When your donation requests have deliveries, their latest status will appear here."
+                    />
+                  )}
+                </section>
+
+                <section className="ngo-dashboard-item rounded-2xl border border-[#EAE5DA] bg-white p-4 shadow-sm sm:p-5">
+                  <SectionHeading
+                    title="Delivery Location"
+                    description="Open your delivery map to view locations"
+                  />
+
+                  {mapUrl ? (
+                    <div className="overflow-hidden rounded-xl border border-[#EAE5DA]">
+                      <iframe
+                        title="NGO delivery map"
+                        src={mapUrl}
+                        className="h-64 w-full sm:h-80"
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                      />
+                    </div>
+                  ) : (
+                    <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-[#E4DED1] bg-[#FBFAF6] px-4 py-8 text-center">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFF0E7] text-[#B64B0C]">
+                        <MapPin size={23} />
+                      </div>
+
+                      <h3 className="mt-3 text-sm font-bold text-[#34251D]">
+                        Delivery map
+                      </h3>
+
+                      <p className="mt-1 max-w-sm text-xs leading-5 text-[#81736A]">
+                        Connect your map URL or map integration here to display
+                        delivery locations.
+                      </p>
+                    </div>
+                  )}
+                </section>
+              </>
+            )}
+
+            <footer className="mt-8 flex flex-col items-center justify-between gap-2 border-t border-[#EAE5DA] py-5 text-center text-xs text-[#9A8B7F] sm:flex-row sm:text-left">
+              <p>HungerBridge · NGO Console</p>
+              <p className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                Dashboard connected to API
+              </p>
+            </footer>
+          </main>
         </div>
-    );
-};
+      </div>
+    </div>
+  );
+}

@@ -25,6 +25,9 @@ import DeliveryPartnerRegister from "./pages/DeliveryPartnerRegister"
 import DeliveryPartnerDashboard from "./pages/DeliveryPartnerDashboard"
 import {AdminDeliveryVerification} from "./pages/admin/AdminDeliveryVerification"
 import {NGODeliveries} from "./pages/NGODeliveries"
+import { ComplaintManagement } from "./pages/admin/ComplaintManagement"
+import { About } from "./pages/About"
+import { IoTMonitoring } from "./pages/admin/IotMonitoring"
 
 export const App = () => {
   const router = createBrowserRouter([
@@ -34,6 +37,7 @@ export const App = () => {
       errorElement: <ErrorPage />,
       children: [
         { index: true, element: <Home /> },
+        { path: "about", element: <About/> },
         { path: "contact-us", element: <Contact /> },
         { path: "register", element: <Register /> },
         { path: "register-donor", element: <DonorRegisterForm /> },
@@ -73,6 +77,8 @@ export const App = () => {
         { path: "delivery-verification", element: <AdminDeliveryVerification /> },
         { path: "donor-management", element: <DonorManagement /> },
         { path: "ngo-management", element: <NgoManagement /> },
+        { path: "complaints", element: <ComplaintManagement /> },
+        { path: "monitoring", element: <IoTMonitoring /> },
       ],
     },
     {

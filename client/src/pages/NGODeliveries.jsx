@@ -12,7 +12,7 @@ import {
   Inbox,
 } from "lucide-react";
 
-import { NgoSideBar,DEFAULT_NGO_NAVIGATION } from "./ngo/NgoSidebar";
+import { NgoSideBar,DEFAULT_NGO_NAVIGATION } from "./ngo/NgoSideBar";
 import { NgoHeader } from "./ngo/NgoHeader";
 
 const API_URL =

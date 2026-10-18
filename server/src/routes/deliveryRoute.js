@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { isDelivery, verifyToken } from "../middleware/auth";
-import { getMyDeliveries, scanDeliveryQR } from "../controller/delivery";
+import { getMyDeliveries, scanDeliveryQR, updatePartnerAvailability } from "../controller/delivery";
 import { registerDeliveryPartner } from "../controller/deliveryAuth";
 export const deliveryRoutes = Router();
 deliveryRoutes.post("/scan", verifyToken, scanDeliveryQR);
@@ -11,4 +11,8 @@ deliveryRoutes.get(
   isDelivery,
   getMyDeliveries
 );
-
+deliveryRoutes.patch(
+  "/availability",
+  verifyToken,
+  updatePartnerAvailability
+);

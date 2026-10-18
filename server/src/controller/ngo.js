@@ -1,20 +1,26 @@
-import { donationRequests } from "../model/donationRequestSchema";
-import { donations } from "../model/donationSchema";
-import { ngos } from "../model/ngoRegisterSchema";
-import { users } from "../model/userSchema";
-import { db } from "../config/dbClient";
-import { desc, eq, and } from "drizzle-orm";
-import { deliveryPartners } from "../model/deliveryPartnerSchema";
-import { deliveries } from "../model/deliverySchema";
+
 import { randomBytes } from "crypto";
-export const getRequest = async (req, res) => {
+import { desc, eq, and, isNotNull } from "drizzle-orm";
+
+import { db } from "../config/dbClient";
+import { users } from "../model/userSchema";
+import { ngos } from "../model/ngoRegisterSchema";
+import { donations } from "../model/donationSchema";
+import { donationRequests } from "../model/donationRequestSchema";
+import { deliveries } from "../model/deliverySchema";
+import { deliveryPartners } from "../model/deliveryPartnerSchema";
+import { distanceInKm } from "../utils/distance";
+
+export const getDashboard = async (req, res) => {
     try {
-        const userPublicId = req.user.id;
-        console.log(userPublicId, "sns")
         const [user] = await db
-            .select()
+            .select({
+                id: users.id,
+                role: users.role,
+            })
             .from(users)
-            .where(eq(users.publicId, userPublicId));
+            .where(eq(users.publicId, req.user.id))
+            .limit(1);
 
         if (!user) {
             return res.status(401).json({
@@ -23,10 +29,18 @@ export const getRequest = async (req, res) => {
             });
         }
 
+        if (user.role !== "ngo") {
+            return res.status(403).json({
+                success: false,
+                message: "NGO account required.",
+            });
+        }
+
         const [ngo] = await db
-            .select()
+            .select({ id: ngos.id })
             .from(ngos)
-            .where(eq(ngos.userId, user.id));
+            .where(eq(ngos.userId, user.id))
+            .limit(1);
 
         if (!ngo) {
             return res.status(404).json({
@@ -35,7 +49,136 @@ export const getRequest = async (req, res) => {
             });
         }
 
-        // Fetch every request belonging to this NGO, with its donation.
+        const requestRows = await db
+            .select({
+                requestId: donationRequests.id,
+                requestStatus: donationRequests.status,
+                requestedAt: donationRequests.createdAt,
+                donationId: donations.donation_id,
+                foodName: donations.foodName,
+                foodType: donations.foodType,
+                quantity: donations.quantity,
+                preparedAt: donations.dateTime,
+                expectedExpiryTime: donations.expectedExpiryTime,
+            })
+            .from(donationRequests)
+            .leftJoin(
+                donations,
+                eq(donationRequests.donationId, donations.donation_id)
+            )
+            .where(eq(donationRequests.ngoId, ngo.id))
+            .orderBy(desc(donationRequests.createdAt));
+
+        const deliveryRows = await db
+            .select({
+                deliveryId: deliveries.id,
+                requestId: deliveries.requestId,
+                status: deliveries.status,
+                createdAt: deliveries.createdAt,
+                assignedAt: deliveries.assignedAt,
+                deliveredAt: deliveries.deliveredAt,
+            })
+            .from(deliveries)
+            .innerJoin(
+                donationRequests,
+                eq(deliveries.requestId, donationRequests.id)
+            )
+            .where(eq(donationRequests.ngoId, ngo.id))
+            .orderBy(desc(deliveries.createdAt));
+
+        const totalRequests = requestRows.length;
+
+        const pendingRequests = requestRows.filter(
+            (request) => request.requestStatus === "pending"
+        ).length;
+
+        const activeDeliveries = deliveryRows.filter(
+            (delivery) =>
+                ["pending", "assigned", "in_transit"].includes(
+                    delivery.status
+                )
+        ).length;
+
+        const completedDeliveries = deliveryRows.filter(
+            (delivery) => delivery.status === "delivered"
+        ).length;
+
+        const recentRequests = requestRows.slice(0, 5).map((request) => ({
+            requestId: request.requestId,
+            status: request.requestStatus,
+            requestedAt: request.requestedAt,
+            donation: request.donationId
+                ? {
+                    id: request.donationId,
+                    foodName: request.foodName,
+                    foodType: request.foodType,
+                    quantity: request.quantity,
+                    preparedAt: request.preparedAt,
+                    expectedExpiryTime: request.expectedExpiryTime,
+                }
+                : null,
+        }));
+
+        return res.status(200).json({
+            success: true,
+            stats: {
+                totalRequests,
+                pendingRequests,
+                activeDeliveries,
+                completedDeliveries,
+            },
+            recentRequests,
+            deliveries: deliveryRows.slice(0, 5),
+        });
+    } catch (error) {
+        console.error("Fetching NGO dashboard failed:", error);
+
+        return res.status(500).json({
+            success: false,
+            message: "Failed to fetch NGO dashboard.",
+        });
+    }
+};
+
+
+export const getRequest = async (req, res) => {
+    try {
+        const [user] = await db
+            .select({
+                id: users.id,
+                role: users.role,
+            })
+            .from(users)
+            .where(eq(users.publicId, req.user.id))
+            .limit(1);
+
+        if (!user) {
+            return res.status(401).json({
+                success: false,
+                message: "User not found.",
+            });
+        }
+
+        if (user.role !== "ngo") {
+            return res.status(403).json({
+                success: false,
+                message: "NGO account required.",
+            });
+        }
+
+        const [ngo] = await db
+            .select({ id: ngos.id })
+            .from(ngos)
+            .where(eq(ngos.userId, user.id))
+            .limit(1);
+
+        if (!ngo) {
+            return res.status(404).json({
+                success: false,
+                message: "NGO profile not found.",
+            });
+        }
+
         const rows = await db
             .select({
                 request: donationRequests,
@@ -51,9 +194,10 @@ export const getRequest = async (req, res) => {
                 deliveries,
                 eq(deliveries.requestId, donationRequests.id)
             )
-            .where(eq(donationRequests.ngoId, ngo.id));
+            .where(eq(donationRequests.ngoId, ngo.id))
+            .orderBy(desc(donationRequests.createdAt));
 
-        const requests = rows.map(({ request, donation }) => ({
+        const requests = rows.map(({ request, donation, delivery }) => ({
             requestId: request.id,
             status: request.status,
             requestedAt: request.createdAt ?? null,
@@ -70,9 +214,19 @@ export const getRequest = async (req, res) => {
                     donationStatus: donation.donationStatus,
                 }
                 : null,
+
+            delivery: delivery
+                ? {
+                    id: delivery.id,
+                    status: delivery.status,
+                    assignedAt: delivery.assignedAt,
+                    pickupScannedAt: delivery.pickupScannedAt,
+                    handoverScannedAt: delivery.handoverScannedAt,
+                    deliveredAt: delivery.deliveredAt,
+                }
+                : null,
         }));
-        console.log("shhs")
-        console.log(requests)
+
         return res.status(200).json({
             success: true,
             requests,
@@ -87,9 +241,9 @@ export const getRequest = async (req, res) => {
     }
 };
 
+
 export const updateRequestStatus = async (req, res) => {
     try {
-        const userPublicId = req.user.id;
         const requestId = Number(req.params.id);
 
         if (!Number.isInteger(requestId) || requestId <= 0) {
@@ -101,7 +255,9 @@ export const updateRequestStatus = async (req, res) => {
 
         let { status } = req.body;
 
-        if (status === "rejected") status = "declined";
+        if (status === "rejected") {
+            status = "declined";
+        }
 
         if (!["accepted", "declined"].includes(status)) {
             return res.status(400).json({
@@ -111,9 +267,13 @@ export const updateRequestStatus = async (req, res) => {
         }
 
         const [user] = await db
-            .select()
+            .select({
+                id: users.id,
+                role: users.role,
+            })
             .from(users)
-            .where(eq(users.publicId, userPublicId));
+            .where(eq(users.publicId, req.user.id))
+            .limit(1);
 
         if (!user) {
             return res.status(401).json({
@@ -122,10 +282,18 @@ export const updateRequestStatus = async (req, res) => {
             });
         }
 
+        if (user.role !== "ngo") {
+            return res.status(403).json({
+                success: false,
+                message: "NGO account required.",
+            });
+        }
+
         const [ngo] = await db
             .select()
             .from(ngos)
-            .where(eq(ngos.userId, user.id));
+            .where(eq(ngos.userId, user.id))
+            .limit(1);
 
         if (!ngo) {
             return res.status(404).json({
@@ -151,6 +319,7 @@ export const updateRequestStatus = async (req, res) => {
                 )
                 .returning({
                     id: donationRequests.id,
+                    donationId: donationRequests.donationId,
                     status: donationRequests.status,
                 });
 
@@ -162,44 +331,89 @@ export const updateRequestStatus = async (req, res) => {
                 throw error;
             }
 
-            // Declining a request does not create a delivery.
+            // A declined request must not create a delivery.
             if (status === "declined") {
                 return {
                     request: updatedRequest,
                     delivery: null,
+                    message: "Request declined successfully.",
                 };
             }
 
-            // Create a delivery with a random QR token.
+            // Update donation status only after successful acceptance.
+            await tx
+                .update(donations)
+                .set({ donationStatus: "accepted" })
+                .where(
+                    eq(
+                        donations.donation_id,
+                        updatedRequest.donationId
+                    )
+                );
+
+            // Create the delivery in pending state first.
             const pickupQrToken = randomBytes(32).toString("hex");
             const handoverQrToken = randomBytes(32).toString("hex");
 
             const [delivery] = await tx
                 .insert(deliveries)
                 .values({
-                    requestId,
+                    requestId: updatedRequest.id,
                     pickupQrToken,
                     handoverQrToken,
                     status: "pending",
                 })
                 .returning();
 
-            // Find a verified partner who is currently available.
-            const [partner] = await tx
-                .select()
+            // Find verified and available partners with coordinates.
+            const availablePartners = await tx
+                .select({
+                    id: deliveryPartners.id,
+                    latitude: deliveryPartners.latitude,
+                    longitude: deliveryPartners.longitude,
+                })
                 .from(deliveryPartners)
                 .where(
                     and(
                         eq(deliveryPartners.isVerified, true),
-                        eq(deliveryPartners.isAvailable, true)
+                        eq(deliveryPartners.isAvailable, true),
+                        isNotNull(deliveryPartners.latitude),
+                        isNotNull(deliveryPartners.longitude)
                     )
-                )
-                .limit(1);
+                );
+
+            const ngoHasCoordinates =
+                typeof ngo.latitude === "number" &&
+                typeof ngo.longitude === "number" &&
+                Number.isFinite(ngo.latitude) &&
+                Number.isFinite(ngo.longitude);
+
+            // Prefer the closest partner when NGO coordinates exist.
+
+            const sortedPartners = [...availablePartners].sort((a, b) => {
+                const distanceA = distanceInKm(
+                    ngo.latitude,
+                    ngo.longitude,
+                    a.latitude,
+                    a.longitude
+                );
+
+                const distanceB = distanceInKm(
+                    ngo.latitude,
+                    ngo.longitude,
+                    b.latitude,
+                    b.longitude
+                );
+
+                return distanceA - distanceB;
+            });
+
 
             let assignedDelivery = delivery;
 
-            if (partner) {
-                // Claim the partner only if they are still available.
+            // Claim one partner. If the conditional update fails,
+            // try the next candidate.
+            for (const partner of sortedPartners) {
                 const [claimedPartner] = await tx
                     .update(deliveryPartners)
                     .set({ isAvailable: false })
@@ -210,48 +424,63 @@ export const updateRequestStatus = async (req, res) => {
                             eq(deliveryPartners.isAvailable, true)
                         )
                     )
-                    .returning({ id: deliveryPartners.id });
+                    .returning({
+                        id: deliveryPartners.id,
+                    });
 
-                if (claimedPartner) {
-                    const [updatedDelivery] = await tx
-                        .update(deliveries)
-                        .set({
-                            deliveryPartnerId: claimedPartner.id,
-                            status: "assigned",
-                            assignedAt: new Date(),
-                        })
-                        .where(eq(deliveries.id, delivery.id))
-                        .returning();
-
-                    assignedDelivery = updatedDelivery;
+                if (!claimedPartner) {
+                    continue;
                 }
+
+                const [updatedDelivery] = await tx
+                    .update(deliveries)
+                    .set({
+                        deliveryPartnerId: claimedPartner.id,
+                        status: "assigned",
+                        assignedAt: new Date(),
+                    })
+                    .where(eq(deliveries.id, delivery.id))
+                    .returning();
+
+                if (!updatedDelivery) {
+                    const error = new Error(
+                        "Failed to assign the delivery."
+                    );
+                    error.statusCode = 500;
+                    throw error;
+                }
+
+                assignedDelivery = updatedDelivery;
+                break;
             }
 
             return {
                 request: updatedRequest,
                 delivery: assignedDelivery,
+                message:
+                    assignedDelivery.status === "assigned"
+                        ? "Request accepted and delivery partner assigned."
+                        : "Request accepted. Waiting for an available delivery partner.",
             };
         });
 
         return res.status(200).json({
             success: true,
-            message:
-                status === "accepted"
-                    ? "Request accepted and delivery created."
-                    : "Request declined successfully.",
+            message: result.message,
             request: result.request,
             delivery: result.delivery
                 ? {
                     id: result.delivery.id,
                     status: result.delivery.status,
-                    deliveryPartnerId: result.delivery.deliveryPartnerId,
+                    deliveryPartnerId:
+                        result.delivery.deliveryPartnerId,
                     assignedAt: result.delivery.assignedAt,
                 }
                 : null,
         });
     } catch (error) {
-        if (error.statusCode === 409) {
-            return res.status(409).json({
+        if (error.statusCode) {
+            return res.status(error.statusCode).json({
                 success: false,
                 message: error.message,
             });
@@ -266,14 +495,16 @@ export const updateRequestStatus = async (req, res) => {
     }
 };
 
-
 export const getMyDeliveries = async (req, res) => {
     try {
-        // req.user.id is the user's public UUID in your application.
         const [user] = await db
-            .select({ id: users.id })
+            .select({
+                id: users.id,
+                role: users.role,
+            })
             .from(users)
-            .where(eq(users.publicId, req.user.id));
+            .where(eq(users.publicId, req.user.id))
+            .limit(1);
 
         if (!user) {
             return res.status(401).json({
@@ -282,10 +513,18 @@ export const getMyDeliveries = async (req, res) => {
             });
         }
 
+        if (user.role !== "ngo") {
+            return res.status(403).json({
+                success: false,
+                message: "NGO account required.",
+            });
+        }
+
         const [ngo] = await db
             .select({ id: ngos.id })
             .from(ngos)
-            .where(eq(ngos.userId, user.id));
+            .where(eq(ngos.userId, user.id))
+            .limit(1);
 
         if (!ngo) {
             return res.status(404).json({
@@ -317,40 +556,42 @@ export const getMyDeliveries = async (req, res) => {
             .where(eq(donationRequests.ngoId, ngo.id))
             .orderBy(desc(deliveries.createdAt));
 
-        const result = rows.map(({ delivery, request, donation, partner }) => ({
-            deliveryId: delivery.id,
-            requestId: request.id,
-            status: delivery.status,
-            requestStatus: request.status,
-            assignedAt: delivery.assignedAt,
-            pickupScannedAt: delivery.pickupScannedAt,
-            handoverScannedAt: delivery.handoverScannedAt,
-            deliveredAt: delivery.deliveredAt,
+        const result = rows.map(
+            ({ delivery, request, donation, partner }) => ({
+                deliveryId: delivery.id,
+                requestId: request.id,
+                status: delivery.status,
+                requestStatus: request.status,
+                assignedAt: delivery.assignedAt,
+                pickupScannedAt: delivery.pickupScannedAt,
+                handoverScannedAt: delivery.handoverScannedAt,
+                deliveredAt: delivery.deliveredAt,
 
-            // Only return the handover token to this authenticated NGO.
-            handoverQrToken:
-                delivery.status === "in_transit"
-                    ? delivery.handoverQrToken
+                // Only expose the handover QR during transit.
+                handoverQrToken:
+                    delivery.status === "in_transit"
+                        ? delivery.handoverQrToken
+                        : null,
+
+                food: {
+                    id: donation.donation_id,
+                    name: donation.foodName,
+                    type: donation.foodType,
+                    quantity: donation.quantity,
+                    ingredients: donation.ingredients,
+                    preparedAt: donation.dateTime,
+                    expectedExpiryTime: donation.expectedExpiryTime,
+                },
+
+                partner: partner
+                    ? {
+                        name: partner.fullName,
+                        vehicleType: partner.vehicleType,
+                        vehicleNumber: partner.vehicleNumber,
+                    }
                     : null,
-
-            food: {
-                id: donation.donation_id,
-                name: donation.foodName,
-                type: donation.foodType,
-                quantity: donation.quantity,
-                ingredients: donation.ingredients,
-                preparedAt: donation.dateTime,
-                expectedExpiryTime: donation.expectedExpiryTime,
-            },
-
-            partner: partner
-                ? {
-                    name: partner.fullName,
-                    vehicleType: partner.vehicleType,
-                    vehicleNumber: partner.vehicleNumber,
-                }
-                : null,
-        }));
+            })
+        );
 
         return res.status(200).json({
             success: true,

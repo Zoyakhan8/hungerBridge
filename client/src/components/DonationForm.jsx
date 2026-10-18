@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 const INITIAL_FORM_DATA = {
@@ -27,9 +26,9 @@ export const DonationForm = ({ onMessage }) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const inputClass =
-        "text-inactive px-4 py-3 bg-tertiary rounded-[4px] w-full border-b-3 border-primary/50 outline-none";
+        "block w-full min-w-0 rounded-lg border border-primary/30 border-b-2 bg-tertiary px-3 py-3 text-sm text-inactive outline-none transition placeholder:text-inactive/50 focus:border-primary focus:ring-2 focus:ring-primary/20 sm:px-4 sm:text-base";
 
-    const errorClass = "text-red-400 text-sm";
+    const errorClass = "break-words text-xs leading-5 text-red-400 sm:text-sm";
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -127,30 +126,19 @@ export const DonationForm = ({ onMessage }) => {
                 dateTime: formData.dateTime,
             };
 
-            console.log("Submitting donation:", payload);
-
-            const response = await fetch(
-                "/api/donor/create-donation",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    credentials: "include",
-                    body: JSON.stringify(payload),
-                }
-            );
+            const response = await fetch("/api/donor/create-donation", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                credentials: "include",
+                body: JSON.stringify(payload),
+            });
 
             const data = await response.json().catch(() => ({}));
 
-            console.log(
-                "Create donation response:",
-                response.status,
-                data
-            );
-
             if (!response.ok || data.success === false) {
-                onMessage({
+                onMessage?.({
                     type: "error",
                     title: "Donation Failed",
                     message:
@@ -160,7 +148,7 @@ export const DonationForm = ({ onMessage }) => {
                 return;
             }
 
-            onMessage({
+            onMessage?.({
                 type: "success",
                 title: "Donation Registered",
                 message:
@@ -173,7 +161,7 @@ export const DonationForm = ({ onMessage }) => {
         } catch (error) {
             console.error("Create donation error:", error);
 
-            onMessage({
+            onMessage?.({
                 type: "error",
                 title: "Donation Failed",
                 message:
@@ -184,17 +172,22 @@ export const DonationForm = ({ onMessage }) => {
         }
     };
 
+    const getFieldProps = (name) => ({
+        "aria-invalid": Boolean(errors[name]),
+        "aria-describedby": errors[name] ? `${name}-error` : undefined,
+    });
+
     return (
         <form
-            className="flex flex-col gap-3"
+            className="flex w-full min-w-0 flex-col gap-4 sm:gap-5"
             onSubmit={handleSubmit}
             noValidate
         >
             {/* Food Name */}
-            <div className="flex flex-col gap-1">
+            <div className="flex min-w-0 flex-col gap-1.5">
                 <label
                     htmlFor="foodName"
-                    className="font-app-body text-md text-inactive font-medium"
+                    className="font-app-body text-sm font-medium text-inactive sm:text-base"
                 >
                     Food Name
                 </label>
@@ -208,29 +201,30 @@ export const DonationForm = ({ onMessage }) => {
                     onChange={handleChange}
                     className={inputClass}
                     required
+                    {...getFieldProps("foodName")}
                 />
 
                 {errors.foodName && (
-                    <span className={errorClass}>
+                    <span id="foodName-error" className={errorClass}>
                         {errors.foodName}
                     </span>
                 )}
             </div>
 
             {/* Food Type */}
-            <div className="flex flex-col gap-1">
-                <p className="font-app-body text-md text-inactive font-medium">
+            <fieldset className="flex min-w-0 flex-col gap-2">
+                <legend className="mb-2 font-app-body text-sm font-medium text-inactive sm:text-base">
                     Food Type
-                </p>
+                </legend>
 
-                <div className="flex gap-2">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
                     {FOOD_TYPES.map((type) => (
                         <label
                             key={type.value}
-                            className={`flex flex-1 font-app-body font-bold cursor-pointer items-center justify-center gap-2 rounded-lg border-2 py-2 transition ${
+                            className={`flex min-h-12 min-w-0 cursor-pointer items-center justify-center gap-2 rounded-lg border-2 px-2 py-3 text-sm font-bold transition sm:text-base ${
                                 formData.foodType === type.value
-                                    ? "border-primary bg-primary/40 text-secondary/70"
-                                    : "border-gray-200 bg-brown hover:border-primary text-heading"
+                                    ? "border-primary bg-primary/20 text-heading"
+                                    : "border-secondary/20 bg-brown text-heading hover:border-primary/60"
                             }`}
                         >
                             <input
@@ -240,26 +234,30 @@ export const DonationForm = ({ onMessage }) => {
                                 checked={formData.foodType === type.value}
                                 onChange={handleChange}
                                 className="sr-only"
+                                aria-invalid={Boolean(errors.foodType)}
+                                aria-describedby={
+                                    errors.foodType ? "foodType-error" : undefined
+                                }
                             />
 
-                            <span>{type.icon}</span>
-                            <span>{type.label}</span>
+                            <span aria-hidden="true">{type.icon}</span>
+                            <span className="break-words">{type.label}</span>
                         </label>
                     ))}
                 </div>
 
                 {errors.foodType && (
-                    <span className={errorClass}>
+                    <span id="foodType-error" className={errorClass}>
                         {errors.foodType}
                     </span>
                 )}
-            </div>
+            </fieldset>
 
             {/* Quantity */}
-            <div className="flex flex-col gap-1">
+            <div className="flex min-w-0 flex-col gap-1.5">
                 <label
                     htmlFor="quantity"
-                    className="font-app-body text-md text-inactive font-medium"
+                    className="font-app-body text-sm font-medium text-inactive sm:text-base"
                 >
                     Quantity (kg / servings)
                 </label>
@@ -275,20 +273,21 @@ export const DonationForm = ({ onMessage }) => {
                     onChange={handleChange}
                     className={inputClass}
                     required
+                    {...getFieldProps("quantity")}
                 />
 
                 {errors.quantity && (
-                    <span className={errorClass}>
+                    <span id="quantity-error" className={errorClass}>
                         {errors.quantity}
                     </span>
                 )}
             </div>
 
             {/* Storage History */}
-            <div className="flex flex-col gap-1">
+            <div className="flex min-w-0 flex-col gap-1.5">
                 <label
                     htmlFor="storageHistory"
-                    className="font-app-body text-md text-inactive font-medium"
+                    className="font-app-body text-sm font-medium text-inactive sm:text-base"
                 >
                     Previous Storage History
                 </label>
@@ -300,31 +299,29 @@ export const DonationForm = ({ onMessage }) => {
                     onChange={handleChange}
                     className={inputClass}
                     required
+                    {...getFieldProps("storageHistory")}
                 >
                     <option value="">Select storage history</option>
 
                     {STORAGE_OPTIONS.map((option) => (
-                        <option
-                            key={option.value}
-                            value={option.value}
-                        >
+                        <option key={option.value} value={option.value}>
                             {option.label}
                         </option>
                     ))}
                 </select>
 
                 {errors.storageHistory && (
-                    <span className={errorClass}>
+                    <span id="storageHistory-error" className={errorClass}>
                         {errors.storageHistory}
                     </span>
                 )}
             </div>
 
             {/* Ingredients */}
-            <div className="flex flex-col gap-1">
+            <div className="flex min-w-0 flex-col gap-1.5">
                 <label
                     htmlFor="ingredients"
-                    className="font-app-body text-md text-inactive font-medium"
+                    className="font-app-body text-sm font-medium text-inactive sm:text-base"
                 >
                     Ingredients
                 </label>
@@ -336,26 +333,27 @@ export const DonationForm = ({ onMessage }) => {
                     placeholder="E.g. Rice, dal, potato, spices, oil"
                     value={formData.ingredients}
                     onChange={handleChange}
-                    className={inputClass}
+                    className={`${inputClass} min-h-24 resize-y`}
                     required
+                    {...getFieldProps("ingredients")}
                 />
 
-                <p className="text-xs text-inactive">
+                <p className="text-xs leading-5 text-inactive">
                     Separate ingredients with commas.
                 </p>
 
                 {errors.ingredients && (
-                    <span className={errorClass}>
+                    <span id="ingredients-error" className={errorClass}>
                         {errors.ingredients}
                     </span>
                 )}
             </div>
 
             {/* Preparation Date and Time */}
-            <div className="flex flex-col gap-1">
+            <div className="flex min-w-0 flex-col gap-1.5">
                 <label
                     htmlFor="dateTime"
-                    className="font-app-body text-md text-inactive font-medium"
+                    className="font-app-body text-sm font-medium text-inactive sm:text-base"
                 >
                     Prepared Date &amp; Time
                 </label>
@@ -367,17 +365,17 @@ export const DonationForm = ({ onMessage }) => {
                     value={formData.dateTime}
                     onChange={handleChange}
                     max={new Date(
-                        Date.now() -
-                            new Date().getTimezoneOffset() * 60000
+                        Date.now() - new Date().getTimezoneOffset() * 60000
                     )
                         .toISOString()
                         .slice(0, 16)}
                     className={inputClass}
                     required
+                    {...getFieldProps("dateTime")}
                 />
 
                 {errors.dateTime && (
-                    <span className={errorClass}>
+                    <span id="dateTime-error" className={errorClass}>
                         {errors.dateTime}
                     </span>
                 )}
@@ -387,11 +385,9 @@ export const DonationForm = ({ onMessage }) => {
             <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-block backdrop-blur-3xl px-10 py-3 shadow-[0_4px_20px] shadow-primary/50 bg-primary border border-white/20 text-secondary/70 rounded-[10px] text-xl font-bold cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                className="mt-1 inline-flex min-h-12 w-full items-center justify-center rounded-xl border border-white/20 bg-primary px-4 py-3 text-base font-bold text-secondary/80 shadow-lg shadow-primary/30 backdrop-blur-3xl transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brown disabled:cursor-not-allowed disabled:opacity-60 sm:text-lg"
             >
-                {isSubmitting
-                    ? "Registering..."
-                    : "Schedule Pickup"}
+                {isSubmitting ? "Registering..." : "Schedule Pickup"}
             </button>
         </form>
     );

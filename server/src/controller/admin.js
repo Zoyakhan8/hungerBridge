@@ -2,9 +2,11 @@ import { db } from "../config/dbClient";
 import { donorDocuments } from "../model/donorDocumentSchema";
 import { donors } from "../model/donorRegisterSchema";
 import { ngos } from "../model/ngoRegisterSchema";
-import { eq, and } from "drizzle-orm";
+import {and,count,desc,eq,gte,inArray,lt,} from "drizzle-orm";
 import { users } from "../model/userSchema";
 import { deliveryPartners } from "../model/deliveryPartnerSchema";
+import { donations } from "../model/donationSchema";
+import { complaints } from "../model/userSchema";
 export const getDonorManagement = async (req, res) => {
     const page = Number(req.query.page) || 1;
     const limit = 5;
@@ -45,7 +47,6 @@ export const verifyDonor = async (req, res) => {
         const { id } = req.params
         const { status } = req.body;
         const publicId = id
-        console.log(publicId, status)
         if (!["pending", "approved", "rejected"].includes(status)) {
             return res.status(400).json({
                 success: false,
@@ -81,7 +82,6 @@ export const verifyNgo = async (req, res) => {
         const { id } = req.params
         const { status } = req.body;
         const publicId = id
-        console.log(publicId, status)
         if (!["pending", "approved", "rejected"].includes(status)) {
             return res.status(400).json({
                 success: false,
@@ -135,7 +135,6 @@ export const getNgoManagement = async (req, res) => {
         .from(ngos)
         .limit(limit)
         .offset(skip);
-    console.log(ngoList,"shsh")
     return res.json({
         ngos: ngoList,
         total: totalNgos.length,
@@ -145,30 +144,8 @@ export const getNgoManagement = async (req, res) => {
     })
 }
 
-// const getAdminUser = async (publicId) => {
-//   const [user] = await db
-//     .select({
-//       id: users.id,
-//       role: users.role,
-//     })
-//     .from(users)
-//     .where(eq(users.publicId, publicId))
-//     .limit(1);
-
-//   return user;
-// };
-
-// GET pending delivery partner applications
 export const getPendingDeliveryPartners = async (req, res) => {
   try {
-    // const admin = await getAdminUser(req.user.id);
-
-    // if (!admin || admin.role !== "admin") {
-    //   return res.status(403).json({
-    //     success: false,
-    //     message: "Admin access required.",
-    //   });
-    // }
 
     const partners = await db
       .select({
@@ -203,18 +180,8 @@ export const getPendingDeliveryPartners = async (req, res) => {
   }
 };
 
-// POST verify a delivery partner
 export const verifyDeliveryPartner = async (req, res) => {
   try {
-    // const admin = await getAdminUser(req.user.id);
-
-    // if (!admin || admin.role !== "admin") {
-    //   return res.status(403).json({
-    //     success: false,
-    //     message: "Admin access required.",
-    //   });
-    // }
-
     const partnerId = Number(req.params.id);
 
     if (!Number.isInteger(partnerId) || partnerId <= 0) {
@@ -263,3 +230,288 @@ export const verifyDeliveryPartner = async (req, res) => {
     });
   }
 };
+
+
+export const getDashboard = async (req, res) => {
+    try {
+        const period = String(req.query.period || "month");
+
+        const allowedPeriods = [
+            "today",
+            "week",
+            "month",
+            "year",
+            "all",
+        ];
+
+        if (!allowedPeriods.includes(period)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid dashboard period.",
+            });
+        }
+
+        // Calculate the beginning of the selected reporting period.
+        const now = new Date();
+        const start = new Date(now);
+
+        switch (period) {
+            case "today":
+                start.setHours(0, 0, 0, 0);
+                break;
+
+            case "week": {
+                start.setHours(0, 0, 0, 0);
+                const day = start.getDay();
+                const daysSinceMonday = (day + 6) % 7;
+                start.setDate(start.getDate() - daysSinceMonday);
+                break;
+            }
+
+            case "month":
+                start.setDate(1);
+                start.setHours(0, 0, 0, 0);
+                break;
+
+            case "year":
+                start.setMonth(0, 1);
+                start.setHours(0, 0, 0, 0);
+                break;
+        }
+
+        const donationPeriodCondition =
+            period === "all"
+                ? undefined
+                : and(
+                    gte(donations.createdAt, start),
+                    lt(donations.createdAt, now)
+                );
+
+        const complaintPeriodCondition =
+            period === "all"
+                ? undefined
+                : and(
+                    gte(complaints.createdAt, start),
+                    lt(complaints.createdAt, now)
+                );
+
+        // All-time registrations and current verification status.
+        const [
+            [totalNgos],
+            [approvedDonors],
+            [totalDonors],
+            [pendingDonorsCount],
+            [pendingNgosCount],
+            [pendingPartnersCount],
+            [deliveredCount],
+            [openComplaintsCount],
+        ] = await Promise.all([
+            db.select({ value: count() }).from(ngos),
+
+            db.select({ value: count() })
+                .from(donors)
+                .where(eq(donors.verifyStatus, "approved")),
+
+            db.select({ value: count() }).from(donors),
+
+            db.select({ value: count() })
+                .from(donors)
+                .where(eq(donors.verifyStatus, "pending")),
+
+            db.select({ value: count() })
+                .from(ngos)
+                .where(eq(ngos.verifyStatus, "pending")),
+
+            db.select({ value: count() })
+                .from(deliveryPartners)
+                .where(eq(deliveryPartners.isVerified, false)),
+
+            db.select({ value: count() })
+                .from(donations)
+                .where(
+                    donationPeriodCondition
+                        ? and(
+                            eq(donations.donationStatus, "delivered"),
+                            donationPeriodCondition
+                        )
+                        : eq(donations.donationStatus, "delivered")
+                ),
+
+            db.select({ value: count() })
+                .from(complaints)
+                .where(
+                    inArray(complaints.status, [
+                        "pending",
+                        "in_progress",
+                    ])
+                ),
+        ]);
+
+        // Fetch actual records for the pending-task panel.
+        const [
+            pendingDonors,
+            pendingNgos,
+            pendingPartners,
+            openComplaintTasks,
+        ] = await Promise.all([
+            db.select({
+                id: donors.publicId,
+                name: donors.name,
+            })
+                .from(donors)
+                .where(eq(donors.verifyStatus, "pending"))
+                .limit(10),
+
+            db.select({
+                id: ngos.publicId,
+                name: ngos.organizationName,
+            })
+                .from(ngos)
+                .where(eq(ngos.verifyStatus, "pending"))
+                .limit(10),
+
+            db.select({
+                id: deliveryPartners.id,
+                name: deliveryPartners.fullName,
+                createdAt: deliveryPartners.createdAt,
+            })
+                .from(deliveryPartners)
+                .where(eq(deliveryPartners.isVerified, false))
+                .orderBy(desc(deliveryPartners.createdAt))
+                .limit(10),
+
+            db.select({
+                id: complaints.publicId,
+                subject: complaints.subject,
+                category: complaints.category,
+                status: complaints.status,
+                createdAt: complaints.createdAt,
+            })
+                .from(complaints)
+                .where(
+                    inArray(complaints.status, [
+                        "pending",
+                        "in_progress",
+                    ])
+                )
+                .orderBy(desc(complaints.createdAt))
+                .limit(10),
+        ]);
+
+        const tasks = [
+            ...pendingDonors.map((donor) => ({
+                id: `donor-${donor.id}`,
+                entityId: donor.id,
+                type: "DONOR VERIFICATION",
+                title: `Verify ${donor.name || "donor"}`,
+                description:
+                    "Review the donor's verification documents.",
+                priority: "medium",
+                status: "pending",
+                href: "/admin/donor-management",
+            })),
+
+            ...pendingNgos.map((ngo) => ({
+                id: `ngo-${ngo.id}`,
+                entityId: ngo.id,
+                type: "NGO VERIFICATION",
+                title: `Verify ${ngo.name || "NGO"}`,
+                description:
+                    "Review the NGO's registration documents.",
+                priority: "medium",
+                status: "pending",
+                href: "/admin/ngo-management",
+            })),
+
+            ...pendingPartners.map((partner) => ({
+                id: `partner-${partner.id}`,
+                entityId: partner.id,
+                type: "DELIVERY PARTNER",
+                title: `Verify ${partner.name || "delivery partner"}`,
+                description:
+                    "Review the delivery partner's details.",
+                priority: "medium",
+                status: "pending",
+                createdAt: partner.createdAt,
+                href: "/admin/delivery-partners",
+            })),
+
+            ...openComplaintTasks.map((complaint) => ({
+                id: `complaint-${complaint.id}`,
+                entityId: complaint.id,
+                type: "COMPLAINT",
+                title: complaint.subject,
+                description:
+                    `${complaint.category} · ${complaint.status.replace("_", " ")}`,
+                priority: complaint.status === "pending"
+                    ? "high"
+                    : "medium",
+                status: complaint.status,
+                createdAt: complaint.createdAt,
+                href: "/admin/complaints",
+            })),
+        ];
+
+        tasks.sort((a, b) => {
+            const aTime = a.createdAt
+                ? new Date(a.createdAt).getTime()
+                : 0;
+
+            const bTime = b.createdAt
+                ? new Date(b.createdAt).getTime()
+                : 0;
+
+            return bTime - aTime;
+        });
+
+        const alerts = openComplaintTasks.map((complaint) => ({
+            id: complaint.id,
+            type: "COMPLAINT",
+            title: complaint.subject,
+            location: complaint.category,
+            priority: complaint.status === "pending"
+                ? "high"
+                : "medium",
+        }));
+
+        return res.status(200).json({
+            success: true,
+
+            stats: {
+                totalNgos: totalNgos.value,
+                activeDonors: approvedDonors.value,
+
+                // This is the count of delivered donation records,
+                // not a sum of meals, because quantity is stored as text.
+                mealsDistributed: deliveredCount.value,
+
+                openComplaints: openComplaintsCount.value,
+
+                totalDonors: totalDonors.value,
+                pendingDonorVerifications: pendingDonorsCount.value,
+                pendingNgoVerifications: pendingNgosCount.value,
+                pendingDeliveryPartnerVerifications:
+                    pendingPartnersCount.value,
+
+                totalPendingVerifications:
+                    pendingDonorsCount.value +
+                    pendingNgosCount.value +
+                    pendingPartnersCount.value,
+
+                period,
+            },
+
+            tasks: tasks.slice(0, 20),
+            alerts,
+            lastSyncedAt: new Date().toISOString(),
+        });
+    } catch (error) {
+        console.error("Admin dashboard failed:", error);
+
+        return res.status(500).json({
+            success: false,
+            message: "Failed to load admin dashboard.",
+        });
+    }
+};
+

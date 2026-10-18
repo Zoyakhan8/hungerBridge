@@ -8,6 +8,145 @@ import { donations } from "../model/donationSchema";
 import { ngos } from "../model/ngoRegisterSchema";
 import { db } from "../config/dbClient";
 
+export const updatePartnerAvailability = async (req, res) => {
+  try {
+    const { isAvailable, latitude, longitude } = req.body;
+
+    if (typeof isAvailable !== "boolean") {
+      return res.status(400).json({
+        success: false,
+        message: "Availability must be true or false.",
+      });
+    }
+
+    const [user] = await db
+      .select()
+      .from(users)
+      .where(eq(users.publicId, req.user.id))
+      .limit(1);
+
+    if (!user || user.role !== "delivery_partner") {
+      return res.status(403).json({
+        success: false,
+        message: "Delivery partner account required.",
+      });
+    }
+
+    const [partner] = await db
+      .select()
+      .from(deliveryPartners)
+      .where(eq(deliveryPartners.userId, user.id))
+      .limit(1);
+
+    if (!partner) {
+      return res.status(404).json({
+        success: false,
+        message: "Delivery partner profile not found.",
+      });
+    }
+
+    if (!partner.isVerified) {
+      return res.status(403).json({
+        success: false,
+        message: "Admin verification is required.",
+      });
+    }
+
+    if (isAvailable) {
+      if (
+        typeof latitude !== "number" ||
+        typeof longitude !== "number" ||
+        !Number.isFinite(latitude) ||
+        !Number.isFinite(longitude) ||
+        latitude < -90 ||
+        latitude > 90 ||
+        longitude < -180 ||
+        longitude > 180
+      ) {
+        return res.status(400).json({
+          success: false,
+          message: "Valid latitude and longitude are required.",
+        });
+      }
+
+      // Prevent going online while a delivery is active.
+      const [activeDelivery] = await db
+        .select({ id: deliveries.id })
+        .from(deliveries)
+        .where(
+          and(
+            eq(deliveries.deliveryPartnerId, partner.id),
+            eq(deliveries.status, "assigned")
+          )
+        )
+        .limit(1);
+
+      const [inTransitDelivery] = await db
+        .select({ id: deliveries.id })
+        .from(deliveries)
+        .where(
+          and(
+            eq(deliveries.deliveryPartnerId, partner.id),
+            eq(deliveries.status, "in_transit")
+          )
+        )
+        .limit(1);
+
+      if (activeDelivery || inTransitDelivery) {
+        return res.status(409).json({
+          success: false,
+          message:
+            "Complete your active delivery before becoming available.",
+        });
+      }
+
+      const [updatedPartner] = await db
+        .update(deliveryPartners)
+        .set({
+          latitude,
+          longitude,
+          isAvailable: true,
+        })
+        .where(eq(deliveryPartners.id, partner.id))
+        .returning({
+          id: deliveryPartners.id,
+          latitude: deliveryPartners.latitude,
+          longitude: deliveryPartners.longitude,
+          isAvailable: deliveryPartners.isAvailable,
+        });
+
+      return res.status(200).json({
+        success: true,
+        message: "You are now available for deliveries.",
+        partner: updatedPartner,
+      });
+    }
+
+    // Going offline does not require new coordinates.
+    const [updatedPartner] = await db
+      .update(deliveryPartners)
+      .set({ isAvailable: false })
+      .where(eq(deliveryPartners.id, partner.id))
+      .returning({
+        id: deliveryPartners.id,
+        isAvailable: deliveryPartners.isAvailable,
+      });
+
+    return res.status(200).json({
+      success: true,
+      message: "You are now unavailable for deliveries.",
+      partner: updatedPartner,
+    });
+  } catch (error) {
+    console.error("Updating partner availability failed:", error);
+
+    return res.status(500).json({
+      success: false,
+      message: "Failed to update availability.",
+    });
+  }
+};
+
 export const scanDeliveryQR = async (req, res) => {
   try {
     const { qrToken } = req.body;
@@ -22,7 +161,8 @@ export const scanDeliveryQR = async (req, res) => {
     const [user] = await db
       .select()
       .from(users)
-      .where(eq(users.publicId, req.user.id));
+      .where(eq(users.publicId, req.user.id))
+      .limit(1);
 
     if (!user || user.role !== "delivery_partner") {
       return res.status(403).json({
@@ -34,7 +174,8 @@ export const scanDeliveryQR = async (req, res) => {
     const [partner] = await db
       .select()
       .from(deliveryPartners)
-      .where(eq(deliveryPartners.userId, user.id));
+      .where(eq(deliveryPartners.userId, user.id))
+      .limit(1);
 
     if (!partner || !partner.isVerified) {
       return res.status(403).json({
@@ -46,27 +187,26 @@ export const scanDeliveryQR = async (req, res) => {
     const token = qrToken.trim();
 
     const result = await db.transaction(async (tx) => {
-      // First, try the pickup QR.
+      // Try the pickup QR first.
       const [pickupDelivery] = await tx
         .select()
         .from(deliveries)
-        .where(eq(deliveries.pickupQrToken, token));
+        .where(eq(deliveries.pickupQrToken, token))
+        .limit(1);
 
       if (pickupDelivery) {
         if (pickupDelivery.deliveryPartnerId !== partner.id) {
-          const error = new Error(
-            "This delivery is not assigned to your account."
+          throw new HttpError(
+            "This delivery is not assigned to your account.",
+            403
           );
-          error.statusCode = 403;
-          throw error;
         }
 
         if (pickupDelivery.status !== "assigned") {
-          const error = new Error(
-            `Pickup cannot be scanned when status is ${pickupDelivery.status}.`
+          throw new HttpError(
+            `Pickup cannot be scanned when status is ${pickupDelivery.status}.`,
+            409
           );
-          error.statusCode = 409;
-          throw error;
         }
 
         const [updated] = await tx
@@ -81,12 +221,13 @@ export const scanDeliveryQR = async (req, res) => {
               eq(deliveries.status, "assigned")
             )
           )
-          .returning();
+          .returning({ id: deliveries.id });
 
         if (!updated) {
-          const error = new Error("Delivery changed. Please scan again.");
-          error.statusCode = 409;
-          throw error;
+          throw new HttpError(
+            "Delivery changed. Please scan again.",
+            409
+          );
         }
 
         return {
@@ -95,40 +236,39 @@ export const scanDeliveryQR = async (req, res) => {
         };
       }
 
-      // If it isn't a pickup QR, try the NGO handover QR.
+      // Otherwise, try the NGO handover QR.
       const [handoverDelivery] = await tx
         .select()
         .from(deliveries)
-        .where(eq(deliveries.handoverQrToken, token));
+        .where(eq(deliveries.handoverQrToken, token))
+        .limit(1);
 
       if (!handoverDelivery) {
-        const error = new Error("Invalid QR code.");
-        error.statusCode = 404;
-        throw error;
+        throw new HttpError("Invalid QR code.", 404);
       }
 
       if (handoverDelivery.deliveryPartnerId !== partner.id) {
-        const error = new Error(
-          "This delivery is not assigned to your account."
+        throw new HttpError(
+          "This delivery is not assigned to your account.",
+          403
         );
-        error.statusCode = 403;
-        throw error;
       }
 
       if (handoverDelivery.status !== "in_transit") {
-        const error = new Error(
-          `Handover cannot be scanned when status is ${handoverDelivery.status}.`
+        throw new HttpError(
+          `Handover cannot be scanned when status is ${handoverDelivery.status}.`,
+          409
         );
-        error.statusCode = 409;
-        throw error;
       }
+
+      const now = new Date();
 
       const [updated] = await tx
         .update(deliveries)
         .set({
           status: "delivered",
-          handoverScannedAt: new Date(),
-          deliveredAt: new Date(),
+          handoverScannedAt: now,
+          deliveredAt: now,
         })
         .where(
           and(
@@ -136,17 +276,19 @@ export const scanDeliveryQR = async (req, res) => {
             eq(deliveries.status, "in_transit")
           )
         )
-        .returning();
+        .returning({ id: deliveries.id });
 
       if (!updated) {
-        const error = new Error("Delivery changed. Please scan again.");
-        error.statusCode = 409;
-        throw error;
+        throw new HttpError(
+          "Delivery changed. Please scan again.",
+          409
+        );
       }
 
+      // The partner must explicitly choose to become available again.
       await tx
         .update(deliveryPartners)
-        .set({ isAvailable: true })
+        .set({ isAvailable: false })
         .where(eq(deliveryPartners.id, partner.id));
 
       return {
@@ -160,7 +302,7 @@ export const scanDeliveryQR = async (req, res) => {
       ...result,
     });
   } catch (error) {
-    if (error.statusCode) {
+    if (error instanceof HttpError) {
       return res.status(error.statusCode).json({
         success: false,
         message: error.message,
@@ -176,14 +318,13 @@ export const scanDeliveryQR = async (req, res) => {
   }
 };
 
-
-
 export const getMyDeliveries = async (req, res) => {
   try {
     const [user] = await db
       .select()
       .from(users)
-      .where(eq(users.publicId, req.user.id));
+      .where(eq(users.publicId, req.user.id))
+      .limit(1);
 
     if (!user || user.role !== "delivery_partner") {
       return res.status(403).json({
@@ -195,7 +336,8 @@ export const getMyDeliveries = async (req, res) => {
     const [partner] = await db
       .select()
       .from(deliveryPartners)
-      .where(eq(deliveryPartners.userId, user.id));
+      .where(eq(deliveryPartners.userId, user.id))
+      .limit(1);
 
     if (!partner) {
       return res.status(404).json({
@@ -228,6 +370,7 @@ export const getMyDeliveries = async (req, res) => {
 
     return res.status(200).json({
       success: true,
+      isAvailable: partner.isAvailable,
       deliveries: rows.map(({ delivery, request, donation, ngo }) => ({
         id: delivery.id,
         status: delivery.status,
@@ -257,4 +400,3 @@ export const getMyDeliveries = async (req, res) => {
     });
   }
 };
-

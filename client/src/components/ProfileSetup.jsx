@@ -1,257 +1,582 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Cropper from "react-easy-crop";
 import { Message } from "./Message";
+
+const INITIAL_FORM_DATA = {
+    photo: null,
+    dob: "",
+    shopName: "",
+    shopAddress: "",
+    aadhar: null,
+    shopLicense: null,
+    refrigerator: false,
+    refrigeratorNumber: "",
+    refrigeratorTemperature: "",
+    refrigeratorTempUnknown: false,
+    freezer: false,
+    freezerNumber: "",
+    freezerTemperature: "",
+    freezerTempUnknown: false,
+    kitchen: false,
+};
+
+const ALLOWED_DOCUMENT_TYPES = [
+    "application/pdf",
+    "image/jpeg",
+    "image/png",
+];
+
+const ALLOWED_PHOTO_TYPES = ["image/jpeg", "image/png"];
+const MAX_FILE_SIZE = 5 * 1024 * 1024;
+
+const inputClass =
+    "block w-full min-w-0 rounded-lg border border-primary/30 border-b-2 bg-tertiary px-3 py-3 text-sm text-inactive outline-none transition placeholder:text-inactive/50 focus:border-primary focus:ring-2 focus:ring-primary/20 sm:px-4 sm:text-base";
+
+const labelClass =
+    "mb-1.5 block text-sm font-medium text-inactive sm:text-base";
+
+const errorClass = "mt-1 text-xs leading-5 text-red-400 sm:text-sm";
+
+const sectionTitleClass =
+    "mb-3 font-app-heading text-lg font-extrabold text-heading sm:text-xl";
+
+const getCroppedImage = async (imageSrc, pixelCrop) => {
+    const image = new Image();
+    image.src = imageSrc;
+
+    await new Promise((resolve, reject) => {
+        image.onload = resolve;
+        image.onerror = reject;
+    });
+
+    const canvas = document.createElement("canvas");
+    canvas.width = pixelCrop.width;
+    canvas.height = pixelCrop.height;
+
+    const context = canvas.getContext("2d");
+
+    if (!context) {
+        throw new Error("Unable to process the profile photo.");
+    }
+
+    context.drawImage(
+        image,
+        pixelCrop.x,
+        pixelCrop.y,
+        pixelCrop.width,
+        pixelCrop.height,
+        0,
+        0,
+        pixelCrop.width,
+        pixelCrop.height
+    );
+
+    return new Promise((resolve, reject) => {
+        canvas.toBlob(
+            (blob) => {
+                if (!blob) {
+                    reject(new Error("Unable to crop the profile photo."));
+                    return;
+                }
+
+                resolve(
+                    new File([blob], "profile-photo.jpg", {
+                        type: "image/jpeg",
+                    })
+                );
+            },
+            "image/jpeg",
+            0.92
+        );
+    });
+};
+
 export const ProfileSetup = () => {
-    const [formData, setFormData] = useState({
-        photo: null,
-        dob: "",
-        shopName: "",
-        shopAddress: "",
-        aadhar: null,
-        shopLicense: null,
-
-        refrigerator: false,
-        refrigeratorNumber: "",
-        refrigeratorTemperature: "",
-
-        freezer: false,
-        freezerNumber: "",
-        freezerTemperature: "",
-        
-        kitchen: false,
-    })
+    const [formData, setFormData] = useState({ ...INITIAL_FORM_DATA });
     const [errors, setErrors] = useState({});
     const [touched, setTouched] = useState({});
     const [crop, setCrop] = useState({ x: 0, y: 0 });
     const [zoom, setZoom] = useState(1);
     const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
     const [photoPreview, setPhotoPreview] = useState(null);
-    const validateField = (name, value) => {
-        let error = "";
-        switch (name) {
-            case "dob":
-                if (!value.trim()) {
-                    error = "Date of Birth is required";
-                }
-                break;
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-            case "shopName":
-                if (!value.trim()) {
-                    error = "Shop name is required";
-                }
-                break;
-
-            case "shopAddress":
-                if (!value.trim()) {
-                    error = "Shop address is required";
-                }
-                else if (value.trim().length < 10) {
-                    error = "Enter a complete address";
-                }
-                break;
-            case "aadhar":
-                if (!value) {
-                    error = "Document is required";
-                } else {
-                    const allowedTypes = [
-                        "image/png",
-                        "image/jpeg",
-                        "application/pdf"
-                    ];
-
-                    if (!allowedTypes.includes(value.type)) {
-                        error = "Only PNG, JPG, and PDF files are allowed";
-                    }
-                }
-                break;
-            case "shopLicense":
-                if (!value) {
-                    error = "Document is required";
-                } else {
-                    const allowedTypes = [
-                        "image/png",
-                        "image/jpeg",
-                        "application/pdf"
-                    ];
-
-                    if (!allowedTypes.includes(value.type)) {
-                        error = "Only PNG, JPG, and PDF files are allowed";
-                    }
-                }
-                break;
-            case "photo":
-                if (!value) {
-                    error = "Document is required";
-                } else {
-                    const allowedTypes = [
-                        "image/png",
-                        "image/jpeg",
-                        "image/jpg"
-                    ];
-                    if (!allowedTypes.includes(value.type)) {
-                        error = "Only JPEG, JPG, and PNG files are allowed";
-                    }
-                }
-                break;
-            default:
-                break;
-        }
-
-        setErrors((prev) => ({
-            ...prev,
-            [name]: error
-        }));
-
-        return !error;
-    };
-    const handleChange = (event) => {
-        const { name, value, type, files,checked } = event.target;
-        if (type === "file") {
-            const file = files?.[0] || null;
-            const allowedTypes = [
-                "application/pdf",
-                "image/jpeg",
-                "image/png",
-                "image/jpg"
-            ];
-            setTouched((prev) => ({
-                ...prev,
-                [name]: true,
-            }));
-            if (!file) {
-                setFormData((prev) => ({
-                    ...prev,
-                    [name]: null,
-                }));
-
-                validateField(name, null);
-                return;
-            }
-            if (!allowedTypes.includes(file.type)) {
-                setFormData((prev) => ({
-                    ...prev,
-                    [name]: null,
-                }));
-
-                validateField(name, file);
-                return;
-            }
-            if (name === "photo") {
-                setFormData((prev) => ({
-                    ...prev,
-                    photo: file,
-                }));
-
-                setPhotoPreview(URL.createObjectURL(file));
-
-                return;
-            }
-            setFormData((prev) => ({
-                ...prev,
-                [name]: file,
-            }));
-
-            validateField(name, file);
-            return;
-        }
-        const newValue =
-            type === "checkbox"
-                ? checked
-                : value;
-
-        setFormData((prev) => ({
-            ...prev,
-            [name]: newValue,
-        }));
-
-        setTouched((prev) => ({
-            ...prev,
-            [name]: true,
-        }));
-
-        validateField(name, newValue);
-    }
     const [showMessage, setShowMessage] = useState(false);
     const [messageData, setMessageData] = useState({
         type: "",
         title: "",
         message: "",
     });
-    const handleSubmit = async (event) => {
-        event.preventDefault()
-        const data = new FormData();
-        Object.entries(formData).forEach(([key, value]) => {
-            data.append(key, value);
-        });
-        for (const [key, value] of data.entries()) {
-            console.log("form submitted", key, value);
+
+    useEffect(() => {
+        return () => {
+            if (photoPreview) {
+                URL.revokeObjectURL(photoPreview);
+            }
+        };
+    }, [photoPreview]);
+
+    const showFeedback = (type, title, message) => {
+        setMessageData({ type, title, message });
+        setShowMessage(true);
+    };
+
+    const validateField = (name, value) => {
+        let error = "";
+
+        switch (name) {
+            case "dob": {
+                if (!value) {
+                    error = "Date of birth is required.";
+                } else {
+                    const birthDate = new Date(`${value}T00:00:00`);
+                    const today = new Date();
+                    today.setHours(23, 59, 59, 999);
+
+                    if (Number.isNaN(birthDate.getTime())) {
+                        error = "Enter a valid date of birth.";
+                    } else if (birthDate > today) {
+                        error = "Date of birth cannot be in the future.";
+                    }
+                }
+                break;
+            }
+
+            case "shopName":
+                if (!value?.trim()) {
+                    error = "Shop name is required.";
+                }
+                break;
+
+            case "shopAddress":
+                if (!value?.trim()) {
+                    error = "Shop address is required.";
+                } else if (value.trim().length < 10) {
+                    error = "Enter a complete address (at least 10 characters).";
+                }
+                break;
+
+            case "photo":
+                if (!value) {
+                    error = "Profile photo is required.";
+                } else if (!ALLOWED_PHOTO_TYPES.includes(value.type)) {
+                    error = "Only JPEG and PNG photos are allowed.";
+                } else if (value.size > MAX_FILE_SIZE) {
+                    error = "Profile photo must be 5 MB or smaller.";
+                }
+                break;
+
+            case "aadhar":
+            case "shopLicense":
+                if (!value) {
+                    error = "Document is required.";
+                } else if (!ALLOWED_DOCUMENT_TYPES.includes(value.type)) {
+                    error = "Only PDF, JPG, and PNG files are allowed.";
+                } else if (value.size > MAX_FILE_SIZE) {
+                    error = "File must be 5 MB or smaller.";
+                }
+                break;
+
+            case "refrigeratorNumber":
+            case "freezerNumber":
+                if (value !== "" && (!Number.isFinite(Number(value)) || Number(value) < 1)) {
+                    error = "Enter a number greater than or equal to 1.";
+                }
+                break;
+
+            default:
+                break;
         }
+
+        setErrors((prev) => ({ ...prev, [name]: error }));
+        return !error;
+    };
+
+    const handleChange = (event) => {
+        const { name, value, type, files, checked } = event.target;
+
+        if (type === "file") {
+            const file = files?.[0] || null;
+
+            setTouched((prev) => ({ ...prev, [name]: true }));
+
+            if (!file) {
+                setFormData((prev) => ({ ...prev, [name]: null }));
+                validateField(name, null);
+
+                if (name === "photo") {
+                    setPhotoPreview(null);
+                    setCroppedAreaPixels(null);
+                }
+                return;
+            }
+
+            const valid = validateField(name, file);
+
+            if (!valid) {
+                setFormData((prev) => ({ ...prev, [name]: null }));
+                return;
+            }
+
+            setFormData((prev) => ({ ...prev, [name]: file }));
+
+            if (name === "photo") {
+                setPhotoPreview(URL.createObjectURL(file));
+                setCrop({ x: 0, y: 0 });
+                setZoom(1);
+                setCroppedAreaPixels(null);
+            }
+
+            return;
+        }
+
+        const newValue = type === "checkbox" ? checked : value;
+
+        setFormData((prev) => ({
+            ...prev,
+            [name]: newValue,
+        }));
+
+        setTouched((prev) => ({ ...prev, [name]: true }));
+
+        if (name === "refrigeratorTempUnknown" && checked) {
+            setFormData((prev) => ({
+                ...prev,
+                refrigeratorTempUnknown: true,
+                refrigeratorTemperature: "",
+            }));
+        } else if (name === "freezerTempUnknown" && checked) {
+            setFormData((prev) => ({
+                ...prev,
+                freezerTempUnknown: true,
+                freezerTemperature: "",
+            }));
+        } else {
+            validateField(name, newValue);
+        }
+    };
+
+    const validateForm = () => {
+        const fieldsToValidate = [
+            "photo",
+            "dob",
+            "shopName",
+            "shopAddress",
+            "aadhar",
+            "shopLicense",
+        ];
+
+        let valid = true;
+        const nextErrors = {};
+
+        fieldsToValidate.forEach((name) => {
+            let error = "";
+
+            switch (name) {
+                case "photo":
+                    if (!formData.photo) {
+                        error = "Profile photo is required.";
+                    } else if (!ALLOWED_PHOTO_TYPES.includes(formData.photo.type)) {
+                        error = "Only JPEG and PNG photos are allowed.";
+                    } else if (formData.photo.size > MAX_FILE_SIZE) {
+                        error = "Profile photo must be 5 MB or smaller.";
+                    }
+                    break;
+
+                case "dob": {
+                    if (!formData.dob) {
+                        error = "Date of birth is required.";
+                    } else {
+                        const birthDate = new Date(`${formData.dob}T00:00:00`);
+                        const today = new Date();
+                        today.setHours(23, 59, 59, 999);
+
+                        if (
+                            Number.isNaN(birthDate.getTime()) ||
+                            birthDate > today
+                        ) {
+                            error = "Enter a valid date of birth.";
+                        }
+                    }
+                    break;
+                }
+
+                case "shopName":
+                    if (!formData.shopName.trim()) {
+                        error = "Shop name is required.";
+                    }
+                    break;
+
+                case "shopAddress":
+                    if (!formData.shopAddress.trim()) {
+                        error = "Shop address is required.";
+                    } else if (formData.shopAddress.trim().length < 10) {
+                        error = "Enter a complete address (at least 10 characters).";
+                    }
+                    break;
+
+                case "aadhar":
+                case "shopLicense": {
+                    const file = formData[name];
+
+                    if (!file) {
+                        error = "Document is required.";
+                    } else if (!ALLOWED_DOCUMENT_TYPES.includes(file.type)) {
+                        error = "Only PDF, JPG, and PNG files are allowed.";
+                    } else if (file.size > MAX_FILE_SIZE) {
+                        error = "File must be 5 MB or smaller.";
+                    }
+                    break;
+                }
+
+                default:
+                    break;
+            }
+
+            nextErrors[name] = error;
+            if (error) valid = false;
+        });
+
+        ["refrigeratorNumber", "freezerNumber"].forEach((name) => {
+            const enabled =
+                name === "refrigeratorNumber"
+                    ? formData.refrigerator
+                    : formData.freezer;
+
+            const value = formData[name];
+
+            if (
+                enabled &&
+                value !== "" &&
+                (!Number.isFinite(Number(value)) || Number(value) < 1)
+            ) {
+                nextErrors[name] = "Enter a number greater than or equal to 1.";
+                valid = false;
+            }
+        });
+
+        setErrors((prev) => ({ ...prev, ...nextErrors }));
+        setTouched((prev) => ({
+            ...prev,
+            photo: true,
+            dob: true,
+            shopName: true,
+            shopAddress: true,
+            aadhar: true,
+            shopLicense: true,
+        }));
+
+        return valid;
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        if (isSubmitting || !validateForm()) {
+            return;
+        }
+
+        setIsSubmitting(true);
+
         try {
+            let photoToUpload = formData.photo;
+
+            if (photoPreview && croppedAreaPixels) {
+                photoToUpload = await getCroppedImage(
+                    photoPreview,
+                    croppedAreaPixels
+                );
+            }
+
+            const data = new FormData();
+
+            Object.entries(formData).forEach(([key, value]) => {
+                if (key === "photo") {
+                    if (photoToUpload) {
+                        data.append("photo", photoToUpload);
+                    }
+                    return;
+                }
+
+                if (value === null || value === undefined) return;
+
+                if (typeof value === "boolean") {
+                    data.append(key, String(value));
+                } else {
+                    data.append(key, value);
+                }
+            });
+
             const res = await fetch("/api/donor/create-profile", {
                 method: "POST",
-                body: data
-            })
-            const result = await res.json()
-            if (res.ok) {
-                setMessageData({
-                    type: "success",
-                    title: "Profile Completed",
-                    message: "Your donation is now available for nearby NGOs to accept. We'll notify you once it's matched.",
-                });
-                setShowMessage(true);
-                setFormData({
-                    photo: null,
-                    dob: "",
-                    shopName: "",
-                    shopAddress: "",
-                    aadhar: null,
-                    shopLicense: null
-                })
-            } else {
-                setMessageData({
-                    type: "error",
-                    title: "Profile Failed",
-                    message: result.message,
-                });
-                setShowMessage(true);
-                console.log(setMessageData)
-            }
-        } catch (error) {
-            setMessageData({
-                type: "error",
-                title: "Profile Failed",
-                message: "Something went wrong.Please try again",
+                credentials: "include",
+                body: data,
             });
-            setShowMessage(true);
-            console.log(setMessageData)
+
+            const result = await res.json().catch(() => ({}));
+
+            if (!res.ok || result.success === false) {
+                showFeedback(
+                    "error",
+                    "Profile Failed",
+                    result.message || "Unable to complete your profile. Please try again."
+                );
+                return;
+            }
+
+            setFormData({ ...INITIAL_FORM_DATA });
+            setErrors({});
+            setTouched({});
+            setCrop({ x: 0, y: 0 });
+            setZoom(1);
+            setCroppedAreaPixels(null);
+            setPhotoPreview(null);
+
+            showFeedback(
+                "success",
+                "Profile Completed",
+                result.message ||
+                    "Your profile has been completed successfully."
+            );
+        } catch (error) {
+            console.error("Profile setup error:", error);
+
+            showFeedback(
+                "error",
+                "Profile Failed",
+                error.message || "Something went wrong. Please try again."
+            );
+        } finally {
+            setIsSubmitting(false);
         }
-    }
+    };
+
+    const renderError = (name) =>
+        touched[name] && errors[name] ? (
+            <p className={errorClass} role="alert">
+                {errors[name]}
+            </p>
+        ) : null;
+
+    const renderFacilityDetails = (type) => {
+        const isRefrigerator = type === "refrigerator";
+        const title = isRefrigerator ? "Refrigerator" : "Freezer";
+        const numberName = `${type}Number`;
+        const temperatureName = `${type}Temperature`;
+        const unknownName = `${type}TempUnknown`;
+
+        return (
+            <div className="min-w-0">
+                <label className="flex cursor-pointer items-center gap-3 text-sm font-medium text-heading sm:text-base">
+                    <input
+                        type="checkbox"
+                        name={type}
+                        checked={formData[type]}
+                        onChange={handleChange}
+                        className="h-5 w-5 shrink-0 cursor-pointer accent-secondary"
+                    />
+                    <span>{title}</span>
+                </label>
+
+                {formData[type] && (
+                    <div className="mt-3 rounded-xl border border-primary/20 bg-tertiary p-3 sm:p-4">
+                        <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+                            <div className="min-w-0">
+                                <label
+                                    htmlFor={numberName}
+                                    className={labelClass}
+                                >
+                                    Number of units
+                                </label>
+                                <input
+                                    type="number"
+                                    id={numberName}
+                                    name={numberName}
+                                    min="1"
+                                    step="1"
+                                    value={formData[numberName]}
+                                    onChange={handleChange}
+                                    className={inputClass}
+                                    placeholder="E.g. 2"
+                                />
+                                {renderError(numberName)}
+                            </div>
+
+                            <div className="min-w-0">
+                                <label
+                                    htmlFor={temperatureName}
+                                    className={labelClass}
+                                >
+                                    Temperature
+                                </label>
+
+                                <div className="flex min-w-0 items-center gap-2">
+                                    <input
+                                        type="number"
+                                        id={temperatureName}
+                                        name={temperatureName}
+                                        step="any"
+                                        value={formData[temperatureName]}
+                                        disabled={formData[unknownName]}
+                                        onChange={handleChange}
+                                        className={`${inputClass} flex-1 disabled:cursor-not-allowed disabled:opacity-50`}
+                                        placeholder="Temperature"
+                                    />
+                                    <span className="shrink-0 text-sm text-inactive">
+                                        °C
+                                    </span>
+                                </div>
+
+                                <label className="mt-3 flex cursor-pointer items-center gap-2 text-xs text-inactive sm:text-sm">
+                                    <input
+                                        type="checkbox"
+                                        name={unknownName}
+                                        checked={formData[unknownName]}
+                                        onChange={handleChange}
+                                        className="h-4 w-4 accent-secondary"
+                                    />
+                                    Temperature unknown
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </div>
+        );
+    };
+
     return (
-        <div className="flex items-center justify-center min-h-screen bg-brown p-6">
-            <div className="bg-background backdrop-blur-xl rounded-[8px] p-8 border border-white/20 shadow-lg shadow-black/10 w-[600px]">
-                <div className="flex flex-col gap-2 items-center pb-8">
-                    <h1 className="font-app-heading text-heading text-4xl font-extrabold">Complete Your Profile</h1>
-                    <p className="font-app-body text-heading text-sm font-bold">Help us connect you with meaningful impact opportunities.</p>
-                </div>
-                <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
-                    <div className="flex flex-col justify-center items-center gap-1 flex-1">
-                        <label htmlFor="photo"
-                            className="font-app-body text-md text-inactive font-medium"
-                        >Profile Photo</label>
-                        <label
-                            htmlFor="photo"
-                            className="relative h-30 w-30 cursor-pointer flex-col items-center justify-center
-                                    rounded-full border border-2 border-primary/40
-                                    bg-tertiary transition hover:border-primary overflow-hidden "
-                        >
-                            {formData.photo ? (
+        <main className="min-h-screen w-full bg-brown px-3 py-6 sm:px-6 sm:py-8 lg:px-8">
+            <div className="mx-auto w-full max-w-3xl rounded-2xl border border-white/20 bg-background p-4 shadow-lg shadow-black/10 backdrop-blur-xl sm:p-6 md:p-8">
+                {/* Header */}
+                <header className="mx-auto mb-7 flex max-w-2xl flex-col items-center gap-2 text-center sm:mb-8">
+                    <h1 className="break-words font-app-heading text-2xl font-extrabold text-heading sm:text-3xl md:text-4xl">
+                        Complete Your Profile
+                    </h1>
+                    <p className="text-sm font-medium leading-6 text-inactive sm:text-base">
+                        Help us connect you with meaningful impact opportunities.
+                    </p>
+                </header>
+
+                <form
+                    className="flex min-w-0 flex-col gap-6 sm:gap-7"
+                    onSubmit={handleSubmit}
+                    noValidate
+                >
+                    {/* Profile Photo */}
+                    <section className="flex min-w-0 flex-col items-center">
+                        <label htmlFor="photo" className={labelClass}>
+                            Profile Photo
+                        </label>
+
+                        <div className="relative h-28 w-28 overflow-hidden rounded-full border-2 border-primary/40 bg-tertiary transition hover:border-primary sm:h-32 sm:w-32">
+                            {photoPreview ? (
                                 <Cropper
                                     image={photoPreview}
                                     crop={crop}
                                     zoom={zoom}
                                     aspect={1}
                                     cropShape="round"
-                                    cropSize={{ width: 250, height: 250 }}
                                     showGrid={false}
                                     onCropChange={setCrop}
                                     onZoomChange={setZoom}
@@ -260,340 +585,208 @@ export const ProfileSetup = () => {
                                     }}
                                 />
                             ) : (
-                                <div className="flex h-full w-full items-center justify-center">
-                                    <span className="font-heading text-sm font-bold text-heading/70">
-                                        Photo
-                                    </span>
-                                </div>
+                                <label
+                                    htmlFor="photo"
+                                    className="flex h-full w-full cursor-pointer items-center justify-center text-sm font-bold text-heading/70"
+                                >
+                                    Choose Photo
+                                </label>
                             )}
-                        </label>
+                        </div>
+
+                        {photoPreview && (
+                            <div className="mt-4 w-full max-w-xs">
+                                <label
+                                    htmlFor="photoZoom"
+                                    className="mb-2 block text-center text-sm text-inactive"
+                                >
+                                    Adjust photo zoom
+                                </label>
+                                <input
+                                    id="photoZoom"
+                                    type="range"
+                                    min="1"
+                                    max="3"
+                                    step="0.1"
+                                    value={zoom}
+                                    onChange={(event) =>
+                                        setZoom(Number(event.target.value))
+                                    }
+                                    className="w-full accent-secondary"
+                                />
+                            </div>
+                        )}
+
                         <input
                             onChange={handleChange}
                             id="photo"
                             name="photo"
                             type="file"
-                            accept=".jpg,.jpeg,.png"
-                            className="hidden"
+                            accept=".jpg,.jpeg,.png,image/jpeg,image/png"
+                            className="sr-only"
                         />
-                    </div>
-                    <div className="flex flex-row gap-6">
-                        <div className="flex flex-col gap-1 flex-1">
-                            <label htmlFor="dob"
-                                className="font-app-body text-md text-inactive font-medium"
-                            >Date of Birth</label>
 
-                            <input
-                                type="date" id="dob" name="dob" placeholder="E.g Chicken Biryani"
-                                required value={formData.dob}
-                                onChange={handleChange}
-                                className="text-inactive px-4 py-3 bg-tertiary
-                                rounded-[4px] w-full border-b-3 border-primary/50 outline-none"
-                            />
-                            {errors.dob && (
-                                <span className="text-red-400 text-sm">
-                                    {errors.dob}
-                                </span>
-                            )}
-                        </div>
-                        <div className="flex flex-col gap-1 flex-1">
-                            <label htmlFor="shopName"
-                                className="font-app-body text-md text-inactive font-medium"
-                            >Shop Name</label>
+                        <label
+                            htmlFor="photo"
+                            className="mt-3 cursor-pointer rounded-lg border border-primary/30 px-4 py-2 text-sm font-semibold text-heading transition hover:bg-primary/10"
+                        >
+                            {photoPreview ? "Change Photo" : "Upload Photo"}
+                        </label>
 
-                            <input
-                                type="text" id="shopName" name="shopName" placeholder="E.g Chicken Biryani"
-                                required value={formData.shopName}
-                                onChange={handleChange}
-                                className="text-inactive px-4 py-3 bg-tertiary
-                                rounded-[4px] w-full border-b-3 border-primary/50 outline-none"
-                            />
-                            {errors.shopName && (
-                                <span className="text-red-400 text-sm">
-                                    {errors.shopName}
-                                </span>
-                            )}
-                        </div>
-                    </div>
-                    <div className="flex flex-col gap-1 flex-1">
-                        <label htmlFor="shopAddress"
-                            className="font-app-body text-md text-inactive font-medium"
-                        >Shop Address</label>
-                        <textarea
-                            rows="2" id="shopAddress" name="shopAddress" placeholder="E.g Chicken, Onion, Rice"
-                            required value={formData.shopAddress}
-                            onChange={handleChange}
-                            className="text-inactive px-4 py-3 bg-tertiary
-                            rounded-[4px] w-full border-b-3 border-primary/50 outline-none"
-                        ></textarea>
-                        {errors.shopAddress && (
-                            <span className="text-red-400 text-sm">
-                                {errors.shopAddress}
-                            </span>
-                        )}
-                    </div>
-                    <div>
-                        <h1 className="font-app-heading text-heading text-xl font-extrabold pb-2">Facilities Details</h1>
-                        <div className="flex flex-col gap-5">
-                            <div>
-                                <label className="flex items-center gap-3 cursor-pointer text-heading font-app-body">
-                                    <input
-                                        type="checkbox"
-                                        name="refrigerator"
-                                        checked={formData.refrigerator}
-                                        onChange={handleChange}
-                                        className="h-5 w-5 accent-secondary/80 check-white cursor-pointer"
-                                    />
+                        <p className="mt-2 text-center text-xs text-inactive">
+                            JPEG or PNG, maximum 5 MB.
+                        </p>
+                        {renderError("photo")}
+                    </section>
 
-                                    <span>Refrigerator</span>
+                    {/* Basic Details */}
+                    <section>
+                        <h2 className={sectionTitleClass}>Basic Details</h2>
+
+                        <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+                            <div className="min-w-0">
+                                <label htmlFor="dob" className={labelClass}>
+                                    Date of Birth
                                 </label>
-
-                                {formData.refrigerator && (
-                                    <div className="mt-3 ml-8 rounded-lg bg-tertiary p-5">
-                                        <div className="grid grid-cols-2 gap-6">
-
-                                            {/* Number */}
-                                            <div>
-                                                <label
-                                                    htmlFor="refrigeratorNumber"
-                                                    className="font-app-body text-sm font-medium text-inactive"
-                                                >
-                                                    Number:
-                                                </label>
-
-                                                <input
-                                                    type="number"
-                                                    id="refrigeratorNumber"
-                                                    name="refrigeratorNumber"
-                                                    min="1"
-                                                    value={formData.refrigeratorNumber}
-                                                    onChange={handleChange}
-                                                    className="mt-1 w-full border-b-2 border-primary/30
-                                bg-background/40 px-3 py-2 outline-none
-                                text-heading"
-                                                />
-                                            </div>
-
-                                            {/* Temperature */}
-                                            <div>
-                                                <label
-                                                    htmlFor="refrigeratorTemperature"
-                                                    className="font-app-body font-medium text-sm text-inactive"
-                                                >
-                                                    Temperature:
-                                                </label>
-
-                                                <div className="flex items-center gap-2">
-                                                    <input
-                                                        type="number"
-                                                        id="refrigeratorTemperature"
-                                                        name="refrigeratorTemperature"
-                                                        value={formData.refrigeratorTemperature}
-                                                        disabled={formData.refrigeratorTempUnknown}
-                                                        onChange={handleChange}
-                                                        className="mt-1 w-full border-b-2 border-primary/30
-                                    bg-background/40 px-3 py-2 outline-none
-                                    text-heading disabled:opacity-40"
-                                                    />
-
-                                                    <span className="whitespace-nowrap text-sm text-inactive">
-                                                        °C
-                                                    </span>
-                                                </div>
-
-                                                <label className="mt-2 flex items-center gap-2 text-xs text-inactive">
-                                                    <input
-                                                        type="checkbox"
-                                                        name="refrigeratorTempUnknown"
-                                                        checked={formData.refrigeratorTempUnknown}
-                                                        onChange={handleChange}
-                                                        className="accent-secondary/80"
-                                                    />
-                                                    Not known
-                                                </label>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                )}
+                                <input
+                                    type="date"
+                                    id="dob"
+                                    name="dob"
+                                    required
+                                    max={new Date().toISOString().slice(0, 10)}
+                                    value={formData.dob}
+                                    onChange={handleChange}
+                                    className={inputClass}
+                                />
+                                {renderError("dob")}
                             </div>
 
-
-                            {/* Freezer */}
-                            <div>
-                                <label className="flex items-center gap-3 cursor-pointer text-heading font-app-body">
-                                    <input
-                                        type="checkbox"
-                                        name="freezer"
-                                        checked={formData.freezer}
-                                        onChange={handleChange}
-                                        className="h-5 w-5 accent-secondary/80 cursor-pointer"
-                                    />
-
-                                    <span>Freezer</span>
+                            <div className="min-w-0">
+                                <label htmlFor="shopName" className={labelClass}>
+                                    Shop / Business Name
                                 </label>
-
-                                {formData.freezer && (
-                                    <div className="mt-3 ml-8 rounded-lg bg-tertiary p-5">
-                                        <div className="grid grid-cols-2 gap-6">
-
-                                            <div>
-                                                <label
-                                                    htmlFor="freezerNumber"
-                                                    className="font-app-body font-medium text-sm text-inactive"
-                                                >
-                                                    Number:
-                                                </label>
-
-                                                <input
-                                                    type="number"
-                                                    id="freezerNumber"
-                                                    name="freezerNumber"
-                                                    min="1"
-                                                    value={formData.freezerNumber}
-                                                    onChange={handleChange}
-                                                    className="mt-1 w-full border-b-2 border-primary/30
-                                bg-background/40 px-3 py-2 outline-none
-                                text-heading"
-                                                />
-                                            </div>
-
-                                            <div>
-                                                <label
-                                                    htmlFor="freezerTemperature"
-                                                    className="font-app-body font-medium text-sm text-inactive"
-                                                >
-                                                    Temperature:
-                                                </label>
-
-                                                <div className="flex items-center gap-2">
-                                                    <input
-                                                        type="number"
-                                                        id="freezerTemperature"
-                                                        name="freezerTemperature"
-                                                        value={formData.freezerTemperature}
-                                                        disabled={formData.freezerTempUnknown}
-                                                        onChange={handleChange}
-                                                        className="mt-1 w-full border-b-2 border-primary/30
-                                    bg-background/40 px-3 py-2 outline-none
-                                    text-heading disabled:opacity-40"
-                                                    />
-
-                                                    <span className="whitespace-nowrap text-sm text-inactive">
-                                                        °C
-                                                    </span>
-                                                </div>
-
-                                                <label className="mt-2 flex items-center gap-2 text-xs text-inactive">
-                                                    <input
-                                                        type="checkbox"
-                                                        name="freezerTempUnknown"
-                                                        checked={formData.freezerTempUnknown}
-                                                        onChange={handleChange}
-                                                        className="accent-secondary/80"
-                                                    />
-                                                    Not known
-                                                </label>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                )}
+                                <input
+                                    type="text"
+                                    id="shopName"
+                                    name="shopName"
+                                    placeholder="E.g. Fresh Bakes"
+                                    required
+                                    value={formData.shopName}
+                                    onChange={handleChange}
+                                    className={inputClass}
+                                />
+                                {renderError("shopName")}
                             </div>
+                        </div>
 
+                        <div className="mt-4 min-w-0">
+                            <label htmlFor="shopAddress" className={labelClass}>
+                                Shop Address
+                            </label>
+                            <textarea
+                                rows={3}
+                                id="shopAddress"
+                                name="shopAddress"
+                                placeholder="Enter your complete shop address"
+                                required
+                                value={formData.shopAddress}
+                                onChange={handleChange}
+                                className={`${inputClass} resize-y`}
+                            />
+                            {renderError("shopAddress")}
+                        </div>
+                    </section>
 
-                            {/* Kitchen */}
-                            <label className="flex items-center gap-3 cursor-pointer text-heading font-app-body">
+                    {/* Facilities */}
+                    <section className="min-w-0">
+                        <h2 className={sectionTitleClass}>Facilities Details</h2>
+
+                        <div className="flex min-w-0 flex-col gap-5">
+                            {renderFacilityDetails("refrigerator")}
+                            {renderFacilityDetails("freezer")}
+
+                            <label className="flex cursor-pointer items-start gap-3 text-sm text-heading sm:text-base">
                                 <input
                                     type="checkbox"
                                     name="kitchen"
                                     checked={formData.kitchen}
                                     onChange={handleChange}
-                                    className="h-5 w-5 accent-secondary/80 cursor-pointer"
+                                    className="mt-0.5 h-5 w-5 shrink-0 accent-secondary"
                                 />
-
                                 <span>Kitchen / food preparation area</span>
                             </label>
+                        </div>
+                    </section>
 
-                        </div>
-                    </div>
-                    <div>
-                        <h1 className="font-app-heading text-heading text-xl font-extrabold pb-2">Document Verification</h1>
-                        <div className="grid grid-cols-2 gap-6">
-                            <div className="flex flex-col gap-1 flex-1">
-                                <label htmlFor="aadhar"
-                                    className="font-app-body text-md text-inactive font-medium"
-                                >Aadhar Card</label>
-                                <label
-                                    htmlFor="aadhar"
-                                    className="flex h-20 cursor-pointer flex-col items-center justify-center
-                                    rounded-lg border border-dashed border-primary/40
-                                    bg-tertiary transition hover:border-primary"
-                                >
-                                    <span className="block text-center w-full p-3 mt-1 font-heading text-sm font-bold text-heading/70 break-words">
-                                        {formData.aadhar
-                                            ? formData.aadhar.name : "PDF, JPG, PNG (Max 5MB)"}
-                                    </span>
-                                    {errors.aadhar && (
-                                        <span className="text-red-400 text-sm">
-                                            {errors.aadhar}
+                    {/* Document Verification */}
+                    <section className="min-w-0">
+                        <h2 className={sectionTitleClass}>
+                            Document Verification
+                        </h2>
+
+                        <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+                            {[
+                                {
+                                    name: "aadhar",
+                                    label: "Aadhaar Card",
+                                },
+                                {
+                                    name: "shopLicense",
+                                    label: "Shop License",
+                                },
+                            ].map(({ name, label }) => (
+                                <div key={name} className="min-w-0">
+                                    <label
+                                        htmlFor={name}
+                                        className={labelClass}
+                                    >
+                                        {label}
+                                    </label>
+
+                                    <label
+                                        htmlFor={name}
+                                        className="flex min-h-24 w-full cursor-pointer items-center justify-center rounded-xl border border-dashed border-primary/40 bg-tertiary p-4 text-center transition hover:border-primary hover:bg-primary/5"
+                                    >
+                                        <span className="break-words text-sm font-medium text-heading/80">
+                                            {formData[name]?.name ||
+                                                "Choose PDF, JPG or PNG (max 5 MB)"}
                                         </span>
-                                    )}
-                                </label>
-                                <input
-                                    id="aadhar"
-                                    name="aadhar"
-                                    type="file"
-                                    onChange={handleChange}
-                                    accept=".pdf,.jpg,.jpeg,.png"
-                                    className="hidden"
-                                />
-                            </div>
-                            <div className="flex flex-col gap-1 flex-1">
-                                <label htmlFor="shopLicense"
-                                    className="font-app-body text-md text-inactive font-medium"
-                                >Shop License</label>
-                                <label
-                                    htmlFor="shopLicense"
-                                    className="flex h-20 cursor-pointer flex-col items-center justify-center
-                                    rounded-lg border border-dashed border-primary/40
-                                    bg-tertiary transition hover:border-primary "
-                                >
-                                    <span className=" block text-center w-full p-3 mt-1 font-heading text-sm font-bold text-heading/70 break-words">
-                                        {formData.shopLicense
-                                            ? formData.shopLicense.name : "PDF, JPG, PNG (Max 5MB)"}
-                                    </span>
-                                    {errors.shopLicense && (
-                                        <span className="text-red-400 text-sm">
-                                            {errors.shopLicense}
-                                        </span>
-                                    )}
-                                </label>
-                                <input
-                                    id="shopLicense"
-                                    name="shopLicense"
-                                    type="file"
-                                    onChange={handleChange}
-                                    accept=".pdf,.jpg,.jpeg,.png"
-                                    className="hidden"
-                                />
-                            </div>
+                                    </label>
+
+                                    <input
+                                        id={name}
+                                        name={name}
+                                        type="file"
+                                        accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+                                        onChange={handleChange}
+                                        className="sr-only"
+                                    />
+
+                                    {renderError(name)}
+                                </div>
+                            ))}
                         </div>
-                    </div>
-                    <div className="flex flex-col gap-1 flex-1">
-                        <button type="submit"
-                            className="inline-block backdrop-blur-3xl px-10 py-3 shadow-[0_4px_20px] shadow-primary/50
-                            bg-primary border border-white/20 text-secondary/70 rounded-[10px] text-xl font-bold
-                            cursor-pointer"
-                        >Complete Profile</button>
-                    </div>
+                    </section>
+
+                    {/* Submit */}
+                    <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="inline-flex min-h-12 w-full items-center justify-center rounded-xl border border-white/20 bg-primary px-5 py-3 text-base font-bold text-background shadow-lg shadow-primary/30 transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brown disabled:cursor-not-allowed disabled:opacity-60 sm:text-lg"
+                    >
+                        {isSubmitting
+                            ? "Completing Profile..."
+                            : "Complete Profile"}
+                    </button>
                 </form>
             </div>
+
             {showMessage && (
                 <Message
                     {...messageData}
                     onClose={() => setShowMessage(false)}
                 />
             )}
-        </div>
-    )
-}
+        </main>
+    );
+};

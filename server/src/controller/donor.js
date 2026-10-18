@@ -1,4 +1,4 @@
-import { eq, inArray,and } from "drizzle-orm"
+import { eq, inArray, and,desc } from "drizzle-orm"
 import { db } from "../config/dbClient"
 import { users } from "../model/userSchema"
 import { donors } from "../model/donorRegisterSchema"
@@ -12,29 +12,79 @@ import { ngos } from "../model/ngoRegisterSchema"
 import { geocodeAddress } from "../utils/geocodeAddress";
 import { distanceInKm } from "../utils/distance";
 import { deliveries } from "../model/deliverySchema";
+
 export const donorDashboard = async (req, res) => {
-    const userPublicId = req.user.id
-    const [user] = await db.select().from(users).where(eq(users.publicId, userPublicId))
-    const userId = user.id
-    const [donor] = await db
-        .select()
-        .from(donors)
-        .where(eq(donors.userId, userId));
-    if (donor.profileComplete === false) {
+    try {
+        const [user] = await db
+            .select()
+            .from(users)
+            .where(eq(users.publicId, req.user.id))
+            .limit(1);
+
+        if (!user) {
+            return res.status(401).json({
+                success: false,
+                message: "User not found.",
+            });
+        }
+
+        const [donor] = await db
+            .select()
+            .from(donors)
+            .where(eq(donors.userId, user.id))
+            .limit(1);
+
+        if (!donor) {
+            return res.status(404).json({
+                success: false,
+                message: "Donor profile not found.",
+            });
+        }
+
+        if (!donor.profileComplete) {
+            return res.status(200).json({
+                success: false,
+                profileComplete: false,
+                donorName: donor.name,
+                verified: donor.approved,
+                photoUrl: donor.photoUrl,
+                recentDonations: [],
+                message: `Welcome ${donor.name}, please complete your profile!`,
+            });
+        }
+
+        const recentDonations = await db
+            .select({
+                id: donations.donation_id,
+                foodName: donations.foodName,
+                quantity: donations.quantity,
+                status: donations.donationStatus,
+                createdAt: donations.createdAt,
+                dateTime: donations.dateTime,
+            })
+            .from(donations)
+            .where(eq(donations.donor_id, donor.id))
+            .orderBy(desc(donations.createdAt))
+            .limit(5);
+
         return res.status(200).json({
-            success: false,
+            success: true,
+            profileComplete: true,
             donorName: donor.name,
             verified: donor.approved,
-            message: `Welcome ${donor.name} ,Please complete your profile!`
-        })
+            photoUrl: donor.photoUrl,
+            recentDonations,
+        });
+    } catch (error) {
+        console.error("Donor dashboard failed:", error);
+
+        return res.status(500).json({
+            success: false,
+            message: "Failed to fetch donor dashboard.",
+        });
     }
-    return res.status(200).json({
-        success: true,
-        donorName: donor.name,
-        verified: donor.approved,
-        photoUrl: donor.photoUrl
-    })
-}
+};
+
 export const profileSetup = async (req, res) => {
     try {
         const { dob, shopName, shopAddress,
@@ -316,7 +366,7 @@ export const createDonation = async (req, res) => {
             dateTime,
         } = req.body;
 
-        // 1. Validate incoming data
+        //  Validate data
         if (
             typeof foodName !== "string" ||
             !foodName.trim() ||
@@ -339,7 +389,7 @@ export const createDonation = async (req, res) => {
             });
         }
 
-        // 2. Find the logged-in user
+        // Find the logged-in user
         const [user] = await db
             .select()
             .from(users)
@@ -352,7 +402,7 @@ export const createDonation = async (req, res) => {
             });
         }
 
-        // 3. Find the donor
+        // Find the donor
         const [donor] = await db
             .select()
             .from(donors)
@@ -381,7 +431,7 @@ export const createDonation = async (req, res) => {
             });
         }
 
-        // 4. Classify the food
+        // Classify the food
         const aiResult = await classifyFood(foodName.trim(), ingredients);
         const predictedCategories = aiResult.predictions;
 
@@ -392,7 +442,7 @@ export const createDonation = async (req, res) => {
             });
         }
 
-        // 5. Check configured time limits
+        // Check configured time limits
         let expiryResult;
 
         try {
@@ -420,7 +470,7 @@ export const createDonation = async (req, res) => {
             });
         }
 
-        // 6. Check cached donor coordinates
+        // Check cached donor coordinates
         const donorHasCoordinates =
             donor.latitude != null &&
             donor.longitude != null &&
@@ -431,7 +481,7 @@ export const createDonation = async (req, res) => {
 
         const locatedNgos = [];
 
-        // 7. Find approved NGOs within 10 km
+        // Find approved NGOs within 10 km
         if (donorHasCoordinates) {
             const verifiedNgos = await db
                 .select({
@@ -472,7 +522,7 @@ export const createDonation = async (req, res) => {
             }
         }
 
-        // 8. Save donation and NGO requests atomically
+        // Save donation and NGO requests atomically
         const newDonation = await db.transaction(async (tx) => {
             const [donation] = await tx
                 .insert(donations)
@@ -506,7 +556,7 @@ export const createDonation = async (req, res) => {
             return donation;
         });
 
-        // 9. Respond to the frontend
+        // Respond to the frontend
         return res.status(201).json({
             success: true,
             message: !donorHasCoordinates
@@ -530,105 +580,103 @@ export const createDonation = async (req, res) => {
 };
 
 export const getDonorDonationHistory = async (req, res) => {
-  try {
-    // req.user.id is the authenticated user's public UUID.
-    const [user] = await db
-      .select({ id: users.id })
-      .from(users)
-      .where(eq(users.publicId, req.user.id))
-      .limit(1);
+    try {
+        const [user] = await db
+            .select({ id: users.id })
+            .from(users)
+            .where(eq(users.publicId, req.user.id))
+            .limit(1);
 
-    if (!user) {
-      return res.status(401).json({
-        success: false,
-        message: "User not found.",
-      });
+        if (!user) {
+            return res.status(401).json({
+                success: false,
+                message: "User not found.",
+            });
+        }
+
+        const [donor] = await db
+            .select({ id: donors.id })
+            .from(donors)
+            .where(eq(donors.userId, user.id))
+            .limit(1);
+
+        if (!donor) {
+            return res.status(404).json({
+                success: false,
+                message: "Donor profile not found.",
+            });
+        }
+
+        const rows = await db
+            .select({
+                donationId: donations.donation_id,
+                foodName: donations.foodName,
+                foodType: donations.foodType,
+                quantity: donations.quantity,
+                ingredients: donations.ingredients,
+                dateTime: donations.dateTime,
+                expectedExpiryTime: donations.expectedExpiryTime,
+                donationStatus: donations.donationStatus,
+
+                requestId: donationRequests.id,
+                requestStatus: donationRequests.status,
+
+                deliveryId: deliveries.id,
+                deliveryStatus: deliveries.status,
+                pickupQrToken: deliveries.pickupQrToken,
+                pickupScannedAt: deliveries.pickupScannedAt,
+                handoverScannedAt: deliveries.handoverScannedAt,
+                deliveredAt: deliveries.deliveredAt,
+            })
+            .from(donations)
+            .leftJoin(
+                donationRequests,
+                and(
+                    eq(donationRequests.donationId, donations.donation_id),
+                    eq(donationRequests.status, "accepted")
+                )
+            )
+            .leftJoin(
+                deliveries,
+                eq(deliveries.requestId, donationRequests.id)
+            )
+            .where(eq(donations.donor_id, donor.id));
+
+        const history = rows.map((row) => ({
+            donationId: row.donationId,
+            foodName: row.foodName,
+            foodType: row.foodType,
+            quantity: row.quantity,
+            ingredients: row.ingredients,
+            dateTime: row.dateTime,
+            expectedExpiryTime: row.expectedExpiryTime,
+            donationStatus: row.donationStatus,
+
+            requestStatus: row.requestStatus,
+            delivery: row.deliveryId
+                ? {
+                    id: row.deliveryId,
+                    status: row.deliveryStatus,
+                    pickupQrToken: row.deliveryStatus !== "cancelled"
+                        ? row.pickupQrToken
+                        : null,
+                    pickupScannedAt: row.pickupScannedAt,
+                    handoverScannedAt: row.handoverScannedAt,
+                    deliveredAt: row.deliveredAt,
+                }
+                : null,
+        }));
+
+        return res.status(200).json({
+            success: true,
+            donations: history,
+        });
+    } catch (error) {
+        console.error("Fetching donor donation history failed:", error);
+
+        return res.status(500).json({
+            success: false,
+            message: "Failed to fetch donation history.",
+        });
     }
-
-    const [donor] = await db
-      .select({ id: donors.id })
-      .from(donors)
-      .where(eq(donors.userId, user.id))
-      .limit(1);
-
-    if (!donor) {
-      return res.status(404).json({
-        success: false,
-        message: "Donor profile not found.",
-      });
-    }
-
-    const rows = await db
-      .select({
-        donationId: donations.donation_id,
-        foodName: donations.foodName,
-        foodType: donations.foodType,
-        quantity: donations.quantity,
-        ingredients: donations.ingredients,
-        dateTime: donations.dateTime,
-        expectedExpiryTime: donations.expectedExpiryTime,
-        donationStatus: donations.donationStatus,
-
-        requestId: donationRequests.id,
-        requestStatus: donationRequests.status,
-
-        deliveryId: deliveries.id,
-        deliveryStatus: deliveries.status,
-        pickupQrToken: deliveries.pickupQrToken,
-        pickupScannedAt: deliveries.pickupScannedAt,
-        handoverScannedAt: deliveries.handoverScannedAt,
-        deliveredAt: deliveries.deliveredAt,
-      })
-      .from(donations)
-      .leftJoin(
-        donationRequests,
-        and(
-          eq(donationRequests.donationId, donations.donation_id),
-          eq(donationRequests.status, "accepted")
-        )
-      )
-      .leftJoin(
-        deliveries,
-        eq(deliveries.requestId, donationRequests.id)
-      )
-      .where(eq(donations.donor_id, donor.id));
-
-    const history = rows.map((row) => ({
-      donationId: row.donationId,
-      foodName: row.foodName,
-      foodType: row.foodType,
-      quantity: row.quantity,
-      ingredients: row.ingredients,
-      dateTime: row.dateTime,
-      expectedExpiryTime: row.expectedExpiryTime,
-      donationStatus: row.donationStatus,
-
-      requestStatus: row.requestStatus,
-      delivery: row.deliveryId
-        ? {
-            id: row.deliveryId,
-            status: row.deliveryStatus,
-            // Only the donor's pickup QR is returned.
-            pickupQrToken: row.deliveryStatus !== "cancelled"
-              ? row.pickupQrToken
-              : null,
-            pickupScannedAt: row.pickupScannedAt,
-            handoverScannedAt: row.handoverScannedAt,
-            deliveredAt: row.deliveredAt,
-          }
-        : null,
-    }));
-
-    return res.status(200).json({
-      success: true,
-      donations: history,
-    });
-  } catch (error) {
-    console.error("Fetching donor donation history failed:", error);
-
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch donation history.",
-    });
-  }
 };
