@@ -1,7 +1,14 @@
 import { Router } from "express"
 import { getDashboard, getDonorManagement, getNgoManagement, getPendingDeliveryPartners, verifyDeliveryPartner, verifyDonor, verifyNgo } from "../controller/admin";
 import { isAdmin, verifyToken } from "../middleware/auth";
-import { getIoTAlerts, getIoTBoxes, getIoTOverview } from "../controller/iotAdmin";
+import {
+  registerIoTBox,
+  assignIoTBox,
+  getIoTAlerts,
+  getIoTBoxes,
+  getIoTOverview,
+  receiveIoTReading,
+} from "../controller/iotAdmin.js";
 export const adminRoutes = Router();
 adminRoutes.get("/", verifyToken, isAdmin, getDashboard)
 adminRoutes.get("/donor-management", verifyToken, isAdmin, getDonorManagement)
@@ -30,3 +37,21 @@ adminRoutes.get(
     isAdmin,
     getIoTAlerts
 );
+adminRoutes.post(
+    "/readings",
+    receiveIoTReading
+);
+adminRoutes.post(
+    "/monitoring/boxes/assign",
+    verifyToken,
+    isAdmin,
+    assignIoTBox
+);
+
+adminRoutes.post(
+  "/monitoring/boxes/register",
+  verifyToken,
+  isAdmin,
+  registerIoTBox
+);
+

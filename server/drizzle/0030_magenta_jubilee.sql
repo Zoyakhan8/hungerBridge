@@ -1,0 +1,1 @@
+ALTER TABLE "iot_readings" ADD COLUMN "food_temperature" double precision;

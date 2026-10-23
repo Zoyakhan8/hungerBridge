@@ -143,7 +143,6 @@ export const getNgoManagement = async (req, res) => {
         totalPages: Math.ceil(totalNgos.length / limit),
     })
 }
-
 export const getPendingDeliveryPartners = async (req, res) => {
   try {
 
@@ -179,7 +178,6 @@ export const getPendingDeliveryPartners = async (req, res) => {
     });
   }
 };
-
 export const verifyDeliveryPartner = async (req, res) => {
   try {
     const partnerId = Number(req.params.id);
@@ -230,8 +228,6 @@ export const verifyDeliveryPartner = async (req, res) => {
     });
   }
 };
-
-
 export const getDashboard = async (req, res) => {
     try {
         const period = String(req.query.period || "month");
@@ -514,4 +510,3 @@ export const getDashboard = async (req, res) => {
         });
     }
 };
-

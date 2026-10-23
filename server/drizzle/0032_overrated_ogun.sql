@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX "iot_donation_one_active_box_idx" ON "iot_box_assignments" USING btree ("donation_id") WHERE "iot_box_assignments"."returned_at" IS NULL;

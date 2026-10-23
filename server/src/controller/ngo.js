@@ -10,7 +10,7 @@ import { donationRequests } from "../model/donationRequestSchema";
 import { deliveries } from "../model/deliverySchema";
 import { deliveryPartners } from "../model/deliveryPartnerSchema";
 import { distanceInKm } from "../utils/distance";
-
+import { autoAssignAvailableIoTBox } from "./iotAdmin";
 export const getDashboard = async (req, res) => {
     try {
         const [user] = await db
@@ -242,6 +242,7 @@ export const getRequest = async (req, res) => {
 };
 
 
+
 export const updateRequestStatus = async (req, res) => {
     try {
         const requestId = Number(req.params.id);
@@ -303,7 +304,7 @@ export const updateRequestStatus = async (req, res) => {
         }
 
         const result = await db.transaction(async (tx) => {
-            // Only this NGO can respond to its own pending request.
+            // Update only this NGO's pending request.
             const [updatedRequest] = await tx
                 .update(donationRequests)
                 .set({
@@ -331,19 +332,22 @@ export const updateRequestStatus = async (req, res) => {
                 throw error;
             }
 
-            // A declined request must not create a delivery.
+            // Declining a request must not create a delivery or assign a box.
             if (status === "declined") {
                 return {
                     request: updatedRequest,
                     delivery: null,
+                    iotBoxAssigned: false,
                     message: "Request declined successfully.",
                 };
             }
 
-            // Update donation status only after successful acceptance.
+            // Mark the donation as accepted.
             await tx
                 .update(donations)
-                .set({ donationStatus: "accepted" })
+                .set({
+                    donationStatus: "accepted",
+                })
                 .where(
                     eq(
                         donations.donation_id,
@@ -351,10 +355,11 @@ export const updateRequestStatus = async (req, res) => {
                     )
                 );
 
-            // Create the delivery in pending state first.
+            // Generate secure QR tokens for the delivery.
             const pickupQrToken = randomBytes(32).toString("hex");
             const handoverQrToken = randomBytes(32).toString("hex");
 
+            // Create the delivery inside this transaction.
             const [delivery] = await tx
                 .insert(deliveries)
                 .values({
@@ -365,7 +370,15 @@ export const updateRequestStatus = async (req, res) => {
                 })
                 .returning();
 
-            // Find verified and available partners with coordinates.
+            // AUTOMATIC IoT BOX ASSIGNMENT.
+            // Use the donation ID from the actual donation request.
+            // If no box is available, the delivery can still proceed.
+            const iotAssignment = await autoAssignAvailableIoTBox(
+                tx,
+                updatedRequest.donationId
+            );
+
+            // Find verified, available delivery partners with coordinates.
             const availablePartners = await tx
                 .select({
                     id: deliveryPartners.id,
@@ -382,41 +395,42 @@ export const updateRequestStatus = async (req, res) => {
                     )
                 );
 
+            // Sort partners by distance when coordinates are usable.
             const ngoHasCoordinates =
-                typeof ngo.latitude === "number" &&
-                typeof ngo.longitude === "number" &&
-                Number.isFinite(ngo.latitude) &&
-                Number.isFinite(ngo.longitude);
+                ngo.latitude != null &&
+                ngo.longitude != null &&
+                Number.isFinite(Number(ngo.latitude)) &&
+                Number.isFinite(Number(ngo.longitude));
 
-            // Prefer the closest partner when NGO coordinates exist.
+            const sortedPartners = ngoHasCoordinates
+                ? [...availablePartners].sort((a, b) => {
+                    const distanceA = distanceInKm(
+                        Number(ngo.latitude),
+                        Number(ngo.longitude),
+                        Number(a.latitude),
+                        Number(a.longitude)
+                    );
 
-            const sortedPartners = [...availablePartners].sort((a, b) => {
-                const distanceA = distanceInKm(
-                    ngo.latitude,
-                    ngo.longitude,
-                    a.latitude,
-                    a.longitude
-                );
+                    const distanceB = distanceInKm(
+                        Number(ngo.latitude),
+                        Number(ngo.longitude),
+                        Number(b.latitude),
+                        Number(b.longitude)
+                    );
 
-                const distanceB = distanceInKm(
-                    ngo.latitude,
-                    ngo.longitude,
-                    b.latitude,
-                    b.longitude
-                );
-
-                return distanceA - distanceB;
-            });
-
+                    return distanceA - distanceB;
+                })
+                : availablePartners;
 
             let assignedDelivery = delivery;
 
-            // Claim one partner. If the conditional update fails,
-            // try the next candidate.
+            // Claim an available partner; try another if the claim fails.
             for (const partner of sortedPartners) {
                 const [claimedPartner] = await tx
                     .update(deliveryPartners)
-                    .set({ isAvailable: false })
+                    .set({
+                        isAvailable: false,
+                    })
                     .where(
                         and(
                             eq(deliveryPartners.id, partner.id),
@@ -457,10 +471,11 @@ export const updateRequestStatus = async (req, res) => {
             return {
                 request: updatedRequest,
                 delivery: assignedDelivery,
+                iotBoxAssigned: Boolean(iotAssignment),
                 message:
                     assignedDelivery.status === "assigned"
-                        ? "Request accepted and delivery partner assigned."
-                        : "Request accepted. Waiting for an available delivery partner.",
+                        ? "Request accepted, delivery partner assigned, and IoT box assignment processed."
+                        : "Request accepted. Waiting for an available delivery partner. IoT box assignment processed.",
             };
         });
 
@@ -477,6 +492,7 @@ export const updateRequestStatus = async (req, res) => {
                     assignedAt: result.delivery.assignedAt,
                 }
                 : null,
+            iotBoxAssigned: result.iotBoxAssigned,
         });
     } catch (error) {
         if (error.statusCode) {
@@ -494,6 +510,7 @@ export const updateRequestStatus = async (req, res) => {
         });
     }
 };
+
 
 export const getMyDeliveries = async (req, res) => {
     try {

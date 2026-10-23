@@ -1,4 +1,5 @@
-import { pgTable, serial, integer, text, boolean, timestamp, doublePrecision, index, } from "drizzle-orm/pg-core";
+import { pgTable, serial, integer, text, boolean, timestamp, doublePrecision, index, uniqueIndex, } from "drizzle-orm/pg-core";
+import { sql } from "drizzle-orm";
 import { donations } from "./donationSchema";
 export const iotBoxes = pgTable(
     "iot_boxes",
@@ -48,9 +49,13 @@ export const iotReadings = pgTable(
             .references(() => iotBoxes.id, { onDelete: "cascade" })
             .notNull(),
 
+        donationId: integer("donation_id").references(
+            () => donations.donation_id,
+            { onDelete: "set null" }
+        ),
         temperature: doublePrecision("temperature"),
         humidity: doublePrecision("humidity"),
-
+        foodTemperature: doublePrecision("food_temperature"),
         doorOpen: boolean("door_open"),
         doorOpenCount: integer("door_open_count"),
         batteryPercent: integer("battery_percent"),
@@ -117,5 +122,45 @@ export const iotAlerts = pgTable(
             table.status
         ),
         index("iot_alerts_created_at_idx").on(table.createdAt),
+    ]
+);
+
+
+export const iotBoxAssignments = pgTable(
+    "iot_box_assignments",
+    {
+        id: serial("id").primaryKey(),
+
+        boxId: integer("box_id")
+            .references(() => iotBoxes.id)
+            .notNull(),
+
+        donationId: integer("donation_id")
+            .references(() => donations.donation_id)
+            .notNull(),
+
+        assignedAt: timestamp("assigned_at", {
+            withTimezone: true,
+        })
+            .defaultNow()
+            .notNull(),
+
+        returnedAt: timestamp("returned_at", {
+            withTimezone: true,
+        }),
+    },
+    (table) => [
+        index("iot_box_assignments_donation_idx").on(
+            table.donationId
+        ),
+
+        // A box can have only one active assignment.
+        uniqueIndex("iot_box_one_active_assignment_idx")
+            .on(table.boxId)
+            .where(sql`${table.returnedAt} IS NULL`),
+            
+        uniqueIndex("iot_donation_one_active_box_idx")
+            .on(table.donationId)
+            .where(sql`${table.returnedAt} IS NULL`)
     ]
 );

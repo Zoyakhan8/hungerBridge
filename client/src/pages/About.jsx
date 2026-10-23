@@ -28,8 +28,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 // Replace these placeholders with your actual project links.
-const GITHUB_URL = "https://github.com/YOUR-USERNAME/YOUR-REPOSITORY";
-const RESEARCH_DRIVE_URL = "https://drive.google.com/drive/my-drive";
+const GITHUB_URL = "https://github.com/Zoyakhan8/hungerBridge";
+const RESEARCH_DRIVE_URL = "https://drive.google.com/drive/folders/1nhLoskx3hgNBczDkjh79s2ddLXTptds1?usp=drive_link";
 
 const researchReferences = [
     {
